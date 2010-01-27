@@ -1,0 +1,3153 @@
+using System;
+using System.Drawing;
+using System.Collections;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Data;
+using System.Data.OleDb;
+using System.IO;
+using System.Diagnostics;
+using System.Reflection;
+using System.Runtime.InteropServices;
+
+namespace EM
+{
+	/// <summary>
+	/// Summary description for PO.
+	/// </summary>
+	/// 
+	public interface IAllowComboBoxUpdates
+	{
+		bool AllowComboBoxUpdates
+		{
+			get;
+			set;
+		}
+	}
+	public class PO : KeyBasedForm,
+		HelperFunctions.DataGridClientInterface,
+		IAllowComboBoxUpdates
+	{
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.ComboBox m_statusCombo;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.TextBox m_dateEdt;
+		private System.Windows.Forms.Button m_dateBtn;
+		private System.Data.OleDb.OleDbDataAdapter poHeaderAdapter;
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.Container components = null;
+
+
+		// My variables
+		
+		private System.Windows.Forms.ComboBox m_shipCodeCombo;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.TextBox m_fobEdt;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.ComboBox m_termsCombo;
+		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.TextBox m_cancelDateEdt;
+		private System.Windows.Forms.Button m_cancelDateBtn;
+		private System.Windows.Forms.TextBox m_commentEdt;
+		private EM.EMDataSet m_emDataSet = new EM.EMDataSet();
+		private System.Data.OleDb.OleDbDataAdapter termsAdapter;
+		private System.Data.OleDb.OleDbDataAdapter shipCodeAdapter;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.GroupBox groupBox2;
+		private System.Data.OleDb.OleDbDataAdapter companyAdapter;
+		private System.Data.OleDb.OleDbDataAdapter poItemAdapter;
+		private System.Windows.Forms.TabControl tabControl1;
+		private System.Windows.Forms.TabPage tabPage1;
+		private System.Windows.Forms.TabPage tabPage2;
+		private System.Windows.Forms.TabPage tabPage3;
+		private System.Data.OleDb.OleDbDataAdapter fileAdapter;
+		private System.Data.OleDb.OleDbDataAdapter poFileAdapter;
+		private System.Windows.Forms.Label label12;
+		private System.Windows.Forms.Label label13;
+		private System.Windows.Forms.TextBox m_totalCostEdit;
+		private System.Windows.Forms.TextBox m_totalCostUSEdit;
+		private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn1;
+		private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn2;
+		private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn8;
+		private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn3;
+		private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn4;
+		private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn5;
+		private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn6;
+		private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn7;
+		private System.Windows.Forms.TextBox custFaxEdt;
+		private System.Windows.Forms.TextBox custPhoneEdt;
+		private System.Windows.Forms.TextBox custContactEdt;
+		private System.Windows.Forms.TextBox vendContactEdt;
+		private System.Windows.Forms.TextBox vendPhoneEdt;
+		private System.Windows.Forms.TextBox vendFaxEdt;
+		private System.Data.OleDb.OleDbConnection emConnection;
+		private System.Data.OleDb.OleDbCommand oleDbSelectCommand2;
+		private System.Data.OleDb.OleDbCommand oleDbInsertCommand2;
+		private System.Data.OleDb.OleDbCommand oleDbUpdateCommand2;
+		private System.Data.OleDb.OleDbCommand oleDbDeleteCommand2;
+		private System.Data.OleDb.OleDbCommand oleDbSelectCommand4;
+		private System.Data.OleDb.OleDbCommand oleDbInsertCommand4;
+		private System.Data.OleDb.OleDbCommand oleDbUpdateCommand4;
+		private System.Data.OleDb.OleDbCommand oleDbDeleteCommand4;
+		private System.Data.OleDb.OleDbCommand oleDbSelectCommand7;
+		private System.Data.OleDb.OleDbCommand oleDbInsertCommand7;
+		private System.Data.OleDb.OleDbCommand oleDbUpdateCommand7;
+		private System.Data.OleDb.OleDbCommand oleDbDeleteCommand7;
+		private System.Data.OleDb.OleDbCommand oleDbSelectCommand8;
+		private System.Data.OleDb.OleDbCommand oleDbInsertCommand8;
+		private System.Data.OleDb.OleDbCommand oleDbUpdateCommand8;
+		private System.Data.OleDb.OleDbCommand oleDbDeleteCommand8;
+		private System.Windows.Forms.Label label14;
+		private System.Windows.Forms.Label label15;
+		private System.Windows.Forms.ComboBox customerCombo;
+		private System.Windows.Forms.ComboBox millCombo;
+		private System.Data.OleDb.OleDbDataAdapter locationAdapter;
+		private System.Data.OleDb.OleDbDataAdapter countryAdapter;
+		private System.Data.OleDb.OleDbCommand oleDbSelectCommand9;
+		private System.Windows.Forms.Label label16;
+		private System.Windows.Forms.Label label17;
+		private System.Windows.Forms.Label label18;
+		private System.Windows.Forms.Label label19;
+		private System.Windows.Forms.Label label20;
+		private System.Windows.Forms.Label label21;
+		private System.Windows.Forms.Label label22;
+		private System.Windows.Forms.Label label23;
+		private System.Data.OleDb.OleDbCommand oleDbSelectCommand5;
+		private System.Windows.Forms.ComboBox vendContactCombo;
+		private System.Windows.Forms.ComboBox custContactCombo;
+		private System.Data.OleDb.OleDbDataAdapter contactsAdapter;
+		private System.Data.OleDb.OleDbCommand oleDbSelectCommand11;
+		private System.Windows.Forms.Button removeItemBtn;
+		private System.Windows.Forms.Button moveUpBtn;
+		private System.Windows.Forms.Button moveDownBtn;
+		private System.Windows.Forms.TabPage purchaseOrderPage;
+		private System.Windows.Forms.TabPage acknowledgementPage;
+		private QuickGrid m_acknowledgementGrid;
+		private System.Windows.Forms.TabControl m_tabControl;
+		private System.Windows.Forms.Button printPOBtn;
+		private System.Windows.Forms.Button printAckBtn;
+		private System.Data.OleDb.OleDbCommand oleDbSelectCommand6;
+		private System.Data.OleDb.OleDbDataAdapter companyTypeAdapter;
+		private System.Data.OleDb.OleDbCommand oleDbSelectCommand12;
+		private QuickGrid poGrid;
+		//private System.Windows.Forms.DataGrid poGrid;
+		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.ComboBox umCombo;
+		public System.Windows.Forms.TextBox m_purchaseEdt;
+		private System.Windows.Forms.ComboBox vendLocationCombo;
+		private System.Windows.Forms.TextBox vendCountryEdt;
+		private System.Windows.Forms.TextBox vendAddressEdt;
+		private System.Windows.Forms.ComboBox shipToLocationCombo;
+		private System.Windows.Forms.TextBox custCountryEdt;
+		private System.Windows.Forms.TextBox custAddressEdt;
+		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.GroupBox groupBox3;
+		private System.Windows.Forms.GroupBox groupBox4;
+		private System.Windows.Forms.Label label11;
+		private System.Data.OleDb.OleDbCommand oleDbSelectCommand1;
+		private System.Data.OleDb.OleDbCommand oleDbInsertCommand1;
+		private System.Data.OleDb.OleDbCommand oleDbUpdateCommand1;
+		private System.Data.OleDb.OleDbCommand oleDbDeleteCommand1;
+		private System.Windows.Forms.TextBox vendEMailEdt;
+		private System.Windows.Forms.TextBox custEMailEdt;
+		private System.Windows.Forms.GroupBox groupBox5;
+		private System.Windows.Forms.GroupBox groupBox6;
+		private System.Windows.Forms.Button previewPOBtn;
+		private System.Windows.Forms.Button previewAckBtn;
+		private System.Data.OleDb.OleDbCommand oleDbSelectCommand3;
+		private System.Data.OleDb.OleDbCommand oleDbInsertCommand3;
+		private System.Data.OleDb.OleDbCommand oleDbUpdateCommand3;
+		private System.Data.OleDb.OleDbCommand oleDbDeleteCommand3;
+		private System.Data.OleDb.OleDbCommand oleDbSelectCommand10;
+		private System.Data.OleDb.OleDbDataAdapter poGetPOIDAdapter;
+		private System.Windows.Forms.Button addNewMillBtn;
+		private System.Windows.Forms.Button addNewMillLocationBtn;
+		private System.Windows.Forms.Button addNewCustomerBtn;
+		private System.Windows.Forms.Button addNewCustomerLocationBtn;
+		private System.Windows.Forms.TextBox m_exchangeRateEdt;
+		
+
+		public override void ClearDataSet()
+		{
+			m_emDataSet.Clear();
+		}
+		public new EMDataSet.POHeaderTblRow GetHeaderRow()
+		{
+			return (EMDataSet.POHeaderTblRow)base.GetHeaderRow();
+		}
+
+		public bool AllowComboBoxUpdates
+		{
+			get
+			{
+				return allowComboBoxUpdates;
+			}
+			set
+			{
+				allowComboBoxUpdates = value;
+			}
+		}
+	
+
+		public object[] m_textBoxes;
+		public string[] m_fieldNames;
+		public string[] m_dateFieldNames;
+		public TextBox[] m_dateBoxes;
+		
+		public override void InitializeDataRow(DataRow rowIn)
+		{
+			EMDataSet.POHeaderTblRow row = (EMDataSet.POHeaderTblRow)rowIn;
+			row.PODate = DateTime.Today;
+			row.Terms = "Net 30";
+			row.Status = "Open";
+		}
+		public override bool IsChanged()
+		{
+			DataTable header = GetHeaderTable().GetChanges();
+			DataTable child = m_emDataSet.POItemTbl.GetChanges();
+			if (header != null)
+				return true;
+			if (child != null)
+				return true;
+			return false;
+		}
+
+		private void OnDateLeave(object sender, System.EventArgs e)
+		{
+			TextBox dateBox = null;
+			string dateField="";
+			for (int i=0;i<this.m_dateBoxes.Length;i++)
+			{
+				if (sender == m_dateBoxes[i])
+				{
+					dateBox = m_dateBoxes[i];
+					dateField = m_dateFieldNames[i];
+					break;
+				}
+			}
+			Debug.Assert(dateBox != null);
+			EMDataSet.POHeaderTblRow row = GetHeaderRow();
+			
+			try
+			{
+				row[dateField] = dateBox.Text;
+			}
+			catch(Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			
+			if (row.IsNull(dateField))
+			{
+				dateBox.Text = "";
+			}
+			else
+			{
+				dateBox.Text = HelperFunctions.ToDateText(
+					(DateTime)row[dateField]);
+			}		
+		}
+
+		public override string[] GetSortOrder()
+		{
+			return new string[]{"Status","PODate","PONumber"};
+		}
+	
+		public override bool IsDeleteAllowed()
+		{
+			if (GetAllDetailRows().Length != 0)
+			{
+				MessageBox.Show("Delete of the purchase order is not allowed " + 
+								"unless all items in the purchase order have been deleted",
+								"Can't delete");
+				return false;
+			}
+			return true;
+		}
+
+		public void MoveToNewCell(DataGrid grid)
+		{
+			DataGridCell cell = grid.CurrentCell;
+			int row = cell.RowNumber;
+			int column = cell.ColumnNumber;
+			if (column == 0)
+				column =1;
+			else
+				column = 0;
+			grid.CurrentCell = new DataGridCell(row,column);
+		}
+
+		public void OnGridItemClicked(int selectedRow)
+		{
+			try
+			{
+				FromControls();
+				EMDataSet.POHeaderTblRow headerRow = GetHeaderRow();
+				if (headerRow.IsShipToNameNull() ||
+					headerRow.ShipToName == "")
+				{
+					throw new Exception("Customer must be chosen before you can use the item selection window");
+				}
+
+
+				EMDataSet.POItemTblRow rowOut = HelperFunctions.GetItemRowOrCreate(m_emDataSet.POItemTbl,
+					headerRow.POID,selectedRow);
+
+				if (!rowOut.IsAcknowledgeDateNull())
+				{
+					MessageBox.Show("Item can not be changed since it has already been acknowledged.\n" +
+						"Remove acknowledgement date first.","Can't change acknowledged item",
+						MessageBoxButtons.OK,MessageBoxIcon.Stop);
+					return;
+				}
+
+				string company = headerRow.ShipToName;
+				EMDataSet.ItemTblRow rowIn = ChooseItem.CreateNewRow(company);
+				if (rowIn == null)
+					return;
+			
+
+				foreach (DataColumn column in rowOut.Table.Columns)
+				{
+					string columnName = column.ColumnName;
+					if (columnName == "POID")
+						continue;
+					if (columnName == "POItemNumber")
+						continue;
+					if (columnName == "SeqNumber")
+						continue;
+					rowOut[column] = DBNull.Value;
+				}
+				
+				if (!rowIn.IsItemNameNull())
+					rowOut.ItemName = rowIn.ItemName;
+	
+				if (!rowIn.IsItemDescNull())
+				{
+					rowOut.ItemDesc = rowIn.ItemDesc;
+				}
+				UpdateGrid();
+			}
+			catch (Exception e)
+			{
+				MessageBox.Show(e.Message);
+			}
+
+		}
+
+		public override bool IsValid()
+		{
+			EMDataSet.POHeaderTblRow row = GetHeaderRow();
+			bool doesItemNameExist = false;
+			foreach (EMDataSet.POItemTblRow childRow in m_emDataSet.POItemTbl.Rows)
+			{
+				if (!DataInterface.IsRowAlive(childRow))
+				{
+					continue;
+				}
+				if (!childRow.IsItemNameNull())
+					if (childRow.ItemName != "")
+						doesItemNameExist = true;
+			}
+			if (!doesItemNameExist)
+				return true;
+			string[] requiredFields = 
+			{"PODate","PONumber","Terms","ShipCode","FOB","VendName","VendLocationName",
+			"ShipToName","ShipToLocationName","ShipToContact"};
+			string[] friendlyTitles = 
+				{	"Purchase order date","PONumber","Terms","Ship Via","FOB","Mill Name","Mill Location Name",
+					"Customer Name","Customer Location Name","Customer Contact"};
+			ArrayList listOfFailedCriteria = new ArrayList();
+			for (int i=0;i<requiredFields.Length;i++)
+			{
+				string fieldName = requiredFields[i];
+				if (row.IsNull(fieldName))
+				{
+					listOfFailedCriteria.Add(i);
+					continue;
+				}
+				if (row.Table.Columns[fieldName].DataType == typeof(string))
+				{
+					if ((string)row[fieldName] == "")
+					{
+						listOfFailedCriteria.Add(i);
+						continue;
+					}
+				}
+			}
+			if (listOfFailedCriteria.Count == 0)
+				return true;
+			string errorMessage = "The following fields must be filled in before saving:";
+			foreach (int failure in listOfFailedCriteria)
+			{
+				errorMessage += "\n" + friendlyTitles[failure];
+			}
+			MessageBox.Show(errorMessage,"Unable to save purchase order");
+			return false;
+		}
+
+		public void NewGridTotal(decimal total)
+		{
+			EMDataSet.POHeaderTblRow row = GetHeaderRow();
+			string otherTotal = total.ToString();
+			row.OtherTotal = total;
+			if (row.IsExchangeRateNull())
+			{
+				row.USTotal = row.OtherTotal;
+				m_totalCostUSEdit.Text = otherTotal;
+			}
+			else
+			{
+				row.USTotal = row.OtherTotal * row.ExchangeRate;
+			}
+			UpdateCurrencyControls();
+		}
+
+
+		public void FromSelectedGrid()
+		{
+			FromGrid(m_tabControl.SelectedIndex);
+		}
+		public void FromGrid(int index)
+		{
+			if (index == 0)
+			{
+				HelperFunctions.FromGrid(GetHeaderRow().POID,
+					m_emDataSet.POItemTbl,poGrid);
+			}
+			else
+			{
+				DataTable sourceTable = m_acknowledgementGrid.GetTable();
+				EMDataSet.POItemTblDataTable targetTable = m_emDataSet.POItemTbl;
+				foreach (DataRow sourceRow in sourceTable.Rows)
+				{
+					int poItemNumber = (int)sourceRow["POItemNumber"];
+					EMDataSet.POItemTblRow targetRow = 
+						targetTable.FindByPOItemNumber(poItemNumber);
+					foreach (DataColumn column in sourceTable.Columns)
+					{
+						string columnName = column.ColumnName;
+						targetRow[columnName] = sourceRow[columnName];
+					}
+				}
+			}
+			FixUMButNoUpdates(umCombo.Text);
+		}
+
+		public override void FromControls()
+		{
+			// Depending on the selected tab, we commit changes from the particular grids
+			FromSelectedGrid();
+
+			EMDataSet.POHeaderTblRow row = GetHeaderRow();
+			for (int i=0;i<m_textBoxes.Length;i++)
+			{
+				try
+				{
+					row[m_fieldNames[i]] = GetText(m_textBoxes[i]);
+				}
+				catch (Exception e)
+				{
+					throw new Exception("Could not parse field:" + m_fieldNames[i] + "\n" +
+						e.Message);
+				}
+			}
+			try
+			{
+				if (m_exchangeRateEdt.Text.Length == 0)
+					row["ExchangeRate"] = 1;
+				else
+					row["ExchangeRate"] = m_exchangeRateEdt.Text;
+			}
+			catch( Exception e)
+			{
+				throw new Exception("Could not parse field: Exchange Rate" + e.Message);
+			}
+
+			for (int i=0;i<m_dateBoxes.Length;i++)
+			{
+				if  (m_dateBoxes[i].Text == "")
+					row[m_dateFieldNames[i]] = DBNull.Value;
+				else
+					row[m_dateFieldNames[i]] = System.DateTime.Parse(m_dateBoxes[i].Text);
+			}
+			row.VendName = millCombo.Text;
+			row.ShipToName = customerCombo.Text;
+
+			row.VendLocationName = vendLocationCombo.Text;
+			row.ShipToLocationName = shipToLocationCombo.Text;
+
+			// First update the total:
+			decimal total = 0;
+			foreach (EMDataSet.POItemTblRow detailRow in GetAllDetailRows())
+			{
+				if (!detailRow.IsCustAmountNull())
+					total += detailRow.CustAmount;
+			}
+			row.OtherTotal = total;
+			decimal exchange;
+			if (row.IsExchangeRateNull())
+				exchange = 1;
+			else
+				exchange = row.ExchangeRate;
+			row.USTotal = total * exchange;
+		}
+		public static void CompareForValidaty(int poid,EMDataSet unsavedDataSet,EMDataSet currentDataSet)
+		{
+			EMDataSet.POHeaderTblRow unsavedRow = unsavedDataSet.POHeaderTbl.FindByPOID(poid);
+			EMDataSet.POHeaderTblRow currentRow = currentDataSet.POHeaderTbl.FindByPOID(poid);
+			if (currentRow == null)
+				return; // This is OK. 
+			if (unsavedRow == null)
+				throw new Exception("Logic error. There is no current purchase order");
+			DataRowCollection unsavedChildrenTemp = unsavedDataSet.POItemTbl.Rows;
+			ArrayList listOfChildren = new ArrayList();
+			foreach (EMDataSet.POItemTblRow row in unsavedChildrenTemp)
+			{
+				if (row.RowState != DataRowState.Added)
+					listOfChildren.Add(row);
+			}
+			EMDataSet.POItemTblRow[] currentChildren = (EMDataSet.POItemTblRow[])
+				currentRow.GetChildRows("POHeaderTblPOItemTbl");
+			if (currentChildren.Length != listOfChildren.Count)
+			{
+				throw new Exception("Number of purchase order items changed since the last refresh. Update aborted");
+			}
+			foreach (EMDataSet.POItemTblRow currentChild in currentChildren)
+			{
+				int itemNumber = currentChild.POItemNumber;
+				EMDataSet.POItemTblRow unsavedChild = null;
+				foreach (EMDataSet.POItemTblRow temp in unsavedDataSet.POItemTbl)
+				{
+					if ((int)temp["POItemNumber",DataRowVersion.Original] == itemNumber)
+					{
+						unsavedChild = temp;
+						break;
+					}
+				}
+				if (unsavedChild == null)
+					throw new Exception("A purchase order item has been added since the last refresh. Update aborted");
+				short originalSeqNumber = (short)unsavedChild["SeqNumber",DataRowVersion.Original];
+						if (originalSeqNumber != currentChild.SeqNumber)
+							throw new Exception("At least one of the purchase order items changed position " + 
+								"since the last refresh. Update aborted");		
+				foreach (DataColumn column in unsavedChild.Table.Columns)
+				{
+					object original = unsavedChild[column,DataRowVersion.Original];
+					object current = currentChild[column];
+					if ((original.GetType() != current.GetType()) ||
+						(!original.Equals(current)))
+					{
+						string message = "Unable to save. At least some of the data in the list " + 
+									"of purchase order items is out of date with the latest in the " + 
+									"database. You must cancel your change and re-save. This is a " +
+									"result of another user making a change while you were editing " + 
+									"this purchase order.\n";
+						
+						string cause = "Cause\n";
+						if (!currentChild.IsItemNameNull())
+							cause = "Item Name:" + currentChild.ItemName + "\n";
+						cause += "Field Name:" + column.ColumnName + "\n";
+						cause += "Database Value:";
+						if (!currentChild.IsNull(column.ColumnName))
+							cause += currentChild[column.ColumnName].ToString();
+						cause += "\n";
+						cause += "Your original Value:";
+						if (!unsavedChild.IsNull(column,DataRowVersion.Original))
+						{
+							cause += unsavedChild[column,DataRowVersion.Original].ToString();
+						}
+						throw new Exception(message + cause);
+					}
+				}
+
+			}
+		}
+		public override void CommitTablesToDatabase()
+		{
+			using (FileStream str = DataInterface.CreateLockFile("po.lock"))
+			{
+				try 
+				{
+					emConnection.Open();
+					EMDataSet tempDataSet = new EMDataSet();
+					DataInterface.FillAdapterWithParameter(poHeaderAdapter,base.CurrentKey);
+					poHeaderAdapter.Fill(tempDataSet.POHeaderTbl);
+					DataInterface.FillAdapterWithParameter(poItemAdapter,base.CurrentKey);
+					poItemAdapter.Fill(tempDataSet.POItemTbl);
+					if (!IsEmptyTable())
+					{
+						EMDataSet.POHeaderTblRow row = GetHeaderRow();
+						if (DataInterface.IsRowAlive(row))
+							CompareForValidaty(row.POID,m_emDataSet,tempDataSet);
+					}
+
+					DataInterface.UpdateTableAdd(poHeaderAdapter,m_emDataSet.POHeaderTbl);
+					DataInterface.UpdateTableDelete(poItemAdapter,m_emDataSet.POItemTbl);
+					DataInterface.UpdateTableDelete(poHeaderAdapter,m_emDataSet.POHeaderTbl);
+					DataInterface.UpdateTableAdd(poItemAdapter,m_emDataSet.POItemTbl);					
+				}
+				finally
+				{
+					emConnection.Close();
+				}
+			}
+		}
+
+		void UpdateCurrencyControls()
+		{
+			EMDataSet.POHeaderTblRow row = GetHeaderRow();
+            if (row.IsExchangeRateNull())
+				m_exchangeRateEdt.Text = "";
+			else
+				m_exchangeRateEdt.Text = row.ExchangeRate.ToString();
+
+			if (row.IsOtherTotalNull())
+				m_totalCostEdit.Text = "";
+			else
+				m_totalCostEdit.Text = row.OtherTotal.ToString("F2");
+			if (row.IsUSTotalNull())
+				m_totalCostUSEdit.Text = "";
+			else
+				m_totalCostUSEdit.Text = row.USTotal.ToString("F2");
+		}
+
+		public override void UpdateControls() 
+		{
+			using (new StopComboBoxUpdates(this))
+			{
+				UpdateGrid();
+				EMDataSet.POHeaderTblRow row = GetHeaderRow();
+				for (int i=0;i<m_textBoxes.Length;i++)
+				{
+					SetText(m_textBoxes[i],row[m_fieldNames[i]].ToString());
+				}
+				for (int i=0;i<m_dateBoxes.Length;i++)
+				{
+					object field = row[m_dateFieldNames[i]];
+					if (field is DateTime)
+					{
+						m_dateBoxes[i].Text = HelperFunctions.ToDateText((DateTime)field);
+					}
+					else
+						m_dateBoxes[i].Text = "";
+				}
+
+				UpdateCurrencyControls();
+				UpdateLocationDataSets();
+				UpdateEnabled();
+			}
+		}
+
+		
+		void UpdateGrid()
+		{
+			using (new StopComboBoxUpdates(this))
+			{
+				// Disable remove, moveup, and movedown for the ack grid
+				int selectedIndex = m_tabControl.SelectedIndex;
+				bool enableDelete = (selectedIndex == 0);
+				bool isEmptyTable = base.IsEmptyTable();
+				enableDelete = enableDelete & !isEmptyTable;
+				moveUpBtn.Enabled = enableDelete;
+				moveDownBtn.Enabled = enableDelete;
+				removeItemBtn.Enabled = enableDelete;
+
+				// Not sure why I'm updating the UM combo when trying to update
+				// the grid.
+				bool isKg = DataInterface.IsMetric(m_emDataSet.POItemTbl);
+				if (isKg)
+				{
+					umCombo.Text = "kg";
+				}
+				else
+				{
+					umCombo.Text = "lbs";			
+				}
+				this.FixUMButNoUpdates(umCombo.Text);
+
+				EMDataSet.POItemTblDataTable itemTable = m_emDataSet.POItemTbl;
+				if (selectedIndex == 0) // is PO grid
+				{
+					HelperFunctions.UpdateGrid(
+						HelperFunctions.GetViewFrom(itemTable),
+						poGrid,this,isKg,IsNewAllowed.Yes,IsReadOnly.No,
+						HelperFunctions.GeneralFields);
+				}
+				else
+				{
+					itemTable = (EMDataSet.POItemTblDataTable)itemTable.Copy();
+					// Remove message lines
+					ArrayList listOfItemsToDelete = new ArrayList();
+					foreach (EMDataSet.POItemTblRow row in itemTable.Rows)
+					{
+						if (!DataInterface.IsRowAlive(row))
+							continue;
+						if (row.IsItemNameNull() ||
+							row.ItemName == "")
+						{
+							listOfItemsToDelete.Add(row);
+						}
+					}
+					foreach(DataRow row in listOfItemsToDelete)
+					{
+						row.Delete();
+					}
+					HelperFunctions.UpdateGrid(
+						HelperFunctions.GetViewFrom(itemTable),
+						m_acknowledgementGrid,this,isKg,IsNewAllowed.No,
+						IsReadOnly.No,
+						HelperFunctions.AckFields);
+				}
+			}
+		}
+		
+		public override DataTable GetHeaderTable() 
+		{
+			return m_emDataSet.POHeaderTbl;
+		}
+		public override OleDbConnection GetConnection()
+		{
+			return emConnection;
+		}
+		public override string GetTableName()
+		{
+			return "tblPOHeader2";
+		}
+
+		public override void FillTablesFromDatabase() 
+		{
+			m_emDataSet.Clear();
+			DataInterface.FillAdapterWithParameter(poHeaderAdapter,base.CurrentKey);
+			poHeaderAdapter.Fill(m_emDataSet.POHeaderTbl);
+			
+			if (IsEmptyTable())
+				return;
+
+			termsAdapter.Fill(m_emDataSet.PaymentTermsTbl);
+			shipCodeAdapter.Fill(m_emDataSet.ShippingCodeTbl);
+			companyAdapter.Fill(m_emDataSet.CompanyTbl);
+			DataInterface.FillAdapterWithParameter(poItemAdapter,GetHeaderRow().POID);
+			poItemAdapter.Fill(m_emDataSet.POItemTbl);
+			fileAdapter.Fill(m_emDataSet.FileTbl);
+			poFileAdapter.Fill(m_emDataSet.POFileTbl);
+			DataInterface.UpdateComboBox(m_emDataSet.ShippingCodeTbl,"ShipCode",m_shipCodeCombo);
+			DataInterface.UpdateComboBox(m_emDataSet.PaymentTermsTbl,"Terms",m_termsCombo);
+			UpdateMillCombo();
+			UpdateCustomerCombo();
+		}
+
+		void UpdateCompanyCombo(OleDbDataAdapter adapter,string companyType,
+			ComboBox combo)
+		{
+			DataTable table = new DataTable();
+			DataInterface.FillAdapterWithStringParameter(adapter,companyType);
+			adapter.Fill(table);
+			DataInterface.UpdateComboBox(table,"CompName",combo);
+		}
+
+		void UpdateMillCombo()
+		{
+			UpdateCompanyCombo(companyTypeAdapter,"Vendor",millCombo);
+		}
+		void UpdateCustomerCombo()
+		{
+			UpdateCompanyCombo(companyTypeAdapter,"Customer",customerCombo);
+		
+		}
+		
+		static void Enable(Object o,bool enable)
+		{
+			ComboBox combo = o as ComboBox;
+			if (combo != null)
+				combo.Enabled = enable;
+			TextBox text = o as TextBox;
+			if (text != null)
+				text.ReadOnly = !enable;
+		}
+		static void SetText(object o,string text)
+		{
+			ComboBox combo = o as ComboBox;
+			if (combo != null)
+				combo.Text = text;
+			TextBox textBox = o as TextBox;
+			if (textBox != null)
+				textBox.Text = text;
+		}
+		static string GetText(object o)
+		{
+			ComboBox combo = o as ComboBox;
+			if (combo != null)
+				return combo.Text;
+			TextBox text = o as TextBox;
+			if (text != null)
+				return text.Text;
+			throw new Exception("Could not convert to a text box or combo");
+		}
+		public void UpdateEnabled() 
+		{
+			int start = this.m_numberOfControlsToEnable;
+			bool isEmptyTable = IsEmptyTable();
+			if (isEmptyTable)
+				start = 0;
+			for (int i=0;i<m_textBoxes.Length;i++)
+			{
+				if (i<start)
+					Enable(m_textBoxes[i],true);
+				else
+					Enable(m_textBoxes[i],false);
+			}
+			for (int i=0;i<m_dateBoxes.Length;i++)
+			{
+				Enable(m_dateBoxes[i],!isEmptyTable);
+			}
+			for (int i=0;i<m_dateSelections.Length;i++)
+			{
+				m_dateSelections[i].Enabled = !isEmptyTable;
+			}
+			m_exchangeRateEdt.Enabled = !isEmptyTable;
+			printPOBtn.Enabled = !isEmptyTable;
+			printAckBtn.Enabled = !isEmptyTable;
+			
+			poGrid.Enabled = !isEmptyTable;
+			m_acknowledgementGrid.Enabled = !isEmptyTable;
+
+			if (!isEmptyTable)
+				UpdateCancelControls();
+		}
+
+		void UpdateCancelControls()
+		{
+			bool isCancelled = m_statusCombo.Text =="Cancelled";
+			m_cancelDateEdt.Enabled = isCancelled;
+			m_cancelDateBtn.Enabled = isCancelled;
+		}
+		Button[] m_dateSelections;
+		int m_numberOfControlsToEnable = 10;
+		public PO(int poid)
+		{
+			m_currentKey = poid;
+			
+			//
+			// Required for Windows Form Designer support
+			//
+			InitializeComponent();
+		
+			poGrid = new QuickGrid();
+			this.poGrid.Size = new System.Drawing.Size(1010, 192);
+			this.poGrid.TabIndex = 0;
+			poGrid.Parent = purchaseOrderPage;
+			poGrid.Visible = true;
+			this.poGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+				| System.Windows.Forms.AnchorStyles.Left) 
+				| System.Windows.Forms.AnchorStyles.Right)));
+
+			
+			m_acknowledgementGrid = new QuickGrid();
+			this.m_acknowledgementGrid.Size = new System.Drawing.Size(1010, 192);
+			this.m_acknowledgementGrid.TabIndex = 0;
+			m_acknowledgementGrid.Parent = this.acknowledgementPage;
+			m_acknowledgementGrid.Visible = true;
+			this.m_acknowledgementGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+				| System.Windows.Forms.AnchorStyles.Left) 
+				| System.Windows.Forms.AnchorStyles.Right)));
+
+			
+			m_textBoxes = new object[]{m_statusCombo,m_purchaseEdt,
+										  m_shipCodeCombo,m_fobEdt,m_termsCombo,
+										  m_commentEdt,
+										  millCombo,customerCombo,
+										  vendLocationCombo,shipToLocationCombo,
+										  vendAddressEdt,vendContactEdt,vendPhoneEdt,
+										  vendFaxEdt,vendEMailEdt,
+										  custAddressEdt,custContactEdt,
+										  custPhoneEdt,custFaxEdt,custEMailEdt,
+										  vendCountryEdt,custCountryEdt
+										  };
+			m_fieldNames = new String[]{"Status","PONumber",
+										   "ShipCode","FOB","Terms",
+										   "Comments",
+										   "VendName","ShipToName",
+										   "VendLocationName","ShipToLocationName",
+										   "VendAddress","VendContact","VendPhone",
+										   "VendFax","VendEMail",
+										   "ShiptoAddress","ShipToContact",
+										   "ShipToPhone","ShipToFax","ShipToEMail",
+											"VendCountry","ShipToCountry"
+										   };
+
+			
+
+			m_dateBoxes = new TextBox[]{m_cancelDateEdt,m_dateEdt};
+			m_dateFieldNames = new string[]{"CancelDate","PODate"};
+			m_dateSelections = new Button[]{m_cancelDateBtn,m_dateBtn};
+			DataInterface.InitializeAdapterWithParameter(poItemAdapter,"POID");
+			DataInterface.InitializeAdapterWithParameter(locationAdapter,"CompID");
+			DataInterface.InitializeAdapterWithParameter(poHeaderAdapter,"POID");
+			DataInterface.InitializeAdapterWithParameter(contactsAdapter,"CompID");
+			DataInterface.InitializeAdapterWithStringParameter(companyTypeAdapter,"CompType");
+			DataInterface.InitializeAdapterWithStringParameter(poGetPOIDAdapter,"PONumber");
+			base.Refresh();
+		}
+
+		EMDataSet millDataSet = new EMDataSet();
+		EMDataSet customerDataSet = new EMDataSet();
+
+
+		
+		void UpdateLocationDataSet(ComboBox companyBox,ComboBox locationCombo,ComboBox contactsCombo,
+			EMDataSet locationDataSet)
+		{
+			string oldLocation = locationCombo.Text;
+			locationCombo.Items.Clear();
+			contactsCombo.Items.Clear();
+			string company = companyBox.Text;
+			int compID = DataInterface.GetCompID(m_emDataSet,company);
+			locationDataSet.Clear();
+			if (compID != -1)
+			{
+				DataInterface.FillAdapterWithParameter(locationAdapter,compID);
+				DataInterface.FillAdapterWithParameter(contactsAdapter,compID);
+				companyAdapter.Fill(locationDataSet.Tables["CompanyTbl"]);
+				countryAdapter.Fill(locationDataSet.Tables["CountryTbl"]);
+				locationAdapter.Fill(locationDataSet.Tables["LocationTbl"]);
+				contactsAdapter.Fill(locationDataSet.Tables["ContactsTbl"]);
+				DataInterface.UpdateComboBox(locationDataSet.Tables["LocationTbl"].DefaultView,"LocID","LocName",
+											 locationCombo,null);
+				contactsCombo.Items.Clear();
+				foreach (EMDataSet.ContactsTblRow row in locationDataSet.ContactsTbl)
+				{
+					string fullname = row.FirstName + " " + row.LastName;
+					DataInterface.TaggedItem t = new DataInterface.TaggedItem(row.ContactID,fullname);
+					contactsCombo.Items.Add(t);
+				}
+			}
+			locationCombo.Text = oldLocation;
+		}
+
+		void UpdateLocationDataSets(ComboBox whichBox)
+		{
+			if (whichBox == null ||
+				whichBox == vendLocationCombo)
+				UpdateLocationDataSet(millCombo,vendLocationCombo,vendContactCombo,millDataSet);
+			if (whichBox == null ||
+				whichBox == shipToLocationCombo)
+				UpdateLocationDataSet(customerCombo,shipToLocationCombo,custContactCombo,customerDataSet);
+		}
+
+		void UpdateLocationDataSets()
+		{
+			UpdateLocationDataSets(null);
+		}
+
+		private void OnLocationChanged(EMDataSet dataSet,ComboBox box,
+			TextBox addressEdt,TextBox countryEdt,ComboBox companyCombo)
+		{
+			if (box.SelectedIndex == -1)
+			{
+				addressEdt.Text = "";
+				countryEdt.Text = "";
+				box.Text = "";
+				return;
+			}
+			DataInterface.TaggedItem item = (DataInterface.TaggedItem)box.SelectedItem;
+			int locationID = item.key;
+			EMDataSet.LocationTblRow row = dataSet.LocationTbl.FindByLocID(locationID);
+			int countryID = row.CountryID;
+			EMDataSet.CountryTblRow countryRow = dataSet.CountryTbl.FindByCountryID(countryID);
+			addressEdt.Text = row.Address;
+			countryEdt.Text = countryRow.CountryName;
+			box.Text = row.LocName;
+		}
+		private void OnContactChanged(EMDataSet dataSet,ComboBox box,TextBox contactEdt,
+			TextBox phoneEdt,TextBox faxEdt,TextBox emailEdt)
+		{
+			DataInterface.TaggedItem item = (DataInterface.TaggedItem)box.SelectedItem;
+			int contactsID = item.key;
+			EMDataSet.ContactsTblRow row = dataSet.ContactsTbl.FindByContactID(contactsID);
+			contactEdt.Text = row.FirstName + " " + row.LastName;
+			phoneEdt.Text = row.Phone;
+			faxEdt.Text = row.Fax;
+			emailEdt.Text = row.EMail;
+		}
+		private void OnMillLocationChanged(object sender, System.EventArgs e)
+		{
+			if (allowComboBoxUpdates)
+				OnLocationChanged(millDataSet,vendLocationCombo,
+								vendAddressEdt,vendCountryEdt,millCombo);
+		}
+		private void OnShipToLocationChanged(object sender, System.EventArgs e)
+		{
+			if (allowComboBoxUpdates)
+				OnLocationChanged(customerDataSet,shipToLocationCombo,
+					custAddressEdt,custCountryEdt,customerCombo);
+		}
+		private void OnCustomerContactChanged(object sender, System.EventArgs e)
+		{
+			if (allowComboBoxUpdates)
+				OnContactChanged(customerDataSet,custContactCombo,custContactEdt,custPhoneEdt,custFaxEdt,custEMailEdt);
+		}
+		private void OnVenderContactChanged(object sender,System.EventArgs e)
+		{
+			if (allowComboBoxUpdates)
+				OnContactChanged(millDataSet,vendContactCombo,vendContactEdt,vendPhoneEdt,vendFaxEdt,vendEMailEdt);
+		}
+
+		bool allowComboBoxUpdates = true;
+		private void OnCompanyChanged(object sender, System.EventArgs e)
+		{
+			if (allowComboBoxUpdates)
+			{
+				ComboBox box = (ComboBox)sender;
+				if (box.SelectedIndex == -1)
+					return;
+				UpdateLocationDataSets();
+				if (sender == millCombo)
+				{
+					vendLocationCombo.SelectedIndex = -1;
+					vendAddressEdt.Text = "";
+					vendCountryEdt.Text = "";
+				}
+				else
+				{
+					shipToLocationCombo.SelectedIndex = -1;
+					custAddressEdt.Text = "";
+					custCountryEdt.Text = "";
+				}
+			}
+		}
+		string GetMill()
+		{
+			EMDataSet.POHeaderTblRow row = GetHeaderRow();
+			if (row.IsShipToNameNull())
+				return null;
+			return row.ShipToName;
+		}
+		void FixUM(string newUM)
+		{
+			FromControls();
+			FixUMButNoUpdates(newUM);
+			UpdateControls();
+		}
+		void FixUMButNoUpdates(string newUM)
+		{
+			EMDataSet.POItemTblRow[] rows = GetAllDetailRows();
+			foreach (EMDataSet.POItemTblRow row in rows)
+			{
+				if (row.IsQtyNull())
+				{
+					row.SetUMNull();
+				}
+				else
+				{
+					row.UM = newUM;
+				}
+			}
+		}
+		private void editItemBtn_Click(object sender, System.EventArgs e)
+		{
+			EMDataSet.POItemTblRow row = HelperFunctions.GetCurrentRow(poGrid,m_emDataSet.POItemTbl);
+			if (row == null)
+				return;
+			ItemEdit dlg = new ItemEdit(row,GetMill());
+			if (DialogResult.OK != dlg.ShowDialog())
+				return;
+			FixUM(row.UM);
+			UpdateControls();
+		}
+		private void addItemBtn_Click(object sender, System.EventArgs e)
+		{
+			EMDataSet.POItemTblRow newRow = m_emDataSet.POItemTbl.NewPOItemTblRow();
+			newRow.POID = GetHeaderRow().POID;
+			ItemEdit dlg = new ItemEdit(newRow,GetMill());
+			DialogResult res = dlg.ShowDialog();
+			if (res != DialogResult.OK)
+			{
+				return;
+			}
+			short maxSeqNumber = 0;
+			foreach (EMDataSet.POItemTblRow currentRow in m_emDataSet.POItemTbl.Rows)
+			{
+				if (!DataInterface.IsRowAlive(currentRow))
+					continue;
+				if (maxSeqNumber < currentRow.SeqNumber)
+					maxSeqNumber = currentRow.SeqNumber;
+			}
+			newRow.SeqNumber = (short)(maxSeqNumber + 1);
+			newRow.POItemNumber = DataInterface.GetNextKeyNumber("tblPOItem2");
+			m_emDataSet.POItemTbl.AddPOItemTblRow(newRow);
+			FixUM(newRow.UM);
+			UpdateControls();
+		}
+		
+		private void removeItemBtn_Click(object sender, System.EventArgs e)
+		{
+			FromSelectedGrid();
+			decimal total = 0;
+			EMDataSet.POItemTblRow rowDelete = 
+				HelperFunctions.GetCurrentRow(poGrid,m_emDataSet.POItemTbl);
+			if (rowDelete != null)
+			{
+				if (!rowDelete.IsAcknowledgeDateNull())
+				{
+					MessageBox.Show("Item can not be removed since it has already been acknowledged.\n" +
+									"Remove acknowledgement date first.","Can't remove acknowledged item",
+									MessageBoxButtons.OK,MessageBoxIcon.Stop);
+					return;
+				}
+				short oldSeqNumber = rowDelete.SeqNumber;
+				rowDelete.Delete();
+				foreach (EMDataSet.POItemTblRow currentRow in m_emDataSet.POItemTbl.Rows)
+				{
+					if (!DataInterface.IsRowAlive(currentRow))
+						continue;
+					if (!currentRow.IsCustAmountNull())
+						total += currentRow.CustAmount;
+					if (currentRow.SeqNumber > oldSeqNumber)
+						currentRow.SeqNumber--;
+				}
+				UpdateGrid();
+				NewGridTotal(total);
+				
+			}
+		}
+		private void SelectDateBtn(object sender, System.EventArgs e)
+		{
+			// first find the control
+			int i=0;
+			for (i=0;i<m_dateSelections.Length;i++)
+			{
+				if (sender == m_dateSelections[i])
+				{
+					break;
+				}
+			}
+			Debug.Assert(i!= m_dateSelections.Length);
+			string fieldName = m_dateFieldNames[i];
+			TextBox box = m_dateBoxes[i];
+			Debug.Assert(i!=m_dateSelections.Length);
+			DataRow row = GetHeaderRow();
+			System.DateTime dateTime;
+			if (row.IsNull(fieldName))
+				dateTime = System.DateTime.Today;
+			else
+				dateTime = (DateTime)row[fieldName];
+			if (DialogResult.OK == DateTimeSelector.RequestTime(ref dateTime))
+				box.Text = HelperFunctions.ToDateText(dateTime);
+		}
+
+		private void Swap(EMDataSet.POItemTblRow row1,EMDataSet.POItemTblRow row2)
+		{
+			if (row1 == null)
+				return;
+			if (row2 == null)
+				return;
+			short tempSeq = row1.SeqNumber;
+			row1.SeqNumber = row2.SeqNumber;
+			row2.SeqNumber = tempSeq;
+		}
+		private void moveUpBtn_Click(object sender, System.EventArgs e)
+		{
+			FromSelectedGrid();
+			EMDataSet.POItemTblRow previousRow = HelperFunctions.GetCurrentRow(poGrid,m_emDataSet.POItemTbl);
+			if (previousRow == null)
+				return;
+			EMDataSet.POItemTblRow nextRow = HelperFunctions.GetRowFromSeqNumber(m_emDataSet.POItemTbl,previousRow.SeqNumber-1);
+			Swap(previousRow,nextRow);
+			UpdateGrid();
+		}
+
+		private void moveDownBtn_Click(object sender, System.EventArgs e)
+		{
+			FromSelectedGrid();
+			EMDataSet.POItemTblRow previousRow = HelperFunctions.GetCurrentRow(poGrid,m_emDataSet.POItemTbl);
+			if (previousRow == null)
+				return;
+			EMDataSet.POItemTblRow nextRow = HelperFunctions.GetRowFromSeqNumber(m_emDataSet.POItemTbl,
+				previousRow.SeqNumber+1);
+			Swap(previousRow,nextRow);
+			UpdateGrid();
+		}
+
+		private int GetPOIDFromPONumber(string poNumber)
+		{
+			string poNumberWithQuotes = "'" + poNumber + "'";
+			int key = base.GetKeyFromField("PONumber",poNumberWithQuotes);
+			return key;
+		}
+
+		public override void OnFind()
+		{
+			string po = Chooser.GetPO(emConnection);
+			if (po != null)
+			{
+				int poid = GetPOIDFromPONumber(po);
+				if (poid != -1)
+					base.CurrentKey = poid;
+			}
+		}
+		public override bool OnUpdateFind()
+		{
+			return true;
+		}
+
+		
+		EMDataSet.POItemTblRow[] GetAllDetailRows()
+		{
+			DataRow[] rowsGen = GetHeaderRow().GetChildRows("POHeaderTblPOItemTbl");
+			EMDataSet.POItemTblRow[] rows = (EMDataSet.POItemTblRow[])rowsGen;
+			return rows;
+		}
+		
+		private void editItemsBtn_Click(object sender, System.EventArgs e)
+		{
+			MainWindow main = (MainWindow)this.MdiParent;
+			main.CreatePOItemForm(GetHeaderRow().POID);
+		}
+
+		private void OnCollapseChanged(object sender, System.EventArgs e)
+		{
+			if (!TryToCommit())
+				return;
+			Refresh();
+		}
+		private void OnAckCurrentCellChanged(object sender, System.EventArgs e)
+		{
+			DataGrid grid = (DataGrid)sender;
+			poGrid.SetNewFocus(grid.CurrentCell.RowNumber,grid.CurrentCell.ColumnNumber);
+		}
+
+		void PrintIt(string reportType,bool preview)
+		{
+			object application = null;
+			object doCmd = null;
+			try 
+			{
+				FixUMButNoUpdates(this.umCombo.Text);
+				if (TryToCommit(true,MessageBoxButtons.OKCancel) == false)
+					return;
+				Type tApp = Type.GetTypeFromProgID("Access.Application");
+				application = Activator.CreateInstance(tApp);
+				object [] args = new object[]
+				{
+					"M:\\em_prog_2002.mdb"
+				};
+				tApp.InvokeMember("OpenCurrentDatabase",BindingFlags.InvokeMethod,null,application,args);
+				doCmd = tApp.InvokeMember("DoCmd",BindingFlags.GetProperty,null,application,new object[0]);
+				Type tDoCmd = doCmd.GetType();
+				object [] reportArgs = new object[]
+					{
+						"rptJEMPO",
+						preview?2:0,// 0 is normal 2 is preview
+						Type.Missing,
+						Type.Missing,
+						3,//Type.Missing, // 3dialog
+						"POID=" + GetHeaderRow().POID + ";RptType="+reportType
+					};
+
+				tDoCmd.InvokeMember("OpenReport",BindingFlags.InvokeMethod,null,doCmd,reportArgs);
+				tApp.InvokeMember("Quit",BindingFlags.InvokeMethod,null,application,new object[0]);
+			}
+			catch(TargetInvocationException ex)
+			{
+				MessageBox.Show(ex.InnerException.Message);
+			}
+			catch(Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			finally
+			{
+				if (application!=null)
+					Marshal.ReleaseComObject(application);
+				if (doCmd != null)
+					Marshal.ReleaseComObject(doCmd);
+			}
+
+		}
+		private void previewPOBtn_Click(object sender, System.EventArgs e)
+		{
+			PrintIt("PO",true);
+		}
+
+		private void previewAckBtn_Click(object sender, System.EventArgs e)
+		{
+			PrintIt("Ack",true);
+		}
+
+
+		private void printPOBtn_Click(object sender, System.EventArgs e)
+		{
+			PrintIt("PO",false);
+		}
+		private void printAckBtn_Click(object sender, System.EventArgs e)
+		{
+			PrintIt("Ack",false);
+		}
+
+		private void umSelectedChanged(object sender, System.EventArgs e)
+		{
+			if (allowComboBoxUpdates)
+			{	
+				DataInterface.DefaultMetric = DataInterface.IsMetric(umCombo.Text);
+				FixUM(umCombo.Text);
+			}
+		}
+
+		private void onStatusSelChanged(object sender, System.EventArgs e)
+		{
+			if (allowComboBoxUpdates)
+			{
+				UpdateCancelControls();
+				if (m_cancelDateEdt.Enabled)
+				{
+					if (m_cancelDateEdt.Text == "")
+					{
+						m_cancelDateEdt.Text = HelperFunctions.ToDateText(DateTime.Today);
+					}
+				}
+				else
+					m_cancelDateEdt.Text = "";
+			}
+		
+		}
+
+		
+		private void OnGridTabChanged(object sender, System.EventArgs e)
+		{
+			int selectedIndex = m_tabControl.SelectedIndex;
+			if (selectedIndex == 0)
+				FromGrid(1);
+			if (selectedIndex == 1)
+				FromGrid(0);
+			UpdateGrid();
+					}
+		
+		private void OnExchangeRateValidated(object sender, System.EventArgs e)
+		{
+			EMDataSet.POHeaderTblRow row = GetHeaderRow();
+			try 
+			{
+				decimal exchangeRate = decimal.Parse(m_exchangeRateEdt.Text);
+				row.ExchangeRate = exchangeRate;
+			}
+			catch(Exception)
+			{
+				row.SetExchangeRateNull();
+			}
+			if (!row.IsOtherTotalNull())
+			{
+				if (row.IsExchangeRateNull())
+					row.USTotal = row.OtherTotal;
+				else
+					row.USTotal = row.OtherTotal * row.ExchangeRate;
+			}
+			UpdateCurrencyControls();
+		}
+
+		private void addNewCompanyBtn_Click(object sender, System.EventArgs e)
+		{
+			string companyType;
+			if (sender == addNewMillBtn)
+				companyType = "Vendor";
+			else
+				companyType = "Customer";
+			AddNewCompany dlg = new AddNewCompany(companyType);
+			DialogResult res = dlg.ShowDialog();
+			if (res == DialogResult.Cancel)
+				return;
+			if (dlg.GetCompanyName() == "")
+				return;
+			using (new StopComboBoxUpdates(this))	
+			{
+				if (sender == addNewMillBtn)
+					UpdateMillCombo();
+				else
+					UpdateCustomerCombo();
+			}
+			ComboBox box;
+			if (sender == addNewMillBtn)
+				box = millCombo;
+			else
+				box = customerCombo;
+			
+			box.Text = dlg.GetCompanyName();
+		}
+		private void addNewLocationBtn_Click(object sender, System.EventArgs e)
+		{
+			try
+			{
+				ComboBox box;
+				if (sender == addNewMillLocationBtn)
+				{
+					box = vendLocationCombo;
+				}
+				else
+				{
+					box = shipToLocationCombo;
+				}
+			
+				string company;
+				if (sender == addNewMillLocationBtn)
+					company = millCombo.Text;
+				else
+					company = customerCombo.Text;
+				if (company == "")
+					throw new Exception("No company was selected. Company must be "
+						+   "selected before a location can be added");
+				int compID = DataInterface.GetCompID(m_emDataSet,company);
+				AddNewLocation dlg = new AddNewLocation(compID);
+				DialogResult res = dlg.ShowDialog();
+				if (res != DialogResult.OK)
+					return;
+				using (new StopComboBoxUpdates(this))
+				{
+					UpdateLocationDataSets(box);
+				}
+				DataInterface.SelectComboBox(box,dlg.m_locationID);
+			}
+			catch(Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+				return;
+			}
+
+		}
+
+
+
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		protected override void Dispose( bool disposing )
+		{
+			if( disposing )
+			{
+				if(components != null)
+				{
+					components.Dispose();
+				}
+			}
+			base.Dispose( disposing );
+		}
+
+		
+		
+			
+		#region Windows Form Designer generated code
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			this.label1 = new System.Windows.Forms.Label();
+			this.m_statusCombo = new System.Windows.Forms.ComboBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.m_dateEdt = new System.Windows.Forms.TextBox();
+			this.m_dateBtn = new System.Windows.Forms.Button();
+			this.poHeaderAdapter = new System.Data.OleDb.OleDbDataAdapter();
+			this.oleDbDeleteCommand3 = new System.Data.OleDb.OleDbCommand();
+			this.emConnection = new System.Data.OleDb.OleDbConnection();
+			this.oleDbInsertCommand3 = new System.Data.OleDb.OleDbCommand();
+			this.oleDbSelectCommand3 = new System.Data.OleDb.OleDbCommand();
+			this.oleDbUpdateCommand3 = new System.Data.OleDb.OleDbCommand();
+			this.m_shipCodeCombo = new System.Windows.Forms.ComboBox();
+			this.label4 = new System.Windows.Forms.Label();
+			this.label5 = new System.Windows.Forms.Label();
+			this.m_fobEdt = new System.Windows.Forms.TextBox();
+			this.label6 = new System.Windows.Forms.Label();
+			this.m_termsCombo = new System.Windows.Forms.ComboBox();
+			this.label7 = new System.Windows.Forms.Label();
+			this.m_exchangeRateEdt = new System.Windows.Forms.TextBox();
+			this.label8 = new System.Windows.Forms.Label();
+			this.m_cancelDateEdt = new System.Windows.Forms.TextBox();
+			this.m_cancelDateBtn = new System.Windows.Forms.Button();
+			this.m_commentEdt = new System.Windows.Forms.TextBox();
+			this.termsAdapter = new System.Data.OleDb.OleDbDataAdapter();
+			this.oleDbDeleteCommand2 = new System.Data.OleDb.OleDbCommand();
+			this.oleDbInsertCommand2 = new System.Data.OleDb.OleDbCommand();
+			this.oleDbSelectCommand2 = new System.Data.OleDb.OleDbCommand();
+			this.oleDbUpdateCommand2 = new System.Data.OleDb.OleDbCommand();
+			this.shipCodeAdapter = new System.Data.OleDb.OleDbDataAdapter();
+			this.oleDbDeleteCommand4 = new System.Data.OleDb.OleDbCommand();
+			this.oleDbInsertCommand4 = new System.Data.OleDb.OleDbCommand();
+			this.oleDbSelectCommand4 = new System.Data.OleDb.OleDbCommand();
+			this.oleDbUpdateCommand4 = new System.Data.OleDb.OleDbCommand();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.vendEMailEdt = new System.Windows.Forms.TextBox();
+			this.vendContactCombo = new System.Windows.Forms.ComboBox();
+			this.label19 = new System.Windows.Forms.Label();
+			this.label18 = new System.Windows.Forms.Label();
+			this.label17 = new System.Windows.Forms.Label();
+			this.label16 = new System.Windows.Forms.Label();
+			this.vendFaxEdt = new System.Windows.Forms.TextBox();
+			this.vendPhoneEdt = new System.Windows.Forms.TextBox();
+			this.vendContactEdt = new System.Windows.Forms.TextBox();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.custEMailEdt = new System.Windows.Forms.TextBox();
+			this.custContactCombo = new System.Windows.Forms.ComboBox();
+			this.label20 = new System.Windows.Forms.Label();
+			this.label21 = new System.Windows.Forms.Label();
+			this.label22 = new System.Windows.Forms.Label();
+			this.label23 = new System.Windows.Forms.Label();
+			this.custFaxEdt = new System.Windows.Forms.TextBox();
+			this.custPhoneEdt = new System.Windows.Forms.TextBox();
+			this.custContactEdt = new System.Windows.Forms.TextBox();
+			this.companyAdapter = new System.Data.OleDb.OleDbDataAdapter();
+			this.oleDbSelectCommand6 = new System.Data.OleDb.OleDbCommand();
+			this.poItemAdapter = new System.Data.OleDb.OleDbDataAdapter();
+			this.oleDbDeleteCommand1 = new System.Data.OleDb.OleDbCommand();
+			this.oleDbInsertCommand1 = new System.Data.OleDb.OleDbCommand();
+			this.oleDbSelectCommand1 = new System.Data.OleDb.OleDbCommand();
+			this.oleDbUpdateCommand1 = new System.Data.OleDb.OleDbCommand();
+			this.tabControl1 = new System.Windows.Forms.TabControl();
+			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.groupBox4 = new System.Windows.Forms.GroupBox();
+			this.addNewCustomerLocationBtn = new System.Windows.Forms.Button();
+			this.label11 = new System.Windows.Forms.Label();
+			this.label15 = new System.Windows.Forms.Label();
+			this.shipToLocationCombo = new System.Windows.Forms.ComboBox();
+			this.customerCombo = new System.Windows.Forms.ComboBox();
+			this.custCountryEdt = new System.Windows.Forms.TextBox();
+			this.custAddressEdt = new System.Windows.Forms.TextBox();
+			this.addNewCustomerBtn = new System.Windows.Forms.Button();
+			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.addNewMillLocationBtn = new System.Windows.Forms.Button();
+			this.addNewMillBtn = new System.Windows.Forms.Button();
+			this.label14 = new System.Windows.Forms.Label();
+			this.millCombo = new System.Windows.Forms.ComboBox();
+			this.label10 = new System.Windows.Forms.Label();
+			this.vendLocationCombo = new System.Windows.Forms.ComboBox();
+			this.vendCountryEdt = new System.Windows.Forms.TextBox();
+			this.vendAddressEdt = new System.Windows.Forms.TextBox();
+			this.label9 = new System.Windows.Forms.Label();
+			this.umCombo = new System.Windows.Forms.ComboBox();
+			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.fileAdapter = new System.Data.OleDb.OleDbDataAdapter();
+			this.oleDbDeleteCommand7 = new System.Data.OleDb.OleDbCommand();
+			this.oleDbInsertCommand7 = new System.Data.OleDb.OleDbCommand();
+			this.oleDbSelectCommand7 = new System.Data.OleDb.OleDbCommand();
+			this.oleDbUpdateCommand7 = new System.Data.OleDb.OleDbCommand();
+			this.poFileAdapter = new System.Data.OleDb.OleDbDataAdapter();
+			this.oleDbDeleteCommand8 = new System.Data.OleDb.OleDbCommand();
+			this.oleDbInsertCommand8 = new System.Data.OleDb.OleDbCommand();
+			this.oleDbSelectCommand8 = new System.Data.OleDb.OleDbCommand();
+			this.oleDbUpdateCommand8 = new System.Data.OleDb.OleDbCommand();
+			this.label12 = new System.Windows.Forms.Label();
+			this.m_totalCostEdit = new System.Windows.Forms.TextBox();
+			this.m_totalCostUSEdit = new System.Windows.Forms.TextBox();
+			this.label13 = new System.Windows.Forms.Label();
+			this.dataGridTextBoxColumn1 = new System.Windows.Forms.DataGridTextBoxColumn();
+			this.dataGridTextBoxColumn2 = new System.Windows.Forms.DataGridTextBoxColumn();
+			this.dataGridTextBoxColumn8 = new System.Windows.Forms.DataGridTextBoxColumn();
+			this.dataGridTextBoxColumn3 = new System.Windows.Forms.DataGridTextBoxColumn();
+			this.dataGridTextBoxColumn4 = new System.Windows.Forms.DataGridTextBoxColumn();
+			this.dataGridTextBoxColumn5 = new System.Windows.Forms.DataGridTextBoxColumn();
+			this.dataGridTextBoxColumn6 = new System.Windows.Forms.DataGridTextBoxColumn();
+			this.dataGridTextBoxColumn7 = new System.Windows.Forms.DataGridTextBoxColumn();
+			this.locationAdapter = new System.Data.OleDb.OleDbDataAdapter();
+			this.oleDbSelectCommand5 = new System.Data.OleDb.OleDbCommand();
+			this.countryAdapter = new System.Data.OleDb.OleDbDataAdapter();
+			this.oleDbSelectCommand9 = new System.Data.OleDb.OleDbCommand();
+			this.contactsAdapter = new System.Data.OleDb.OleDbDataAdapter();
+			this.oleDbSelectCommand11 = new System.Data.OleDb.OleDbCommand();
+			this.removeItemBtn = new System.Windows.Forms.Button();
+			this.moveUpBtn = new System.Windows.Forms.Button();
+			this.moveDownBtn = new System.Windows.Forms.Button();
+			this.purchaseOrderPage = new System.Windows.Forms.TabPage();
+			this.acknowledgementPage = new System.Windows.Forms.TabPage();
+			this.m_tabControl = new System.Windows.Forms.TabControl();
+			this.printPOBtn = new System.Windows.Forms.Button();
+			this.printAckBtn = new System.Windows.Forms.Button();
+			this.companyTypeAdapter = new System.Data.OleDb.OleDbDataAdapter();
+			this.oleDbSelectCommand12 = new System.Data.OleDb.OleDbCommand();
+			this.m_purchaseEdt = new System.Windows.Forms.TextBox();
+			this.groupBox5 = new System.Windows.Forms.GroupBox();
+			this.groupBox6 = new System.Windows.Forms.GroupBox();
+			this.previewAckBtn = new System.Windows.Forms.Button();
+			this.previewPOBtn = new System.Windows.Forms.Button();
+			this.poGetPOIDAdapter = new System.Data.OleDb.OleDbDataAdapter();
+			this.oleDbSelectCommand10 = new System.Data.OleDb.OleDbCommand();
+			this.groupBox1.SuspendLayout();
+			this.groupBox2.SuspendLayout();
+			this.tabControl1.SuspendLayout();
+			this.tabPage1.SuspendLayout();
+			this.groupBox4.SuspendLayout();
+			this.groupBox3.SuspendLayout();
+			this.tabPage2.SuspendLayout();
+			this.tabPage3.SuspendLayout();
+			this.m_tabControl.SuspendLayout();
+			this.groupBox5.SuspendLayout();
+			this.groupBox6.SuspendLayout();
+			this.SuspendLayout();
+			// 
+			// label1
+			// 
+			this.label1.Location = new System.Drawing.Point(16, 16);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(56, 16);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "PO No.:";
+			// 
+			// m_statusCombo
+			// 
+			this.m_statusCombo.ForeColor = System.Drawing.SystemColors.WindowText;
+			this.m_statusCombo.ItemHeight = 13;
+			this.m_statusCombo.Items.AddRange(new object[] {
+															   "Open",
+															   "Cancelled",
+															   "Closed"});
+			this.m_statusCombo.Location = new System.Drawing.Point(136, 32);
+			this.m_statusCombo.Name = "m_statusCombo";
+			this.m_statusCombo.Size = new System.Drawing.Size(96, 21);
+			this.m_statusCombo.TabIndex = 4;
+			this.m_statusCombo.SelectedIndexChanged += new System.EventHandler(this.onStatusSelChanged);
+			// 
+			// label2
+			// 
+			this.label2.Location = new System.Drawing.Point(8, 32);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(40, 16);
+			this.label2.TabIndex = 3;
+			this.label2.Text = "Status";
+			// 
+			// label3
+			// 
+			this.label3.Location = new System.Drawing.Point(8, 8);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(48, 23);
+			this.label3.TabIndex = 0;
+			this.label3.Text = "PO Date";
+			// 
+			// m_dateEdt
+			// 
+			this.m_dateEdt.Location = new System.Drawing.Point(136, 8);
+			this.m_dateEdt.Name = "m_dateEdt";
+			this.m_dateEdt.Size = new System.Drawing.Size(96, 20);
+			this.m_dateEdt.TabIndex = 1;
+			this.m_dateEdt.Text = "";
+			this.m_dateEdt.Leave += new System.EventHandler(this.OnDateLeave);
+			// 
+			// m_dateBtn
+			// 
+			this.m_dateBtn.Location = new System.Drawing.Point(240, 8);
+			this.m_dateBtn.Name = "m_dateBtn";
+			this.m_dateBtn.Size = new System.Drawing.Size(24, 24);
+			this.m_dateBtn.TabIndex = 2;
+			this.m_dateBtn.Text = "...";
+			this.m_dateBtn.Click += new System.EventHandler(this.SelectDateBtn);
+			// 
+			// poHeaderAdapter
+			// 
+			this.poHeaderAdapter.DeleteCommand = this.oleDbDeleteCommand3;
+			this.poHeaderAdapter.InsertCommand = this.oleDbInsertCommand3;
+			this.poHeaderAdapter.SelectCommand = this.oleDbSelectCommand3;
+			this.poHeaderAdapter.TableMappings.AddRange(new System.Data.Common.DataTableMapping[] {
+																									  new System.Data.Common.DataTableMapping("Table", "tblPOHeader2", new System.Data.Common.DataColumnMapping[] {
+																																																					  new System.Data.Common.DataColumnMapping("CancelDate", "CancelDate"),
+																																																					  new System.Data.Common.DataColumnMapping("Comments", "Comments"),
+																																																					  new System.Data.Common.DataColumnMapping("ExchangeRate", "ExchangeRate"),
+																																																					  new System.Data.Common.DataColumnMapping("FOB", "FOB"),
+																																																					  new System.Data.Common.DataColumnMapping("OtherTotal", "OtherTotal"),
+																																																					  new System.Data.Common.DataColumnMapping("PODate", "PODate"),
+																																																					  new System.Data.Common.DataColumnMapping("POID", "POID"),
+																																																					  new System.Data.Common.DataColumnMapping("PONumber", "PONumber"),
+																																																					  new System.Data.Common.DataColumnMapping("ShipCode", "ShipCode"),
+																																																					  new System.Data.Common.DataColumnMapping("ShipToAddress", "ShipToAddress"),
+																																																					  new System.Data.Common.DataColumnMapping("ShipToCompany", "ShipToCompany"),
+																																																					  new System.Data.Common.DataColumnMapping("ShipToContact", "ShipToContact"),
+																																																					  new System.Data.Common.DataColumnMapping("ShipToCountry", "ShipToCountry"),
+																																																					  new System.Data.Common.DataColumnMapping("ShipToEMail", "ShipToEMail"),
+																																																					  new System.Data.Common.DataColumnMapping("ShipToFax", "ShipToFax"),
+																																																					  new System.Data.Common.DataColumnMapping("ShipToLocationName", "ShipToLocationName"),
+																																																					  new System.Data.Common.DataColumnMapping("ShipToName", "ShipToName"),
+																																																					  new System.Data.Common.DataColumnMapping("ShipToPhone", "ShipToPhone"),
+																																																					  new System.Data.Common.DataColumnMapping("Status", "Status"),
+																																																					  new System.Data.Common.DataColumnMapping("Terms", "Terms"),
+																																																					  new System.Data.Common.DataColumnMapping("USTotal", "USTotal"),
+																																																					  new System.Data.Common.DataColumnMapping("VendAddress", "VendAddress"),
+																																																					  new System.Data.Common.DataColumnMapping("VendCompany", "VendCompany"),
+																																																					  new System.Data.Common.DataColumnMapping("VendContact", "VendContact"),
+																																																					  new System.Data.Common.DataColumnMapping("VendCountry", "VendCountry"),
+																																																					  new System.Data.Common.DataColumnMapping("VendEMail", "VendEMail"),
+																																																					  new System.Data.Common.DataColumnMapping("VendFax", "VendFax"),
+																																																					  new System.Data.Common.DataColumnMapping("VendLocationName", "VendLocationName"),
+																																																					  new System.Data.Common.DataColumnMapping("VendName", "VendName"),
+																																																					  new System.Data.Common.DataColumnMapping("VendPhone", "VendPhone")})});
+			this.poHeaderAdapter.UpdateCommand = this.oleDbUpdateCommand3;
+			// 
+			// oleDbDeleteCommand3
+			// 
+			this.oleDbDeleteCommand3.CommandText = "DELETE FROM tblPOHeader2 WHERE (POID = ?) AND (CancelDate = ? OR ? IS NULL AND Ca" +
+				"ncelDate IS NULL) AND (ExchangeRate = ? OR ? IS NULL AND ExchangeRate IS NULL) A" +
+				"ND (FOB = ? OR ? IS NULL AND FOB IS NULL) AND (OtherTotal = ? OR ? IS NULL AND O" +
+				"therTotal IS NULL) AND (PODate = ? OR ? IS NULL AND PODate IS NULL) AND (PONumbe" +
+				"r = ? OR ? IS NULL AND PONumber IS NULL) AND (ShipCode = ? OR ? IS NULL AND Ship" +
+				"Code IS NULL) AND (ShipToCompany = ? OR ? IS NULL AND ShipToCompany IS NULL) AND" +
+				" (ShipToContact = ? OR ? IS NULL AND ShipToContact IS NULL) AND (ShipToCountry =" +
+				" ? OR ? IS NULL AND ShipToCountry IS NULL) AND (ShipToEMail = ? OR ? IS NULL AND" +
+				" ShipToEMail IS NULL) AND (ShipToFax = ? OR ? IS NULL AND ShipToFax IS NULL) AND" +
+				" (ShipToLocationName = ? OR ? IS NULL AND ShipToLocationName IS NULL) AND (ShipT" +
+				"oName = ? OR ? IS NULL AND ShipToName IS NULL) AND (ShipToPhone = ? OR ? IS NULL" +
+				" AND ShipToPhone IS NULL) AND (Status = ? OR ? IS NULL AND Status IS NULL) AND (" +
+				"Terms = ? OR ? IS NULL AND Terms IS NULL) AND (USTotal = ? OR ? IS NULL AND USTo" +
+				"tal IS NULL) AND (VendCompany = ? OR ? IS NULL AND VendCompany IS NULL) AND (Ven" +
+				"dContact = ? OR ? IS NULL AND VendContact IS NULL) AND (VendCountry = ? OR ? IS " +
+				"NULL AND VendCountry IS NULL) AND (VendEMail = ? OR ? IS NULL AND VendEMail IS N" +
+				"ULL) AND (VendFax = ? OR ? IS NULL AND VendFax IS NULL) AND (VendLocationName = " +
+				"? OR ? IS NULL AND VendLocationName IS NULL) AND (VendName = ? OR ? IS NULL AND " +
+				"VendName IS NULL) AND (VendPhone = ? OR ? IS NULL AND VendPhone IS NULL)";
+			this.oleDbDeleteCommand3.Connection = this.emConnection;
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_POID", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "POID", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CancelDate", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CancelDate", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CancelDate1", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CancelDate", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ExchangeRate", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ExchangeRate", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ExchangeRate1", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ExchangeRate", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_FOB", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "FOB", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_FOB1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "FOB", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_OtherTotal", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "OtherTotal", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_OtherTotal1", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "OtherTotal", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_PODate", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "PODate", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_PODate1", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "PODate", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_PONumber", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "PONumber", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_PONumber1", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "PONumber", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipCode", System.Data.OleDb.OleDbType.VarWChar, 10, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipCode", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipCode1", System.Data.OleDb.OleDbType.VarWChar, 10, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipCode", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToCompany", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToCompany", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToCompany1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToCompany", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToContact", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToContact", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToContact1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToContact", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToCountry", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToCountry", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToCountry1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToCountry", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToEMail", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToEMail", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToEMail1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToEMail", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToFax", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToFax", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToFax1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToFax", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToLocationName", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToLocationName", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToLocationName1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToLocationName", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToName", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToName", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToName1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToName", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToPhone", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToPhone", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToPhone1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToPhone", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_Status", System.Data.OleDb.OleDbType.VarWChar, 10, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "Status", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_Status1", System.Data.OleDb.OleDbType.VarWChar, 10, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "Status", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_Terms", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "Terms", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_Terms1", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "Terms", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_USTotal", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "USTotal", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_USTotal1", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "USTotal", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendCompany", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendCompany", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendCompany1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendCompany", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendContact", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendContact", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendContact1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendContact", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendCountry", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendCountry", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendCountry1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendCountry", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendEMail", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendEMail", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendEMail1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendEMail", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendFax", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendFax", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendFax1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendFax", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendLocationName", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendLocationName", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendLocationName1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendLocationName", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendName", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendName", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendName1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendName", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendPhone", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendPhone", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendPhone1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendPhone", System.Data.DataRowVersion.Original, null));
+			// 
+			// emConnection
+			// 
+			this.emConnection.ConnectionString = @"Jet OLEDB:Global Partial Bulk Ops=2;Jet OLEDB:Registry Path=;Jet OLEDB:Database Locking Mode=1;Jet OLEDB:Database Password=;Data Source=""m:\em_prog_2002.mdb"";Password=;Jet OLEDB:Engine Type=5;Jet OLEDB:Global Bulk Transactions=1;Provider=""Microsoft.Jet.OLEDB.4.0"";Jet OLEDB:System database=;Jet OLEDB:SFP=False;Extended Properties=;Mode=ReadWrite;Jet OLEDB:New Database Password=;Jet OLEDB:Create System Database=False;Jet OLEDB:Don't Copy Locale on Compact=False;Jet OLEDB:Compact Without Replica Repair=False;User ID=Admin;Jet OLEDB:Encrypt Database=False";
+			// 
+			// oleDbInsertCommand3
+			// 
+			this.oleDbInsertCommand3.CommandText = @"INSERT INTO tblPOHeader2(CancelDate, Comments, ExchangeRate, FOB, OtherTotal, PODate, POID, PONumber, ShipCode, ShipToAddress, ShipToCompany, ShipToContact, ShipToCountry, ShipToEMail, ShipToFax, ShipToLocationName, ShipToName, ShipToPhone, Status, Terms, USTotal, VendAddress, VendCompany, VendContact, VendCountry, VendEMail, VendFax, VendLocationName, VendName, VendPhone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			this.oleDbInsertCommand3.Connection = this.emConnection;
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("CancelDate", System.Data.OleDb.OleDbType.DBDate, 0, "CancelDate"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Comments", System.Data.OleDb.OleDbType.VarWChar, 0, "Comments"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("ExchangeRate", System.Data.OleDb.OleDbType.Currency, 0, "ExchangeRate"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("FOB", System.Data.OleDb.OleDbType.VarWChar, 50, "FOB"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("OtherTotal", System.Data.OleDb.OleDbType.Currency, 0, "OtherTotal"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("PODate", System.Data.OleDb.OleDbType.DBDate, 0, "PODate"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("POID", System.Data.OleDb.OleDbType.Integer, 0, "POID"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("PONumber", System.Data.OleDb.OleDbType.VarWChar, 20, "PONumber"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipCode", System.Data.OleDb.OleDbType.VarWChar, 10, "ShipCode"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipToAddress", System.Data.OleDb.OleDbType.VarWChar, 0, "ShipToAddress"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipToCompany", System.Data.OleDb.OleDbType.VarWChar, 50, "ShipToCompany"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipToContact", System.Data.OleDb.OleDbType.VarWChar, 50, "ShipToContact"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipToCountry", System.Data.OleDb.OleDbType.VarWChar, 50, "ShipToCountry"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipToEMail", System.Data.OleDb.OleDbType.VarWChar, 50, "ShipToEMail"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipToFax", System.Data.OleDb.OleDbType.VarWChar, 50, "ShipToFax"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipToLocationName", System.Data.OleDb.OleDbType.VarWChar, 50, "ShipToLocationName"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipToName", System.Data.OleDb.OleDbType.VarWChar, 50, "ShipToName"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipToPhone", System.Data.OleDb.OleDbType.VarWChar, 50, "ShipToPhone"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Status", System.Data.OleDb.OleDbType.VarWChar, 10, "Status"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Terms", System.Data.OleDb.OleDbType.VarWChar, 20, "Terms"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("USTotal", System.Data.OleDb.OleDbType.Currency, 0, "USTotal"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("VendAddress", System.Data.OleDb.OleDbType.VarWChar, 0, "VendAddress"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("VendCompany", System.Data.OleDb.OleDbType.VarWChar, 50, "VendCompany"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("VendContact", System.Data.OleDb.OleDbType.VarWChar, 50, "VendContact"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("VendCountry", System.Data.OleDb.OleDbType.VarWChar, 50, "VendCountry"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("VendEMail", System.Data.OleDb.OleDbType.VarWChar, 50, "VendEMail"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("VendFax", System.Data.OleDb.OleDbType.VarWChar, 50, "VendFax"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("VendLocationName", System.Data.OleDb.OleDbType.VarWChar, 50, "VendLocationName"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("VendName", System.Data.OleDb.OleDbType.VarWChar, 50, "VendName"));
+			this.oleDbInsertCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("VendPhone", System.Data.OleDb.OleDbType.VarWChar, 50, "VendPhone"));
+			// 
+			// oleDbSelectCommand3
+			// 
+			this.oleDbSelectCommand3.CommandText = @"SELECT CancelDate, Comments, ExchangeRate, FOB, OtherTotal, PODate, POID, PONumber, ShipCode, ShipToAddress, ShipToCompany, ShipToContact, ShipToCountry, ShipToEMail, ShipToFax, ShipToLocationName, ShipToName, ShipToPhone, Status, Terms, USTotal, VendAddress, VendCompany, VendContact, VendCountry, VendEMail, VendFax, VendLocationName, VendName, VendPhone FROM tblPOHeader2 WHERE (POID = ?) ORDER BY PODate, PONumber";
+			this.oleDbSelectCommand3.Connection = this.emConnection;
+			this.oleDbSelectCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("POID", System.Data.OleDb.OleDbType.Integer, 0, "POID"));
+			// 
+			// oleDbUpdateCommand3
+			// 
+			this.oleDbUpdateCommand3.CommandText = "UPDATE tblPOHeader2 SET CancelDate = ?, Comments = ?, ExchangeRate = ?, FOB = ?, " +
+				"OtherTotal = ?, PODate = ?, POID = ?, PONumber = ?, ShipCode = ?, ShipToAddress " +
+				"= ?, ShipToCompany = ?, ShipToContact = ?, ShipToCountry = ?, ShipToEMail = ?, S" +
+				"hipToFax = ?, ShipToLocationName = ?, ShipToName = ?, ShipToPhone = ?, Status = " +
+				"?, Terms = ?, USTotal = ?, VendAddress = ?, VendCompany = ?, VendContact = ?, Ve" +
+				"ndCountry = ?, VendEMail = ?, VendFax = ?, VendLocationName = ?, VendName = ?, V" +
+				"endPhone = ? WHERE (POID = ?) AND (CancelDate = ? OR ? IS NULL AND CancelDate IS" +
+				" NULL) AND (ExchangeRate = ? OR ? IS NULL AND ExchangeRate IS NULL) AND (FOB = ?" +
+				" OR ? IS NULL AND FOB IS NULL) AND (OtherTotal = ? OR ? IS NULL AND OtherTotal I" +
+				"S NULL) AND (PODate = ? OR ? IS NULL AND PODate IS NULL) AND (PONumber = ? OR ? " +
+				"IS NULL AND PONumber IS NULL) AND (ShipCode = ? OR ? IS NULL AND ShipCode IS NUL" +
+				"L) AND (ShipToCompany = ? OR ? IS NULL AND ShipToCompany IS NULL) AND (ShipToCon" +
+				"tact = ? OR ? IS NULL AND ShipToContact IS NULL) AND (ShipToCountry = ? OR ? IS " +
+				"NULL AND ShipToCountry IS NULL) AND (ShipToEMail = ? OR ? IS NULL AND ShipToEMai" +
+				"l IS NULL) AND (ShipToFax = ? OR ? IS NULL AND ShipToFax IS NULL) AND (ShipToLoc" +
+				"ationName = ? OR ? IS NULL AND ShipToLocationName IS NULL) AND (ShipToName = ? O" +
+				"R ? IS NULL AND ShipToName IS NULL) AND (ShipToPhone = ? OR ? IS NULL AND ShipTo" +
+				"Phone IS NULL) AND (Status = ? OR ? IS NULL AND Status IS NULL) AND (Terms = ? O" +
+				"R ? IS NULL AND Terms IS NULL) AND (USTotal = ? OR ? IS NULL AND USTotal IS NULL" +
+				") AND (VendCompany = ? OR ? IS NULL AND VendCompany IS NULL) AND (VendContact = " +
+				"? OR ? IS NULL AND VendContact IS NULL) AND (VendCountry = ? OR ? IS NULL AND Ve" +
+				"ndCountry IS NULL) AND (VendEMail = ? OR ? IS NULL AND VendEMail IS NULL) AND (V" +
+				"endFax = ? OR ? IS NULL AND VendFax IS NULL) AND (VendLocationName = ? OR ? IS N" +
+				"ULL AND VendLocationName IS NULL) AND (VendName = ? OR ? IS NULL AND VendName IS" +
+				" NULL) AND (VendPhone = ? OR ? IS NULL AND VendPhone IS NULL)";
+			this.oleDbUpdateCommand3.Connection = this.emConnection;
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("CancelDate", System.Data.OleDb.OleDbType.DBDate, 0, "CancelDate"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Comments", System.Data.OleDb.OleDbType.VarWChar, 0, "Comments"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("ExchangeRate", System.Data.OleDb.OleDbType.Currency, 0, "ExchangeRate"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("FOB", System.Data.OleDb.OleDbType.VarWChar, 50, "FOB"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("OtherTotal", System.Data.OleDb.OleDbType.Currency, 0, "OtherTotal"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("PODate", System.Data.OleDb.OleDbType.DBDate, 0, "PODate"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("POID", System.Data.OleDb.OleDbType.Integer, 0, "POID"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("PONumber", System.Data.OleDb.OleDbType.VarWChar, 20, "PONumber"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipCode", System.Data.OleDb.OleDbType.VarWChar, 10, "ShipCode"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipToAddress", System.Data.OleDb.OleDbType.VarWChar, 0, "ShipToAddress"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipToCompany", System.Data.OleDb.OleDbType.VarWChar, 50, "ShipToCompany"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipToContact", System.Data.OleDb.OleDbType.VarWChar, 50, "ShipToContact"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipToCountry", System.Data.OleDb.OleDbType.VarWChar, 50, "ShipToCountry"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipToEMail", System.Data.OleDb.OleDbType.VarWChar, 50, "ShipToEMail"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipToFax", System.Data.OleDb.OleDbType.VarWChar, 50, "ShipToFax"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipToLocationName", System.Data.OleDb.OleDbType.VarWChar, 50, "ShipToLocationName"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipToName", System.Data.OleDb.OleDbType.VarWChar, 50, "ShipToName"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipToPhone", System.Data.OleDb.OleDbType.VarWChar, 50, "ShipToPhone"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Status", System.Data.OleDb.OleDbType.VarWChar, 10, "Status"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Terms", System.Data.OleDb.OleDbType.VarWChar, 20, "Terms"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("USTotal", System.Data.OleDb.OleDbType.Currency, 0, "USTotal"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("VendAddress", System.Data.OleDb.OleDbType.VarWChar, 0, "VendAddress"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("VendCompany", System.Data.OleDb.OleDbType.VarWChar, 50, "VendCompany"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("VendContact", System.Data.OleDb.OleDbType.VarWChar, 50, "VendContact"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("VendCountry", System.Data.OleDb.OleDbType.VarWChar, 50, "VendCountry"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("VendEMail", System.Data.OleDb.OleDbType.VarWChar, 50, "VendEMail"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("VendFax", System.Data.OleDb.OleDbType.VarWChar, 50, "VendFax"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("VendLocationName", System.Data.OleDb.OleDbType.VarWChar, 50, "VendLocationName"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("VendName", System.Data.OleDb.OleDbType.VarWChar, 50, "VendName"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("VendPhone", System.Data.OleDb.OleDbType.VarWChar, 50, "VendPhone"));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_POID", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "POID", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CancelDate", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CancelDate", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CancelDate1", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CancelDate", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ExchangeRate", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ExchangeRate", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ExchangeRate1", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ExchangeRate", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_FOB", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "FOB", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_FOB1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "FOB", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_OtherTotal", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "OtherTotal", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_OtherTotal1", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "OtherTotal", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_PODate", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "PODate", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_PODate1", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "PODate", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_PONumber", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "PONumber", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_PONumber1", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "PONumber", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipCode", System.Data.OleDb.OleDbType.VarWChar, 10, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipCode", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipCode1", System.Data.OleDb.OleDbType.VarWChar, 10, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipCode", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToCompany", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToCompany", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToCompany1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToCompany", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToContact", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToContact", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToContact1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToContact", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToCountry", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToCountry", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToCountry1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToCountry", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToEMail", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToEMail", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToEMail1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToEMail", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToFax", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToFax", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToFax1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToFax", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToLocationName", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToLocationName", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToLocationName1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToLocationName", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToName", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToName", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToName1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToName", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToPhone", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToPhone", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipToPhone1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipToPhone", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_Status", System.Data.OleDb.OleDbType.VarWChar, 10, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "Status", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_Status1", System.Data.OleDb.OleDbType.VarWChar, 10, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "Status", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_Terms", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "Terms", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_Terms1", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "Terms", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_USTotal", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "USTotal", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_USTotal1", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "USTotal", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendCompany", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendCompany", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendCompany1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendCompany", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendContact", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendContact", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendContact1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendContact", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendCountry", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendCountry", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendCountry1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendCountry", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendEMail", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendEMail", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendEMail1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendEMail", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendFax", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendFax", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendFax1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendFax", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendLocationName", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendLocationName", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendLocationName1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendLocationName", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendName", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendName", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendName1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendName", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendPhone", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendPhone", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand3.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_VendPhone1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "VendPhone", System.Data.DataRowVersion.Original, null));
+			// 
+			// m_shipCodeCombo
+			// 
+			this.m_shipCodeCombo.Location = new System.Drawing.Point(136, 104);
+			this.m_shipCodeCombo.Name = "m_shipCodeCombo";
+			this.m_shipCodeCombo.Size = new System.Drawing.Size(120, 21);
+			this.m_shipCodeCombo.TabIndex = 11;
+			// 
+			// label4
+			// 
+			this.label4.Location = new System.Drawing.Point(8, 104);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(56, 16);
+			this.label4.TabIndex = 10;
+			this.label4.Text = "Ship Via:";
+			// 
+			// label5
+			// 
+			this.label5.Location = new System.Drawing.Point(8, 128);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(32, 16);
+			this.label5.TabIndex = 12;
+			this.label5.Text = "FOB:";
+			// 
+			// m_fobEdt
+			// 
+			this.m_fobEdt.Location = new System.Drawing.Point(136, 128);
+			this.m_fobEdt.Name = "m_fobEdt";
+			this.m_fobEdt.Size = new System.Drawing.Size(120, 20);
+			this.m_fobEdt.TabIndex = 13;
+			this.m_fobEdt.Text = "textBox1";
+			// 
+			// label6
+			// 
+			this.label6.Location = new System.Drawing.Point(8, 80);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(44, 16);
+			this.label6.TabIndex = 8;
+			this.label6.Text = "Terms:";
+			// 
+			// m_termsCombo
+			// 
+			this.m_termsCombo.Location = new System.Drawing.Point(136, 80);
+			this.m_termsCombo.Name = "m_termsCombo";
+			this.m_termsCombo.Size = new System.Drawing.Size(121, 21);
+			this.m_termsCombo.TabIndex = 9;
+			// 
+			// label7
+			// 
+			this.label7.Location = new System.Drawing.Point(8, 152);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(120, 16);
+			this.label7.TabIndex = 14;
+			this.label7.Text = "Exchange Rate: $/x";
+			// 
+			// m_exchangeRateEdt
+			// 
+			this.m_exchangeRateEdt.Location = new System.Drawing.Point(136, 152);
+			this.m_exchangeRateEdt.Name = "m_exchangeRateEdt";
+			this.m_exchangeRateEdt.Size = new System.Drawing.Size(120, 20);
+			this.m_exchangeRateEdt.TabIndex = 15;
+			this.m_exchangeRateEdt.Text = "textBox1";
+			this.m_exchangeRateEdt.Validated += new System.EventHandler(this.OnExchangeRateValidated);
+			// 
+			// label8
+			// 
+			this.label8.Location = new System.Drawing.Point(8, 56);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(72, 16);
+			this.label8.TabIndex = 5;
+			this.label8.Text = "Cancel Date:";
+			// 
+			// m_cancelDateEdt
+			// 
+			this.m_cancelDateEdt.Location = new System.Drawing.Point(136, 56);
+			this.m_cancelDateEdt.Name = "m_cancelDateEdt";
+			this.m_cancelDateEdt.Size = new System.Drawing.Size(96, 20);
+			this.m_cancelDateEdt.TabIndex = 6;
+			this.m_cancelDateEdt.Text = "";
+			this.m_cancelDateEdt.Leave += new System.EventHandler(this.OnDateLeave);
+			// 
+			// m_cancelDateBtn
+			// 
+			this.m_cancelDateBtn.Location = new System.Drawing.Point(240, 56);
+			this.m_cancelDateBtn.Name = "m_cancelDateBtn";
+			this.m_cancelDateBtn.Size = new System.Drawing.Size(24, 24);
+			this.m_cancelDateBtn.TabIndex = 7;
+			this.m_cancelDateBtn.Text = "...";
+			this.m_cancelDateBtn.Click += new System.EventHandler(this.SelectDateBtn);
+			// 
+			// m_commentEdt
+			// 
+			this.m_commentEdt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+				| System.Windows.Forms.AnchorStyles.Left) 
+				| System.Windows.Forms.AnchorStyles.Right)));
+			this.m_commentEdt.Location = new System.Drawing.Point(0, 0);
+			this.m_commentEdt.Multiline = true;
+			this.m_commentEdt.Name = "m_commentEdt";
+			this.m_commentEdt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+			this.m_commentEdt.Size = new System.Drawing.Size(944, 216);
+			this.m_commentEdt.TabIndex = 23;
+			this.m_commentEdt.Text = "textBox1";
+			// 
+			// termsAdapter
+			// 
+			this.termsAdapter.DeleteCommand = this.oleDbDeleteCommand2;
+			this.termsAdapter.InsertCommand = this.oleDbInsertCommand2;
+			this.termsAdapter.SelectCommand = this.oleDbSelectCommand2;
+			this.termsAdapter.TableMappings.AddRange(new System.Data.Common.DataTableMapping[] {
+																								   new System.Data.Common.DataTableMapping("Table", "tblPaymentTerms", new System.Data.Common.DataColumnMapping[] {
+																																																					  new System.Data.Common.DataColumnMapping("Terms", "Terms"),
+																																																					  new System.Data.Common.DataColumnMapping("TermsDesc", "TermsDesc"),
+																																																					  new System.Data.Common.DataColumnMapping("TermsID", "TermsID")})});
+			this.termsAdapter.UpdateCommand = this.oleDbUpdateCommand2;
+			// 
+			// oleDbDeleteCommand2
+			// 
+			this.oleDbDeleteCommand2.CommandText = "DELETE FROM tblPaymentTerms WHERE (TermsID = ?) AND (Terms = ? OR ? IS NULL AND T" +
+				"erms IS NULL) AND (TermsDesc = ? OR ? IS NULL AND TermsDesc IS NULL)";
+			this.oleDbDeleteCommand2.Connection = this.emConnection;
+			this.oleDbDeleteCommand2.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_TermsID", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "TermsID", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand2.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_Terms", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "Terms", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand2.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_Terms1", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "Terms", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand2.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_TermsDesc", System.Data.OleDb.OleDbType.VarWChar, 30, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "TermsDesc", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand2.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_TermsDesc1", System.Data.OleDb.OleDbType.VarWChar, 30, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "TermsDesc", System.Data.DataRowVersion.Original, null));
+			// 
+			// oleDbInsertCommand2
+			// 
+			this.oleDbInsertCommand2.CommandText = "INSERT INTO tblPaymentTerms(Terms, TermsDesc, TermsID) VALUES (?, ?, ?)";
+			this.oleDbInsertCommand2.Connection = this.emConnection;
+			this.oleDbInsertCommand2.Parameters.Add(new System.Data.OleDb.OleDbParameter("Terms", System.Data.OleDb.OleDbType.VarWChar, 20, "Terms"));
+			this.oleDbInsertCommand2.Parameters.Add(new System.Data.OleDb.OleDbParameter("TermsDesc", System.Data.OleDb.OleDbType.VarWChar, 30, "TermsDesc"));
+			this.oleDbInsertCommand2.Parameters.Add(new System.Data.OleDb.OleDbParameter("TermsID", System.Data.OleDb.OleDbType.Integer, 0, "TermsID"));
+			// 
+			// oleDbSelectCommand2
+			// 
+			this.oleDbSelectCommand2.CommandText = "SELECT Terms, TermsDesc, TermsID FROM tblPaymentTerms ORDER BY Terms";
+			this.oleDbSelectCommand2.Connection = this.emConnection;
+			// 
+			// oleDbUpdateCommand2
+			// 
+			this.oleDbUpdateCommand2.CommandText = "UPDATE tblPaymentTerms SET Terms = ?, TermsDesc = ?, TermsID = ? WHERE (TermsID =" +
+				" ?) AND (Terms = ? OR ? IS NULL AND Terms IS NULL) AND (TermsDesc = ? OR ? IS NU" +
+				"LL AND TermsDesc IS NULL)";
+			this.oleDbUpdateCommand2.Connection = this.emConnection;
+			this.oleDbUpdateCommand2.Parameters.Add(new System.Data.OleDb.OleDbParameter("Terms", System.Data.OleDb.OleDbType.VarWChar, 20, "Terms"));
+			this.oleDbUpdateCommand2.Parameters.Add(new System.Data.OleDb.OleDbParameter("TermsDesc", System.Data.OleDb.OleDbType.VarWChar, 30, "TermsDesc"));
+			this.oleDbUpdateCommand2.Parameters.Add(new System.Data.OleDb.OleDbParameter("TermsID", System.Data.OleDb.OleDbType.Integer, 0, "TermsID"));
+			this.oleDbUpdateCommand2.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_TermsID", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "TermsID", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand2.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_Terms", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "Terms", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand2.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_Terms1", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "Terms", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand2.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_TermsDesc", System.Data.OleDb.OleDbType.VarWChar, 30, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "TermsDesc", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand2.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_TermsDesc1", System.Data.OleDb.OleDbType.VarWChar, 30, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "TermsDesc", System.Data.DataRowVersion.Original, null));
+			// 
+			// shipCodeAdapter
+			// 
+			this.shipCodeAdapter.DeleteCommand = this.oleDbDeleteCommand4;
+			this.shipCodeAdapter.InsertCommand = this.oleDbInsertCommand4;
+			this.shipCodeAdapter.SelectCommand = this.oleDbSelectCommand4;
+			this.shipCodeAdapter.TableMappings.AddRange(new System.Data.Common.DataTableMapping[] {
+																									  new System.Data.Common.DataTableMapping("Table", "tblShippingCode", new System.Data.Common.DataColumnMapping[] {
+																																																						 new System.Data.Common.DataColumnMapping("ShipCode", "ShipCode"),
+																																																						 new System.Data.Common.DataColumnMapping("ShipCodeID", "ShipCodeID"),
+																																																						 new System.Data.Common.DataColumnMapping("ShipDesc", "ShipDesc")})});
+			this.shipCodeAdapter.UpdateCommand = this.oleDbUpdateCommand4;
+			// 
+			// oleDbDeleteCommand4
+			// 
+			this.oleDbDeleteCommand4.CommandText = "DELETE FROM tblShippingCode WHERE (ShipCodeID = ?) AND (ShipCode = ? OR ? IS NULL" +
+				" AND ShipCode IS NULL) AND (ShipDesc = ? OR ? IS NULL AND ShipDesc IS NULL)";
+			this.oleDbDeleteCommand4.Connection = this.emConnection;
+			this.oleDbDeleteCommand4.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipCodeID", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipCodeID", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand4.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipCode", System.Data.OleDb.OleDbType.VarWChar, 10, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipCode", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand4.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipCode1", System.Data.OleDb.OleDbType.VarWChar, 10, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipCode", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand4.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipDesc", System.Data.OleDb.OleDbType.VarWChar, 30, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipDesc", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand4.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipDesc1", System.Data.OleDb.OleDbType.VarWChar, 30, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipDesc", System.Data.DataRowVersion.Original, null));
+			// 
+			// oleDbInsertCommand4
+			// 
+			this.oleDbInsertCommand4.CommandText = "INSERT INTO tblShippingCode(ShipCode, ShipCodeID, ShipDesc) VALUES (?, ?, ?)";
+			this.oleDbInsertCommand4.Connection = this.emConnection;
+			this.oleDbInsertCommand4.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipCode", System.Data.OleDb.OleDbType.VarWChar, 10, "ShipCode"));
+			this.oleDbInsertCommand4.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipCodeID", System.Data.OleDb.OleDbType.Integer, 0, "ShipCodeID"));
+			this.oleDbInsertCommand4.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipDesc", System.Data.OleDb.OleDbType.VarWChar, 30, "ShipDesc"));
+			// 
+			// oleDbSelectCommand4
+			// 
+			this.oleDbSelectCommand4.CommandText = "SELECT ShipCode, ShipCodeID, ShipDesc FROM tblShippingCode ORDER BY ShipCode";
+			this.oleDbSelectCommand4.Connection = this.emConnection;
+			// 
+			// oleDbUpdateCommand4
+			// 
+			this.oleDbUpdateCommand4.CommandText = "UPDATE tblShippingCode SET ShipCode = ?, ShipCodeID = ?, ShipDesc = ? WHERE (Ship" +
+				"CodeID = ?) AND (ShipCode = ? OR ? IS NULL AND ShipCode IS NULL) AND (ShipDesc =" +
+				" ? OR ? IS NULL AND ShipDesc IS NULL)";
+			this.oleDbUpdateCommand4.Connection = this.emConnection;
+			this.oleDbUpdateCommand4.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipCode", System.Data.OleDb.OleDbType.VarWChar, 10, "ShipCode"));
+			this.oleDbUpdateCommand4.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipCodeID", System.Data.OleDb.OleDbType.Integer, 0, "ShipCodeID"));
+			this.oleDbUpdateCommand4.Parameters.Add(new System.Data.OleDb.OleDbParameter("ShipDesc", System.Data.OleDb.OleDbType.VarWChar, 30, "ShipDesc"));
+			this.oleDbUpdateCommand4.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipCodeID", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipCodeID", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand4.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipCode", System.Data.OleDb.OleDbType.VarWChar, 10, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipCode", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand4.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipCode1", System.Data.OleDb.OleDbType.VarWChar, 10, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipCode", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand4.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipDesc", System.Data.OleDb.OleDbType.VarWChar, 30, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipDesc", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand4.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ShipDesc1", System.Data.OleDb.OleDbType.VarWChar, 30, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ShipDesc", System.Data.DataRowVersion.Original, null));
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.Controls.Add(this.vendEMailEdt);
+			this.groupBox1.Controls.Add(this.vendContactCombo);
+			this.groupBox1.Controls.Add(this.label19);
+			this.groupBox1.Controls.Add(this.label18);
+			this.groupBox1.Controls.Add(this.label17);
+			this.groupBox1.Controls.Add(this.label16);
+			this.groupBox1.Controls.Add(this.vendFaxEdt);
+			this.groupBox1.Controls.Add(this.vendPhoneEdt);
+			this.groupBox1.Controls.Add(this.vendContactEdt);
+			this.groupBox1.Location = new System.Drawing.Point(16, 8);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(368, 176);
+			this.groupBox1.TabIndex = 0;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Mill";
+			// 
+			// vendEMailEdt
+			// 
+			this.vendEMailEdt.Location = new System.Drawing.Point(32, 136);
+			this.vendEMailEdt.Name = "vendEMailEdt";
+			this.vendEMailEdt.Size = new System.Drawing.Size(152, 20);
+			this.vendEMailEdt.TabIndex = 31;
+			this.vendEMailEdt.Text = "textBox4";
+			// 
+			// vendContactCombo
+			// 
+			this.vendContactCombo.Location = new System.Drawing.Point(32, 40);
+			this.vendContactCombo.Name = "vendContactCombo";
+			this.vendContactCombo.Size = new System.Drawing.Size(152, 21);
+			this.vendContactCombo.TabIndex = 12;
+			this.vendContactCombo.SelectedIndexChanged += new System.EventHandler(this.OnVenderContactChanged);
+			// 
+			// label19
+			// 
+			this.label19.Location = new System.Drawing.Point(8, 136);
+			this.label19.Name = "label19";
+			this.label19.Size = new System.Drawing.Size(16, 16);
+			this.label19.TabIndex = 8;
+			this.label19.Text = "E:";
+			// 
+			// label18
+			// 
+			this.label18.Location = new System.Drawing.Point(8, 112);
+			this.label18.Name = "label18";
+			this.label18.Size = new System.Drawing.Size(16, 16);
+			this.label18.TabIndex = 6;
+			this.label18.Text = "F:";
+			// 
+			// label17
+			// 
+			this.label17.Location = new System.Drawing.Point(8, 88);
+			this.label17.Name = "label17";
+			this.label17.Size = new System.Drawing.Size(16, 16);
+			this.label17.TabIndex = 4;
+			this.label17.Text = "P:";
+			// 
+			// label16
+			// 
+			this.label16.Location = new System.Drawing.Point(8, 64);
+			this.label16.Name = "label16";
+			this.label16.Size = new System.Drawing.Size(16, 16);
+			this.label16.TabIndex = 2;
+			this.label16.Text = "N:";
+			// 
+			// vendFaxEdt
+			// 
+			this.vendFaxEdt.Location = new System.Drawing.Point(32, 112);
+			this.vendFaxEdt.Name = "vendFaxEdt";
+			this.vendFaxEdt.Size = new System.Drawing.Size(152, 20);
+			this.vendFaxEdt.TabIndex = 7;
+			this.vendFaxEdt.Text = "textBox3";
+			// 
+			// vendPhoneEdt
+			// 
+			this.vendPhoneEdt.Location = new System.Drawing.Point(32, 88);
+			this.vendPhoneEdt.Name = "vendPhoneEdt";
+			this.vendPhoneEdt.Size = new System.Drawing.Size(152, 20);
+			this.vendPhoneEdt.TabIndex = 5;
+			this.vendPhoneEdt.Text = "textBox2";
+			// 
+			// vendContactEdt
+			// 
+			this.vendContactEdt.Location = new System.Drawing.Point(32, 64);
+			this.vendContactEdt.Name = "vendContactEdt";
+			this.vendContactEdt.Size = new System.Drawing.Size(152, 20);
+			this.vendContactEdt.TabIndex = 3;
+			this.vendContactEdt.Text = "textBox1";
+			// 
+			// groupBox2
+			// 
+			this.groupBox2.Controls.Add(this.custEMailEdt);
+			this.groupBox2.Controls.Add(this.custContactCombo);
+			this.groupBox2.Controls.Add(this.label20);
+			this.groupBox2.Controls.Add(this.label21);
+			this.groupBox2.Controls.Add(this.label22);
+			this.groupBox2.Controls.Add(this.label23);
+			this.groupBox2.Controls.Add(this.custFaxEdt);
+			this.groupBox2.Controls.Add(this.custPhoneEdt);
+			this.groupBox2.Controls.Add(this.custContactEdt);
+			this.groupBox2.Location = new System.Drawing.Point(392, 8);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.Size = new System.Drawing.Size(368, 176);
+			this.groupBox2.TabIndex = 1;
+			this.groupBox2.TabStop = false;
+			this.groupBox2.Text = "Buyer";
+			// 
+			// custEMailEdt
+			// 
+			this.custEMailEdt.Location = new System.Drawing.Point(32, 136);
+			this.custEMailEdt.Name = "custEMailEdt";
+			this.custEMailEdt.Size = new System.Drawing.Size(152, 20);
+			this.custEMailEdt.TabIndex = 31;
+			this.custEMailEdt.Text = "textBox4";
+			// 
+			// custContactCombo
+			// 
+			this.custContactCombo.Location = new System.Drawing.Point(32, 40);
+			this.custContactCombo.Name = "custContactCombo";
+			this.custContactCombo.Size = new System.Drawing.Size(152, 21);
+			this.custContactCombo.TabIndex = 12;
+			this.custContactCombo.SelectedIndexChanged += new System.EventHandler(this.OnCustomerContactChanged);
+			// 
+			// label20
+			// 
+			this.label20.Location = new System.Drawing.Point(8, 136);
+			this.label20.Name = "label20";
+			this.label20.Size = new System.Drawing.Size(16, 16);
+			this.label20.TabIndex = 8;
+			this.label20.Text = "E:";
+			// 
+			// label21
+			// 
+			this.label21.Location = new System.Drawing.Point(8, 112);
+			this.label21.Name = "label21";
+			this.label21.Size = new System.Drawing.Size(16, 16);
+			this.label21.TabIndex = 6;
+			this.label21.Text = "F:";
+			// 
+			// label22
+			// 
+			this.label22.Location = new System.Drawing.Point(8, 88);
+			this.label22.Name = "label22";
+			this.label22.Size = new System.Drawing.Size(16, 16);
+			this.label22.TabIndex = 4;
+			this.label22.Text = "P:";
+			// 
+			// label23
+			// 
+			this.label23.Location = new System.Drawing.Point(8, 64);
+			this.label23.Name = "label23";
+			this.label23.Size = new System.Drawing.Size(16, 16);
+			this.label23.TabIndex = 2;
+			this.label23.Text = "N:";
+			// 
+			// custFaxEdt
+			// 
+			this.custFaxEdt.Location = new System.Drawing.Point(32, 112);
+			this.custFaxEdt.Name = "custFaxEdt";
+			this.custFaxEdt.Size = new System.Drawing.Size(152, 20);
+			this.custFaxEdt.TabIndex = 7;
+			this.custFaxEdt.Text = "textBox3";
+			// 
+			// custPhoneEdt
+			// 
+			this.custPhoneEdt.Location = new System.Drawing.Point(32, 88);
+			this.custPhoneEdt.Name = "custPhoneEdt";
+			this.custPhoneEdt.Size = new System.Drawing.Size(152, 20);
+			this.custPhoneEdt.TabIndex = 5;
+			this.custPhoneEdt.Text = "textBox2";
+			// 
+			// custContactEdt
+			// 
+			this.custContactEdt.Location = new System.Drawing.Point(32, 64);
+			this.custContactEdt.Name = "custContactEdt";
+			this.custContactEdt.Size = new System.Drawing.Size(152, 20);
+			this.custContactEdt.TabIndex = 3;
+			this.custContactEdt.Text = "textBox1";
+			// 
+			// companyAdapter
+			// 
+			this.companyAdapter.SelectCommand = this.oleDbSelectCommand6;
+			this.companyAdapter.TableMappings.AddRange(new System.Data.Common.DataTableMapping[] {
+																									 new System.Data.Common.DataTableMapping("Table", "tblCompany", new System.Data.Common.DataColumnMapping[] {
+																																																				   new System.Data.Common.DataColumnMapping("CompID", "CompID"),
+																																																				   new System.Data.Common.DataColumnMapping("CompName", "CompName"),
+																																																				   new System.Data.Common.DataColumnMapping("CompType", "CompType")})});
+			// 
+			// oleDbSelectCommand6
+			// 
+			this.oleDbSelectCommand6.CommandText = "SELECT CompID, CompName, CompType FROM tblCompany ORDER BY CompName";
+			this.oleDbSelectCommand6.Connection = this.emConnection;
+			// 
+			// poItemAdapter
+			// 
+			this.poItemAdapter.DeleteCommand = this.oleDbDeleteCommand1;
+			this.poItemAdapter.InsertCommand = this.oleDbInsertCommand1;
+			this.poItemAdapter.SelectCommand = this.oleDbSelectCommand1;
+			this.poItemAdapter.TableMappings.AddRange(new System.Data.Common.DataTableMapping[] {
+																									new System.Data.Common.DataTableMapping("Table", "tblPOItem2", new System.Data.Common.DataColumnMapping[] {
+																																																				  new System.Data.Common.DataColumnMapping("AcknowledgeDate", "AcknowledgeDate"),
+																																																				  new System.Data.Common.DataColumnMapping("CancelDate", "CancelDate"),
+																																																				  new System.Data.Common.DataColumnMapping("CommAmount", "CommAmount"),
+																																																				  new System.Data.Common.DataColumnMapping("Comments", "Comments"),
+																																																				  new System.Data.Common.DataColumnMapping("CommRate", "CommRate"),
+																																																				  new System.Data.Common.DataColumnMapping("CustAmount", "CustAmount"),
+																																																				  new System.Data.Common.DataColumnMapping("CustRate", "CustRate"),
+																																																				  new System.Data.Common.DataColumnMapping("DateRequired", "DateRequired"),
+																																																				  new System.Data.Common.DataColumnMapping("ItemAccessCode", "ItemAccessCode"),
+																																																				  new System.Data.Common.DataColumnMapping("ItemDesc", "ItemDesc"),
+																																																				  new System.Data.Common.DataColumnMapping("ItemName", "ItemName"),
+																																																				  new System.Data.Common.DataColumnMapping("Length", "Length"),
+																																																				  new System.Data.Common.DataColumnMapping("MillConfirmNumber", "MillConfirmNumber"),
+																																																				  new System.Data.Common.DataColumnMapping("MillShipDate", "MillShipDate"),
+																																																				  new System.Data.Common.DataColumnMapping("POID", "POID"),
+																																																				  new System.Data.Common.DataColumnMapping("POItemNumber", "POItemNumber"),
+																																																				  new System.Data.Common.DataColumnMapping("Qty", "Qty"),
+																																																				  new System.Data.Common.DataColumnMapping("SeqNumber", "SeqNumber"),
+																																																				  new System.Data.Common.DataColumnMapping("SizeOfItem", "SizeOfItem"),
+																																																				  new System.Data.Common.DataColumnMapping("UM", "UM")})});
+			this.poItemAdapter.UpdateCommand = this.oleDbUpdateCommand1;
+			// 
+			// oleDbDeleteCommand1
+			// 
+			this.oleDbDeleteCommand1.CommandText = @"DELETE FROM tblPOItem2 WHERE (POItemNumber = ?) AND (AcknowledgeDate = ? OR ? IS NULL AND AcknowledgeDate IS NULL) AND (CancelDate = ? OR ? IS NULL AND CancelDate IS NULL) AND (CommAmount = ? OR ? IS NULL AND CommAmount IS NULL) AND (CommRate = ? OR ? IS NULL AND CommRate IS NULL) AND (CustAmount = ? OR ? IS NULL AND CustAmount IS NULL) AND (CustRate = ? OR ? IS NULL AND CustRate IS NULL) AND (DateRequired = ? OR ? IS NULL AND DateRequired IS NULL) AND (ItemAccessCode = ? OR ? IS NULL AND ItemAccessCode IS NULL) AND (ItemName = ? OR ? IS NULL AND ItemName IS NULL) AND (Length = ? OR ? IS NULL AND Length IS NULL) AND (MillConfirmNumber = ? OR ? IS NULL AND MillConfirmNumber IS NULL) AND (MillShipDate = ? OR ? IS NULL AND MillShipDate IS NULL) AND (POID = ? OR ? IS NULL AND POID IS NULL) AND (Qty = ? OR ? IS NULL AND Qty IS NULL) AND (SeqNumber = ? OR ? IS NULL AND SeqNumber IS NULL) AND (SizeOfItem = ? OR ? IS NULL AND SizeOfItem IS NULL) AND (UM = ? OR ? IS NULL AND UM IS NULL)";
+			this.oleDbDeleteCommand1.Connection = this.emConnection;
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_POItemNumber", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "POItemNumber", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_AcknowledgeDate", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "AcknowledgeDate", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_AcknowledgeDate1", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "AcknowledgeDate", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CancelDate", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CancelDate", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CancelDate1", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CancelDate", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CommAmount", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CommAmount", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CommAmount1", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CommAmount", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CommRate", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CommRate", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CommRate1", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CommRate", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CustAmount", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CustAmount", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CustAmount1", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CustAmount", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CustRate", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CustRate", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CustRate1", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CustRate", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_DateRequired", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "DateRequired", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_DateRequired1", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "DateRequired", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ItemAccessCode", System.Data.OleDb.OleDbType.VarWChar, 30, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ItemAccessCode", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ItemAccessCode1", System.Data.OleDb.OleDbType.VarWChar, 30, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ItemAccessCode", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ItemName", System.Data.OleDb.OleDbType.VarWChar, 30, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ItemName", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ItemName1", System.Data.OleDb.OleDbType.VarWChar, 30, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ItemName", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_Length", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "Length", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_Length1", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "Length", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_MillConfirmNumber", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "MillConfirmNumber", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_MillConfirmNumber1", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "MillConfirmNumber", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_MillShipDate", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "MillShipDate", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_MillShipDate1", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "MillShipDate", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_POID", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "POID", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_POID1", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "POID", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_Qty", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "Qty", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_Qty1", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "Qty", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_SeqNumber", System.Data.OleDb.OleDbType.SmallInt, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "SeqNumber", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_SeqNumber1", System.Data.OleDb.OleDbType.SmallInt, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "SeqNumber", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_SizeOfItem", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "SizeOfItem", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_SizeOfItem1", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "SizeOfItem", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_UM", System.Data.OleDb.OleDbType.VarWChar, 10, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "UM", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_UM1", System.Data.OleDb.OleDbType.VarWChar, 10, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "UM", System.Data.DataRowVersion.Original, null));
+			// 
+			// oleDbInsertCommand1
+			// 
+			this.oleDbInsertCommand1.CommandText = @"INSERT INTO tblPOItem2(AcknowledgeDate, CancelDate, CommAmount, Comments, CommRate, CustAmount, CustRate, DateRequired, ItemAccessCode, ItemDesc, ItemName, Length, MillConfirmNumber, MillShipDate, POID, POItemNumber, Qty, SeqNumber, SizeOfItem, UM) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			this.oleDbInsertCommand1.Connection = this.emConnection;
+			this.oleDbInsertCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("AcknowledgeDate", System.Data.OleDb.OleDbType.DBDate, 0, "AcknowledgeDate"));
+			this.oleDbInsertCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("CancelDate", System.Data.OleDb.OleDbType.DBDate, 0, "CancelDate"));
+			this.oleDbInsertCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("CommAmount", System.Data.OleDb.OleDbType.Currency, 0, "CommAmount"));
+			this.oleDbInsertCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Comments", System.Data.OleDb.OleDbType.VarWChar, 0, "Comments"));
+			this.oleDbInsertCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("CommRate", System.Data.OleDb.OleDbType.Currency, 0, "CommRate"));
+			this.oleDbInsertCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("CustAmount", System.Data.OleDb.OleDbType.Currency, 0, "CustAmount"));
+			this.oleDbInsertCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("CustRate", System.Data.OleDb.OleDbType.Currency, 0, "CustRate"));
+			this.oleDbInsertCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("DateRequired", System.Data.OleDb.OleDbType.DBDate, 0, "DateRequired"));
+			this.oleDbInsertCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("ItemAccessCode", System.Data.OleDb.OleDbType.VarWChar, 30, "ItemAccessCode"));
+			this.oleDbInsertCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("ItemDesc", System.Data.OleDb.OleDbType.VarWChar, 0, "ItemDesc"));
+			this.oleDbInsertCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("ItemName", System.Data.OleDb.OleDbType.VarWChar, 30, "ItemName"));
+			this.oleDbInsertCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Length", System.Data.OleDb.OleDbType.VarWChar, 20, "Length"));
+			this.oleDbInsertCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("MillConfirmNumber", System.Data.OleDb.OleDbType.VarWChar, 20, "MillConfirmNumber"));
+			this.oleDbInsertCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("MillShipDate", System.Data.OleDb.OleDbType.DBDate, 0, "MillShipDate"));
+			this.oleDbInsertCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("POID", System.Data.OleDb.OleDbType.Integer, 0, "POID"));
+			this.oleDbInsertCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("POItemNumber", System.Data.OleDb.OleDbType.Integer, 0, "POItemNumber"));
+			this.oleDbInsertCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Qty", System.Data.OleDb.OleDbType.Currency, 0, "Qty"));
+			this.oleDbInsertCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("SeqNumber", System.Data.OleDb.OleDbType.SmallInt, 0, "SeqNumber"));
+			this.oleDbInsertCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("SizeOfItem", System.Data.OleDb.OleDbType.VarWChar, 20, "SizeOfItem"));
+			this.oleDbInsertCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("UM", System.Data.OleDb.OleDbType.VarWChar, 10, "UM"));
+			// 
+			// oleDbSelectCommand1
+			// 
+			this.oleDbSelectCommand1.CommandText = @"SELECT AcknowledgeDate, CancelDate, CommAmount, Comments, CommRate, CustAmount, CustRate, DateRequired, ItemAccessCode, ItemDesc, ItemName, Length, MillConfirmNumber, MillShipDate, POID, POItemNumber, Qty, SeqNumber, SizeOfItem, UM FROM tblPOItem2 WHERE (POID = ?) ORDER BY SeqNumber";
+			this.oleDbSelectCommand1.Connection = this.emConnection;
+			this.oleDbSelectCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("POID", System.Data.OleDb.OleDbType.Integer, 0, "POID"));
+			// 
+			// oleDbUpdateCommand1
+			// 
+			this.oleDbUpdateCommand1.CommandText = @"UPDATE tblPOItem2 SET AcknowledgeDate = ?, CancelDate = ?, CommAmount = ?, Comments = ?, CommRate = ?, CustAmount = ?, CustRate = ?, DateRequired = ?, ItemAccessCode = ?, ItemDesc = ?, ItemName = ?, Length = ?, MillConfirmNumber = ?, MillShipDate = ?, POID = ?, POItemNumber = ?, Qty = ?, SeqNumber = ?, SizeOfItem = ?, UM = ? WHERE (POItemNumber = ?) AND (AcknowledgeDate = ? OR ? IS NULL AND AcknowledgeDate IS NULL) AND (CancelDate = ? OR ? IS NULL AND CancelDate IS NULL) AND (CommAmount = ? OR ? IS NULL AND CommAmount IS NULL) AND (CommRate = ? OR ? IS NULL AND CommRate IS NULL) AND (CustAmount = ? OR ? IS NULL AND CustAmount IS NULL) AND (CustRate = ? OR ? IS NULL AND CustRate IS NULL) AND (DateRequired = ? OR ? IS NULL AND DateRequired IS NULL) AND (ItemAccessCode = ? OR ? IS NULL AND ItemAccessCode IS NULL) AND (ItemName = ? OR ? IS NULL AND ItemName IS NULL) AND (Length = ? OR ? IS NULL AND Length IS NULL) AND (MillConfirmNumber = ? OR ? IS NULL AND MillConfirmNumber IS NULL) AND (MillShipDate = ? OR ? IS NULL AND MillShipDate IS NULL) AND (POID = ? OR ? IS NULL AND POID IS NULL) AND (Qty = ? OR ? IS NULL AND Qty IS NULL) AND (SeqNumber = ? OR ? IS NULL AND SeqNumber IS NULL) AND (SizeOfItem = ? OR ? IS NULL AND SizeOfItem IS NULL) AND (UM = ? OR ? IS NULL AND UM IS NULL)";
+			this.oleDbUpdateCommand1.Connection = this.emConnection;
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("AcknowledgeDate", System.Data.OleDb.OleDbType.DBDate, 0, "AcknowledgeDate"));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("CancelDate", System.Data.OleDb.OleDbType.DBDate, 0, "CancelDate"));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("CommAmount", System.Data.OleDb.OleDbType.Currency, 0, "CommAmount"));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Comments", System.Data.OleDb.OleDbType.VarWChar, 0, "Comments"));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("CommRate", System.Data.OleDb.OleDbType.Currency, 0, "CommRate"));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("CustAmount", System.Data.OleDb.OleDbType.Currency, 0, "CustAmount"));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("CustRate", System.Data.OleDb.OleDbType.Currency, 0, "CustRate"));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("DateRequired", System.Data.OleDb.OleDbType.DBDate, 0, "DateRequired"));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("ItemAccessCode", System.Data.OleDb.OleDbType.VarWChar, 30, "ItemAccessCode"));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("ItemDesc", System.Data.OleDb.OleDbType.VarWChar, 0, "ItemDesc"));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("ItemName", System.Data.OleDb.OleDbType.VarWChar, 30, "ItemName"));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Length", System.Data.OleDb.OleDbType.VarWChar, 20, "Length"));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("MillConfirmNumber", System.Data.OleDb.OleDbType.VarWChar, 20, "MillConfirmNumber"));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("MillShipDate", System.Data.OleDb.OleDbType.DBDate, 0, "MillShipDate"));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("POID", System.Data.OleDb.OleDbType.Integer, 0, "POID"));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("POItemNumber", System.Data.OleDb.OleDbType.Integer, 0, "POItemNumber"));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Qty", System.Data.OleDb.OleDbType.Currency, 0, "Qty"));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("SeqNumber", System.Data.OleDb.OleDbType.SmallInt, 0, "SeqNumber"));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("SizeOfItem", System.Data.OleDb.OleDbType.VarWChar, 20, "SizeOfItem"));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("UM", System.Data.OleDb.OleDbType.VarWChar, 10, "UM"));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_POItemNumber", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "POItemNumber", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_AcknowledgeDate", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "AcknowledgeDate", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_AcknowledgeDate1", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "AcknowledgeDate", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CancelDate", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CancelDate", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CancelDate1", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CancelDate", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CommAmount", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CommAmount", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CommAmount1", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CommAmount", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CommRate", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CommRate", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CommRate1", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CommRate", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CustAmount", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CustAmount", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CustAmount1", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CustAmount", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CustRate", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CustRate", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_CustRate1", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "CustRate", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_DateRequired", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "DateRequired", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_DateRequired1", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "DateRequired", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ItemAccessCode", System.Data.OleDb.OleDbType.VarWChar, 30, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ItemAccessCode", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ItemAccessCode1", System.Data.OleDb.OleDbType.VarWChar, 30, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ItemAccessCode", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ItemName", System.Data.OleDb.OleDbType.VarWChar, 30, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ItemName", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_ItemName1", System.Data.OleDb.OleDbType.VarWChar, 30, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "ItemName", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_Length", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "Length", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_Length1", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "Length", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_MillConfirmNumber", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "MillConfirmNumber", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_MillConfirmNumber1", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "MillConfirmNumber", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_MillShipDate", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "MillShipDate", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_MillShipDate1", System.Data.OleDb.OleDbType.DBDate, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "MillShipDate", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_POID", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "POID", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_POID1", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "POID", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_Qty", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "Qty", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_Qty1", System.Data.OleDb.OleDbType.Currency, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "Qty", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_SeqNumber", System.Data.OleDb.OleDbType.SmallInt, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "SeqNumber", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_SeqNumber1", System.Data.OleDb.OleDbType.SmallInt, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "SeqNumber", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_SizeOfItem", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "SizeOfItem", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_SizeOfItem1", System.Data.OleDb.OleDbType.VarWChar, 20, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "SizeOfItem", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_UM", System.Data.OleDb.OleDbType.VarWChar, 10, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "UM", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand1.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_UM1", System.Data.OleDb.OleDbType.VarWChar, 10, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "UM", System.Data.DataRowVersion.Original, null));
+			// 
+			// tabControl1
+			// 
+			this.tabControl1.Controls.Add(this.tabPage1);
+			this.tabControl1.Controls.Add(this.tabPage2);
+			this.tabControl1.Controls.Add(this.tabPage3);
+			this.tabControl1.Location = new System.Drawing.Point(8, 64);
+			this.tabControl1.Name = "tabControl1";
+			this.tabControl1.SelectedIndex = 0;
+			this.tabControl1.Size = new System.Drawing.Size(952, 240);
+			this.tabControl1.TabIndex = 6;
+			// 
+			// tabPage1
+			// 
+			this.tabPage1.Controls.Add(this.groupBox4);
+			this.tabPage1.Controls.Add(this.groupBox3);
+			this.tabPage1.Controls.Add(this.label9);
+			this.tabPage1.Controls.Add(this.umCombo);
+			this.tabPage1.Controls.Add(this.m_dateBtn);
+			this.tabPage1.Controls.Add(this.m_dateEdt);
+			this.tabPage1.Controls.Add(this.label3);
+			this.tabPage1.Controls.Add(this.label2);
+			this.tabPage1.Controls.Add(this.m_cancelDateBtn);
+			this.tabPage1.Controls.Add(this.m_cancelDateEdt);
+			this.tabPage1.Controls.Add(this.label8);
+			this.tabPage1.Controls.Add(this.m_exchangeRateEdt);
+			this.tabPage1.Controls.Add(this.label7);
+			this.tabPage1.Controls.Add(this.m_termsCombo);
+			this.tabPage1.Controls.Add(this.label6);
+			this.tabPage1.Controls.Add(this.m_fobEdt);
+			this.tabPage1.Controls.Add(this.label5);
+			this.tabPage1.Controls.Add(this.label4);
+			this.tabPage1.Controls.Add(this.m_shipCodeCombo);
+			this.tabPage1.Controls.Add(this.m_statusCombo);
+			this.tabPage1.Location = new System.Drawing.Point(4, 22);
+			this.tabPage1.Name = "tabPage1";
+			this.tabPage1.Size = new System.Drawing.Size(944, 214);
+			this.tabPage1.TabIndex = 0;
+			this.tabPage1.Text = "General";
+			// 
+			// groupBox4
+			// 
+			this.groupBox4.Controls.Add(this.addNewCustomerLocationBtn);
+			this.groupBox4.Controls.Add(this.label11);
+			this.groupBox4.Controls.Add(this.label15);
+			this.groupBox4.Controls.Add(this.shipToLocationCombo);
+			this.groupBox4.Controls.Add(this.customerCombo);
+			this.groupBox4.Controls.Add(this.custCountryEdt);
+			this.groupBox4.Controls.Add(this.custAddressEdt);
+			this.groupBox4.Controls.Add(this.addNewCustomerBtn);
+			this.groupBox4.Location = new System.Drawing.Point(608, 8);
+			this.groupBox4.Name = "groupBox4";
+			this.groupBox4.Size = new System.Drawing.Size(328, 200);
+			this.groupBox4.TabIndex = 19;
+			this.groupBox4.TabStop = false;
+			this.groupBox4.Text = "Customer";
+			// 
+			// addNewCustomerLocationBtn
+			// 
+			this.addNewCustomerLocationBtn.Location = new System.Drawing.Point(304, 40);
+			this.addNewCustomerLocationBtn.Name = "addNewCustomerLocationBtn";
+			this.addNewCustomerLocationBtn.Size = new System.Drawing.Size(16, 23);
+			this.addNewCustomerLocationBtn.TabIndex = 5;
+			this.addNewCustomerLocationBtn.Text = "+";
+			this.addNewCustomerLocationBtn.Click += new System.EventHandler(this.addNewLocationBtn_Click);
+			// 
+			// label11
+			// 
+			this.label11.Location = new System.Drawing.Point(8, 40);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(56, 23);
+			this.label11.TabIndex = 3;
+			this.label11.Text = "Location:";
+			// 
+			// label15
+			// 
+			this.label15.Location = new System.Drawing.Point(8, 16);
+			this.label15.Name = "label15";
+			this.label15.Size = new System.Drawing.Size(56, 23);
+			this.label15.TabIndex = 0;
+			this.label15.Text = "Customer:";
+			// 
+			// shipToLocationCombo
+			// 
+			this.shipToLocationCombo.Location = new System.Drawing.Point(72, 40);
+			this.shipToLocationCombo.Name = "shipToLocationCombo";
+			this.shipToLocationCombo.Size = new System.Drawing.Size(224, 21);
+			this.shipToLocationCombo.TabIndex = 4;
+			this.shipToLocationCombo.SelectedIndexChanged += new System.EventHandler(this.OnShipToLocationChanged);
+			// 
+			// customerCombo
+			// 
+			this.customerCombo.Location = new System.Drawing.Point(72, 16);
+			this.customerCombo.Name = "customerCombo";
+			this.customerCombo.Size = new System.Drawing.Size(224, 21);
+			this.customerCombo.TabIndex = 1;
+			this.customerCombo.SelectedIndexChanged += new System.EventHandler(this.OnCompanyChanged);
+			// 
+			// custCountryEdt
+			// 
+			this.custCountryEdt.Location = new System.Drawing.Point(16, 168);
+			this.custCountryEdt.Name = "custCountryEdt";
+			this.custCountryEdt.Size = new System.Drawing.Size(280, 20);
+			this.custCountryEdt.TabIndex = 7;
+			this.custCountryEdt.Text = "shipToCountryEdt";
+			// 
+			// custAddressEdt
+			// 
+			this.custAddressEdt.Location = new System.Drawing.Point(16, 64);
+			this.custAddressEdt.Multiline = true;
+			this.custAddressEdt.Name = "custAddressEdt";
+			this.custAddressEdt.Size = new System.Drawing.Size(280, 96);
+			this.custAddressEdt.TabIndex = 6;
+			this.custAddressEdt.Text = "textBox1";
+			// 
+			// addNewCustomerBtn
+			// 
+			this.addNewCustomerBtn.Location = new System.Drawing.Point(304, 16);
+			this.addNewCustomerBtn.Name = "addNewCustomerBtn";
+			this.addNewCustomerBtn.Size = new System.Drawing.Size(16, 23);
+			this.addNewCustomerBtn.TabIndex = 2;
+			this.addNewCustomerBtn.Text = "+";
+			this.addNewCustomerBtn.Click += new System.EventHandler(this.addNewCompanyBtn_Click);
+			// 
+			// groupBox3
+			// 
+			this.groupBox3.Controls.Add(this.addNewMillLocationBtn);
+			this.groupBox3.Controls.Add(this.addNewMillBtn);
+			this.groupBox3.Controls.Add(this.label14);
+			this.groupBox3.Controls.Add(this.millCombo);
+			this.groupBox3.Controls.Add(this.label10);
+			this.groupBox3.Controls.Add(this.vendLocationCombo);
+			this.groupBox3.Controls.Add(this.vendCountryEdt);
+			this.groupBox3.Controls.Add(this.vendAddressEdt);
+			this.groupBox3.Location = new System.Drawing.Point(304, 8);
+			this.groupBox3.Name = "groupBox3";
+			this.groupBox3.Size = new System.Drawing.Size(296, 200);
+			this.groupBox3.TabIndex = 18;
+			this.groupBox3.TabStop = false;
+			this.groupBox3.Text = "Mill";
+			// 
+			// addNewMillLocationBtn
+			// 
+			this.addNewMillLocationBtn.Location = new System.Drawing.Point(272, 40);
+			this.addNewMillLocationBtn.Name = "addNewMillLocationBtn";
+			this.addNewMillLocationBtn.Size = new System.Drawing.Size(16, 23);
+			this.addNewMillLocationBtn.TabIndex = 5;
+			this.addNewMillLocationBtn.Text = "+";
+			this.addNewMillLocationBtn.Click += new System.EventHandler(this.addNewLocationBtn_Click);
+			// 
+			// addNewMillBtn
+			// 
+			this.addNewMillBtn.Location = new System.Drawing.Point(272, 16);
+			this.addNewMillBtn.Name = "addNewMillBtn";
+			this.addNewMillBtn.Size = new System.Drawing.Size(16, 23);
+			this.addNewMillBtn.TabIndex = 2;
+			this.addNewMillBtn.Text = "+";
+			this.addNewMillBtn.Click += new System.EventHandler(this.addNewCompanyBtn_Click);
+			// 
+			// label14
+			// 
+			this.label14.Location = new System.Drawing.Point(8, 16);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(24, 16);
+			this.label14.TabIndex = 0;
+			this.label14.Text = "Mill:";
+			// 
+			// millCombo
+			// 
+			this.millCombo.Location = new System.Drawing.Point(64, 16);
+			this.millCombo.Name = "millCombo";
+			this.millCombo.Size = new System.Drawing.Size(200, 21);
+			this.millCombo.TabIndex = 1;
+			this.millCombo.SelectedIndexChanged += new System.EventHandler(this.OnCompanyChanged);
+			// 
+			// label10
+			// 
+			this.label10.Location = new System.Drawing.Point(8, 40);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(56, 16);
+			this.label10.TabIndex = 3;
+			this.label10.Text = "Location:";
+			// 
+			// vendLocationCombo
+			// 
+			this.vendLocationCombo.Location = new System.Drawing.Point(64, 40);
+			this.vendLocationCombo.Name = "vendLocationCombo";
+			this.vendLocationCombo.Size = new System.Drawing.Size(200, 21);
+			this.vendLocationCombo.TabIndex = 4;
+			this.vendLocationCombo.SelectedIndexChanged += new System.EventHandler(this.OnMillLocationChanged);
+			// 
+			// vendCountryEdt
+			// 
+			this.vendCountryEdt.Location = new System.Drawing.Point(16, 168);
+			this.vendCountryEdt.Name = "vendCountryEdt";
+			this.vendCountryEdt.Size = new System.Drawing.Size(256, 20);
+			this.vendCountryEdt.TabIndex = 7;
+			this.vendCountryEdt.Text = "vendCountryEdt";
+			// 
+			// vendAddressEdt
+			// 
+			this.vendAddressEdt.Location = new System.Drawing.Point(16, 64);
+			this.vendAddressEdt.Multiline = true;
+			this.vendAddressEdt.Name = "vendAddressEdt";
+			this.vendAddressEdt.Size = new System.Drawing.Size(256, 96);
+			this.vendAddressEdt.TabIndex = 6;
+			this.vendAddressEdt.Text = "textBox1";
+			// 
+			// label9
+			// 
+			this.label9.Location = new System.Drawing.Point(8, 176);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(88, 23);
+			this.label9.TabIndex = 16;
+			this.label9.Text = "Unit of Measure:";
+			// 
+			// umCombo
+			// 
+			this.umCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.umCombo.Items.AddRange(new object[] {
+														 "lbs",
+														 "kg"});
+			this.umCombo.Location = new System.Drawing.Point(136, 176);
+			this.umCombo.Name = "umCombo";
+			this.umCombo.Size = new System.Drawing.Size(121, 21);
+			this.umCombo.TabIndex = 17;
+			this.umCombo.SelectedIndexChanged += new System.EventHandler(this.umSelectedChanged);
+			// 
+			// tabPage2
+			// 
+			this.tabPage2.Controls.Add(this.groupBox1);
+			this.tabPage2.Controls.Add(this.groupBox2);
+			this.tabPage2.Location = new System.Drawing.Point(4, 22);
+			this.tabPage2.Name = "tabPage2";
+			this.tabPage2.Size = new System.Drawing.Size(944, 214);
+			this.tabPage2.TabIndex = 1;
+			this.tabPage2.Text = "Contacts";
+			// 
+			// tabPage3
+			// 
+			this.tabPage3.Controls.Add(this.m_commentEdt);
+			this.tabPage3.Location = new System.Drawing.Point(4, 22);
+			this.tabPage3.Name = "tabPage3";
+			this.tabPage3.Size = new System.Drawing.Size(944, 214);
+			this.tabPage3.TabIndex = 2;
+			this.tabPage3.Text = "Comments";
+			// 
+			// fileAdapter
+			// 
+			this.fileAdapter.DeleteCommand = this.oleDbDeleteCommand7;
+			this.fileAdapter.InsertCommand = this.oleDbInsertCommand7;
+			this.fileAdapter.SelectCommand = this.oleDbSelectCommand7;
+			this.fileAdapter.TableMappings.AddRange(new System.Data.Common.DataTableMapping[] {
+																								  new System.Data.Common.DataTableMapping("Table", "tblFile", new System.Data.Common.DataColumnMapping[] {
+																																																			 new System.Data.Common.DataColumnMapping("FileID", "FileID"),
+																																																			 new System.Data.Common.DataColumnMapping("FileName", "FileName")})});
+			this.fileAdapter.UpdateCommand = this.oleDbUpdateCommand7;
+			// 
+			// oleDbDeleteCommand7
+			// 
+			this.oleDbDeleteCommand7.CommandText = "DELETE FROM tblFile WHERE (FileID = ?) AND (FileName = ? OR ? IS NULL AND FileNam" +
+				"e IS NULL)";
+			this.oleDbDeleteCommand7.Connection = this.emConnection;
+			this.oleDbDeleteCommand7.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_FileID", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "FileID", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand7.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_FileName", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "FileName", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand7.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_FileName1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "FileName", System.Data.DataRowVersion.Original, null));
+			// 
+			// oleDbInsertCommand7
+			// 
+			this.oleDbInsertCommand7.CommandText = "INSERT INTO tblFile(FileID, FileName) VALUES (?, ?)";
+			this.oleDbInsertCommand7.Connection = this.emConnection;
+			this.oleDbInsertCommand7.Parameters.Add(new System.Data.OleDb.OleDbParameter("FileID", System.Data.OleDb.OleDbType.Integer, 0, "FileID"));
+			this.oleDbInsertCommand7.Parameters.Add(new System.Data.OleDb.OleDbParameter("FileName", System.Data.OleDb.OleDbType.VarWChar, 50, "FileName"));
+			// 
+			// oleDbSelectCommand7
+			// 
+			this.oleDbSelectCommand7.CommandText = "SELECT FileID, FileName FROM tblFile";
+			this.oleDbSelectCommand7.Connection = this.emConnection;
+			// 
+			// oleDbUpdateCommand7
+			// 
+			this.oleDbUpdateCommand7.CommandText = "UPDATE tblFile SET FileID = ?, FileName = ? WHERE (FileID = ?) AND (FileName = ? " +
+				"OR ? IS NULL AND FileName IS NULL)";
+			this.oleDbUpdateCommand7.Connection = this.emConnection;
+			this.oleDbUpdateCommand7.Parameters.Add(new System.Data.OleDb.OleDbParameter("FileID", System.Data.OleDb.OleDbType.Integer, 0, "FileID"));
+			this.oleDbUpdateCommand7.Parameters.Add(new System.Data.OleDb.OleDbParameter("FileName", System.Data.OleDb.OleDbType.VarWChar, 50, "FileName"));
+			this.oleDbUpdateCommand7.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_FileID", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "FileID", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand7.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_FileName", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "FileName", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand7.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_FileName1", System.Data.OleDb.OleDbType.VarWChar, 50, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "FileName", System.Data.DataRowVersion.Original, null));
+			// 
+			// poFileAdapter
+			// 
+			this.poFileAdapter.DeleteCommand = this.oleDbDeleteCommand8;
+			this.poFileAdapter.InsertCommand = this.oleDbInsertCommand8;
+			this.poFileAdapter.SelectCommand = this.oleDbSelectCommand8;
+			this.poFileAdapter.TableMappings.AddRange(new System.Data.Common.DataTableMapping[] {
+																									new System.Data.Common.DataTableMapping("Table", "tblPOFile", new System.Data.Common.DataColumnMapping[] {
+																																																				 new System.Data.Common.DataColumnMapping("FileID", "FileID"),
+																																																				 new System.Data.Common.DataColumnMapping("POID", "POID")})});
+			this.poFileAdapter.UpdateCommand = this.oleDbUpdateCommand8;
+			// 
+			// oleDbDeleteCommand8
+			// 
+			this.oleDbDeleteCommand8.CommandText = "DELETE FROM tblPOFile WHERE (FileID = ?) AND (POID = ?)";
+			this.oleDbDeleteCommand8.Connection = this.emConnection;
+			this.oleDbDeleteCommand8.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_FileID", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "FileID", System.Data.DataRowVersion.Original, null));
+			this.oleDbDeleteCommand8.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_POID", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "POID", System.Data.DataRowVersion.Original, null));
+			// 
+			// oleDbInsertCommand8
+			// 
+			this.oleDbInsertCommand8.CommandText = "INSERT INTO tblPOFile(FileID, POID) VALUES (?, ?)";
+			this.oleDbInsertCommand8.Connection = this.emConnection;
+			this.oleDbInsertCommand8.Parameters.Add(new System.Data.OleDb.OleDbParameter("FileID", System.Data.OleDb.OleDbType.Integer, 0, "FileID"));
+			this.oleDbInsertCommand8.Parameters.Add(new System.Data.OleDb.OleDbParameter("POID", System.Data.OleDb.OleDbType.Integer, 0, "POID"));
+			// 
+			// oleDbSelectCommand8
+			// 
+			this.oleDbSelectCommand8.CommandText = "SELECT FileID, POID FROM tblPOFile";
+			this.oleDbSelectCommand8.Connection = this.emConnection;
+			// 
+			// oleDbUpdateCommand8
+			// 
+			this.oleDbUpdateCommand8.CommandText = "UPDATE tblPOFile SET FileID = ?, POID = ? WHERE (FileID = ?) AND (POID = ?)";
+			this.oleDbUpdateCommand8.Connection = this.emConnection;
+			this.oleDbUpdateCommand8.Parameters.Add(new System.Data.OleDb.OleDbParameter("FileID", System.Data.OleDb.OleDbType.Integer, 0, "FileID"));
+			this.oleDbUpdateCommand8.Parameters.Add(new System.Data.OleDb.OleDbParameter("POID", System.Data.OleDb.OleDbType.Integer, 0, "POID"));
+			this.oleDbUpdateCommand8.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_FileID", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "FileID", System.Data.DataRowVersion.Original, null));
+			this.oleDbUpdateCommand8.Parameters.Add(new System.Data.OleDb.OleDbParameter("Original_POID", System.Data.OleDb.OleDbType.Integer, 0, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "POID", System.Data.DataRowVersion.Original, null));
+			// 
+			// label12
+			// 
+			this.label12.Location = new System.Drawing.Point(496, 552);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(40, 16);
+			this.label12.TabIndex = 11;
+			this.label12.Text = "Total:";
+			// 
+			// m_totalCostEdit
+			// 
+			this.m_totalCostEdit.Location = new System.Drawing.Point(536, 552);
+			this.m_totalCostEdit.Name = "m_totalCostEdit";
+			this.m_totalCostEdit.ReadOnly = true;
+			this.m_totalCostEdit.Size = new System.Drawing.Size(64, 20);
+			this.m_totalCostEdit.TabIndex = 12;
+			this.m_totalCostEdit.Text = "textBox1";
+			// 
+			// m_totalCostUSEdit
+			// 
+			this.m_totalCostUSEdit.Location = new System.Drawing.Point(680, 552);
+			this.m_totalCostUSEdit.Name = "m_totalCostUSEdit";
+			this.m_totalCostUSEdit.ReadOnly = true;
+			this.m_totalCostUSEdit.Size = new System.Drawing.Size(64, 20);
+			this.m_totalCostUSEdit.TabIndex = 0;
+			this.m_totalCostUSEdit.Text = "textBox2";
+			// 
+			// label13
+			// 
+			this.label13.Location = new System.Drawing.Point(616, 552);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(56, 16);
+			this.label13.TabIndex = 13;
+			this.label13.Text = "US Total:";
+			// 
+			// dataGridTextBoxColumn1
+			// 
+			this.dataGridTextBoxColumn1.Format = "";
+			this.dataGridTextBoxColumn1.FormatInfo = null;
+			this.dataGridTextBoxColumn1.HeaderText = "SeqNumber";
+			this.dataGridTextBoxColumn1.MappingName = "SeqNumber";
+			this.dataGridTextBoxColumn1.Width = 75;
+			// 
+			// dataGridTextBoxColumn2
+			// 
+			this.dataGridTextBoxColumn2.Format = "";
+			this.dataGridTextBoxColumn2.FormatInfo = null;
+			this.dataGridTextBoxColumn2.HeaderText = "Name";
+			this.dataGridTextBoxColumn2.MappingName = "ItemName";
+			this.dataGridTextBoxColumn2.Width = 75;
+			// 
+			// dataGridTextBoxColumn8
+			// 
+			this.dataGridTextBoxColumn8.Format = "";
+			this.dataGridTextBoxColumn8.FormatInfo = null;
+			this.dataGridTextBoxColumn8.HeaderText = "Description";
+			this.dataGridTextBoxColumn8.MappingName = "ItemDesc";
+			this.dataGridTextBoxColumn8.Width = 75;
+			// 
+			// dataGridTextBoxColumn3
+			// 
+			this.dataGridTextBoxColumn3.Format = "";
+			this.dataGridTextBoxColumn3.FormatInfo = null;
+			this.dataGridTextBoxColumn3.HeaderText = "Length";
+			this.dataGridTextBoxColumn3.MappingName = "Length";
+			this.dataGridTextBoxColumn3.Width = 75;
+			// 
+			// dataGridTextBoxColumn4
+			// 
+			this.dataGridTextBoxColumn4.Format = "";
+			this.dataGridTextBoxColumn4.FormatInfo = null;
+			this.dataGridTextBoxColumn4.HeaderText = "Size";
+			this.dataGridTextBoxColumn4.MappingName = "SizeOfItem";
+			this.dataGridTextBoxColumn4.Width = 75;
+			// 
+			// dataGridTextBoxColumn5
+			// 
+			this.dataGridTextBoxColumn5.Format = "";
+			this.dataGridTextBoxColumn5.FormatInfo = null;
+			this.dataGridTextBoxColumn5.HeaderText = "IAC";
+			this.dataGridTextBoxColumn5.MappingName = "ItemAccessCode";
+			this.dataGridTextBoxColumn5.Width = 75;
+			// 
+			// dataGridTextBoxColumn6
+			// 
+			this.dataGridTextBoxColumn6.Format = "";
+			this.dataGridTextBoxColumn6.FormatInfo = null;
+			this.dataGridTextBoxColumn6.HeaderText = "UM";
+			this.dataGridTextBoxColumn6.MappingName = "UM";
+			this.dataGridTextBoxColumn6.Width = 75;
+			// 
+			// dataGridTextBoxColumn7
+			// 
+			this.dataGridTextBoxColumn7.Format = "";
+			this.dataGridTextBoxColumn7.FormatInfo = null;
+			this.dataGridTextBoxColumn7.HeaderText = "DateRequired";
+			this.dataGridTextBoxColumn7.MappingName = "DateRequired";
+			this.dataGridTextBoxColumn7.Width = 75;
+			// 
+			// locationAdapter
+			// 
+			this.locationAdapter.SelectCommand = this.oleDbSelectCommand5;
+			this.locationAdapter.TableMappings.AddRange(new System.Data.Common.DataTableMapping[] {
+																									  new System.Data.Common.DataTableMapping("Table", "tblLocation2", new System.Data.Common.DataColumnMapping[] {
+																																																					  new System.Data.Common.DataColumnMapping("Address", "Address"),
+																																																					  new System.Data.Common.DataColumnMapping("CompID", "CompID"),
+																																																					  new System.Data.Common.DataColumnMapping("CountryID", "CountryID"),
+																																																					  new System.Data.Common.DataColumnMapping("LocID", "LocID"),
+																																																					  new System.Data.Common.DataColumnMapping("LocName", "LocName")})});
+			// 
+			// oleDbSelectCommand5
+			// 
+			this.oleDbSelectCommand5.CommandText = "SELECT Address, CompID, CountryID, LocID, LocName FROM tblLocation2 WHERE (CompID" +
+				" = ?)";
+			this.oleDbSelectCommand5.Connection = this.emConnection;
+			this.oleDbSelectCommand5.Parameters.Add(new System.Data.OleDb.OleDbParameter("CompID", System.Data.OleDb.OleDbType.Integer, 0, "CompID"));
+			// 
+			// countryAdapter
+			// 
+			this.countryAdapter.SelectCommand = this.oleDbSelectCommand9;
+			this.countryAdapter.TableMappings.AddRange(new System.Data.Common.DataTableMapping[] {
+																									 new System.Data.Common.DataTableMapping("Table", "tblCountry", new System.Data.Common.DataColumnMapping[] {
+																																																				   new System.Data.Common.DataColumnMapping("CountryID", "CountryID"),
+																																																				   new System.Data.Common.DataColumnMapping("CountryName", "CountryName")})});
+			// 
+			// oleDbSelectCommand9
+			// 
+			this.oleDbSelectCommand9.CommandText = "SELECT CountryID, CountryName FROM tblCountry";
+			this.oleDbSelectCommand9.Connection = this.emConnection;
+			// 
+			// contactsAdapter
+			// 
+			this.contactsAdapter.SelectCommand = this.oleDbSelectCommand11;
+			this.contactsAdapter.TableMappings.AddRange(new System.Data.Common.DataTableMapping[] {
+																									  new System.Data.Common.DataTableMapping("Table", "tblContacts", new System.Data.Common.DataColumnMapping[] {
+																																																					 new System.Data.Common.DataColumnMapping("CompID", "CompID"),
+																																																					 new System.Data.Common.DataColumnMapping("ContactID", "ContactID"),
+																																																					 new System.Data.Common.DataColumnMapping("EMail", "EMail"),
+																																																					 new System.Data.Common.DataColumnMapping("Fax", "Fax"),
+																																																					 new System.Data.Common.DataColumnMapping("FirstName", "FirstName"),
+																																																					 new System.Data.Common.DataColumnMapping("LastName", "LastName"),
+																																																					 new System.Data.Common.DataColumnMapping("Phone", "Phone")})});
+			// 
+			// oleDbSelectCommand11
+			// 
+			this.oleDbSelectCommand11.CommandText = "SELECT CompID, ContactID, EMail, Fax, FirstName, LastName, Phone FROM tblContacts" +
+				" WHERE (CompID = ?) ORDER BY LastName, FirstName";
+			this.oleDbSelectCommand11.Connection = this.emConnection;
+			this.oleDbSelectCommand11.Parameters.Add(new System.Data.OleDb.OleDbParameter("CompID", System.Data.OleDb.OleDbType.Integer, 0, "CompID"));
+			// 
+			// removeItemBtn
+			// 
+			this.removeItemBtn.Location = new System.Drawing.Point(232, 544);
+			this.removeItemBtn.Name = "removeItemBtn";
+			this.removeItemBtn.Size = new System.Drawing.Size(80, 24);
+			this.removeItemBtn.TabIndex = 10;
+			this.removeItemBtn.Text = "Remove Item";
+			this.removeItemBtn.Click += new System.EventHandler(this.removeItemBtn_Click);
+			// 
+			// moveUpBtn
+			// 
+			this.moveUpBtn.Location = new System.Drawing.Point(8, 544);
+			this.moveUpBtn.Name = "moveUpBtn";
+			this.moveUpBtn.Size = new System.Drawing.Size(88, 23);
+			this.moveUpBtn.TabIndex = 8;
+			this.moveUpBtn.Text = "Move Item Up";
+			this.moveUpBtn.Click += new System.EventHandler(this.moveUpBtn_Click);
+			// 
+			// moveDownBtn
+			// 
+			this.moveDownBtn.Location = new System.Drawing.Point(112, 544);
+			this.moveDownBtn.Name = "moveDownBtn";
+			this.moveDownBtn.Size = new System.Drawing.Size(104, 23);
+			this.moveDownBtn.TabIndex = 9;
+			this.moveDownBtn.Text = "Move Item Down";
+			this.moveDownBtn.Click += new System.EventHandler(this.moveDownBtn_Click);
+			// 
+			// purchaseOrderPage
+			// 
+			this.purchaseOrderPage.Location = new System.Drawing.Point(4, 22);
+			this.purchaseOrderPage.Name = "purchaseOrderPage";
+			this.purchaseOrderPage.Size = new System.Drawing.Size(1012, 190);
+			this.purchaseOrderPage.TabIndex = 0;
+			this.purchaseOrderPage.Text = "Purchase Order";
+			// 
+			// acknowledgementPage
+			// 
+			this.acknowledgementPage.Location = new System.Drawing.Point(4, 22);
+			this.acknowledgementPage.Name = "acknowledgementPage";
+			this.acknowledgementPage.Size = new System.Drawing.Size(1012, 190);
+			this.acknowledgementPage.TabIndex = 1;
+			this.acknowledgementPage.Text = "Acknowledgement";
+			// 
+			// m_tabControl
+			// 
+			this.m_tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+				| System.Windows.Forms.AnchorStyles.Right)));
+			this.m_tabControl.Controls.Add(this.purchaseOrderPage);
+			this.m_tabControl.Controls.Add(this.acknowledgementPage);
+			this.m_tabControl.ItemSize = new System.Drawing.Size(86, 18);
+			this.m_tabControl.Location = new System.Drawing.Point(0, 320);
+			this.m_tabControl.Name = "m_tabControl";
+			this.m_tabControl.SelectedIndex = 0;
+			this.m_tabControl.Size = new System.Drawing.Size(1020, 216);
+			this.m_tabControl.TabIndex = 7;
+			this.m_tabControl.TabIndexChanged += new System.EventHandler(this.umSelectedChanged);
+			this.m_tabControl.SelectedIndexChanged += new System.EventHandler(this.OnGridTabChanged);
+			// 
+			// printPOBtn
+			// 
+			this.printPOBtn.Location = new System.Drawing.Point(8, 16);
+			this.printPOBtn.Name = "printPOBtn";
+			this.printPOBtn.Size = new System.Drawing.Size(48, 23);
+			this.printPOBtn.TabIndex = 0;
+			this.printPOBtn.Text = "PO";
+			this.printPOBtn.Click += new System.EventHandler(this.printPOBtn_Click);
+			// 
+			// printAckBtn
+			// 
+			this.printAckBtn.Location = new System.Drawing.Point(64, 16);
+			this.printAckBtn.Name = "printAckBtn";
+			this.printAckBtn.Size = new System.Drawing.Size(136, 23);
+			this.printAckBtn.TabIndex = 1;
+			this.printAckBtn.Text = "Acknowledgement";
+			this.printAckBtn.Click += new System.EventHandler(this.printAckBtn_Click);
+			// 
+			// companyTypeAdapter
+			// 
+			this.companyTypeAdapter.SelectCommand = this.oleDbSelectCommand12;
+			this.companyTypeAdapter.TableMappings.AddRange(new System.Data.Common.DataTableMapping[] {
+																										 new System.Data.Common.DataTableMapping("Table", "tblCompany", new System.Data.Common.DataColumnMapping[] {
+																																																					   new System.Data.Common.DataColumnMapping("CompID", "CompID"),
+																																																					   new System.Data.Common.DataColumnMapping("CompName", "CompName"),
+																																																					   new System.Data.Common.DataColumnMapping("CompType", "CompType")})});
+			// 
+			// oleDbSelectCommand12
+			// 
+			this.oleDbSelectCommand12.CommandText = "SELECT CompID, CompName, CompType FROM tblCompany WHERE (CompType = ?) ORDER BY C" +
+				"ompName";
+			this.oleDbSelectCommand12.Connection = this.emConnection;
+			this.oleDbSelectCommand12.Parameters.Add(new System.Data.OleDb.OleDbParameter("CompType", System.Data.OleDb.OleDbType.VarWChar, 15, "CompType"));
+			// 
+			// m_purchaseEdt
+			// 
+			this.m_purchaseEdt.Location = new System.Drawing.Point(72, 16);
+			this.m_purchaseEdt.Name = "m_purchaseEdt";
+			this.m_purchaseEdt.Size = new System.Drawing.Size(216, 20);
+			this.m_purchaseEdt.TabIndex = 1;
+			this.m_purchaseEdt.Text = "textBox1";
+			// 
+			// groupBox5
+			// 
+			this.groupBox5.Controls.Add(this.printPOBtn);
+			this.groupBox5.Controls.Add(this.printAckBtn);
+			this.groupBox5.Location = new System.Drawing.Point(344, 8);
+			this.groupBox5.Name = "groupBox5";
+			this.groupBox5.Size = new System.Drawing.Size(216, 48);
+			this.groupBox5.TabIndex = 3;
+			this.groupBox5.TabStop = false;
+			this.groupBox5.Text = "Print";
+			// 
+			// groupBox6
+			// 
+			this.groupBox6.Controls.Add(this.previewAckBtn);
+			this.groupBox6.Controls.Add(this.previewPOBtn);
+			this.groupBox6.Location = new System.Drawing.Point(576, 8);
+			this.groupBox6.Name = "groupBox6";
+			this.groupBox6.Size = new System.Drawing.Size(224, 48);
+			this.groupBox6.TabIndex = 4;
+			this.groupBox6.TabStop = false;
+			this.groupBox6.Text = "Preview";
+			// 
+			// previewAckBtn
+			// 
+			this.previewAckBtn.Location = new System.Drawing.Point(72, 16);
+			this.previewAckBtn.Name = "previewAckBtn";
+			this.previewAckBtn.Size = new System.Drawing.Size(128, 23);
+			this.previewAckBtn.TabIndex = 1;
+			this.previewAckBtn.Text = "Acknowledgement";
+			this.previewAckBtn.Click += new System.EventHandler(this.previewAckBtn_Click);
+			// 
+			// previewPOBtn
+			// 
+			this.previewPOBtn.Location = new System.Drawing.Point(16, 16);
+			this.previewPOBtn.Name = "previewPOBtn";
+			this.previewPOBtn.Size = new System.Drawing.Size(40, 23);
+			this.previewPOBtn.TabIndex = 0;
+			this.previewPOBtn.Text = "PO";
+			this.previewPOBtn.Click += new System.EventHandler(this.previewPOBtn_Click);
+			// 
+			// poGetPOIDAdapter
+			// 
+			this.poGetPOIDAdapter.SelectCommand = this.oleDbSelectCommand10;
+			this.poGetPOIDAdapter.TableMappings.AddRange(new System.Data.Common.DataTableMapping[] {
+																									   new System.Data.Common.DataTableMapping("Table", "tblPOHeader2", new System.Data.Common.DataColumnMapping[] {
+																																																					   new System.Data.Common.DataColumnMapping("POID", "POID"),
+																																																					   new System.Data.Common.DataColumnMapping("PONumber", "PONumber")})});
+			// 
+			// oleDbSelectCommand10
+			// 
+			this.oleDbSelectCommand10.CommandText = "SELECT POID, PONumber FROM tblPOHeader2 WHERE (PONumber = \'?\')";
+			this.oleDbSelectCommand10.Connection = this.emConnection;
+			// 
+			// PO
+			// 
+			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+			this.ClientSize = new System.Drawing.Size(1028, 613);
+			this.Controls.Add(this.groupBox6);
+			this.Controls.Add(this.groupBox5);
+			this.Controls.Add(this.m_purchaseEdt);
+			this.Controls.Add(this.m_totalCostUSEdit);
+			this.Controls.Add(this.m_totalCostEdit);
+			this.Controls.Add(this.moveDownBtn);
+			this.Controls.Add(this.moveUpBtn);
+			this.Controls.Add(this.removeItemBtn);
+			this.Controls.Add(this.label13);
+			this.Controls.Add(this.label12);
+			this.Controls.Add(this.tabControl1);
+			this.Controls.Add(this.m_tabControl);
+			this.Controls.Add(this.label1);
+			this.Name = "PO";
+			this.Text = "Purchase Order";
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox2.ResumeLayout(false);
+			this.tabControl1.ResumeLayout(false);
+			this.tabPage1.ResumeLayout(false);
+			this.groupBox4.ResumeLayout(false);
+			this.groupBox3.ResumeLayout(false);
+			this.tabPage2.ResumeLayout(false);
+			this.tabPage3.ResumeLayout(false);
+			this.m_tabControl.ResumeLayout(false);
+			this.groupBox5.ResumeLayout(false);
+			this.groupBox6.ResumeLayout(false);
+			this.ResumeLayout(false);
+
+		}
+		#endregion
+
+
+
+
+
+
+	
+
+
+
+	}
+}

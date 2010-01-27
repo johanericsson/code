@@ -1,0 +1,1831 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="emConnection.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="poHeaderAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>138, 13</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand1.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbDeleteCommand1.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblPOHeader2` WHERE ((`POID` = ?) AND ((? = 1 AND `PONumber` IS NULL) OR (`PONumber` = ?)) AND ((? = 1 AND `PODate` IS NULL) OR (`PODate` = ?)) AND ((? = 1 AND `VendCompany` IS NULL) OR (`VendCompany` = ?)) AND ((? = 1 AND `VendNameObsolete` IS NULL) OR (`VendNameObsolete` = ?)) AND ((? = 1 AND `VendPhone` IS NULL) OR (`VendPhone` = ?)) AND ((? = 1 AND `VendFax` IS NULL) OR (`VendFax` = ?)) AND ((? = 1 AND `VendContact` IS NULL) OR (`VendContact` = ?)) AND ((? = 1 AND `VendEMail` IS NULL) OR (`VendEMail` = ?)) AND ((? = 1 AND `VendCountryObsolete` IS NULL) OR (`VendCountryObsolete` = ?)) AND ((? = 1 AND `ShipToCompanyObsolete` IS NULL) OR (`ShipToCompanyObsolete` = ?)) AND ((? = 1 AND `ShipToNameObsolete` IS NULL) OR (`ShipToNameObsolete` = ?)) AND ((? = 1 AND `ShipToPhone` IS NULL) OR (`ShipToPhone` = ?)) AND ((? = 1 AND `ShipToFax` IS NULL) OR (`ShipToFax` = ?)) AND ((? = 1 AND `ShipToContact` IS NULL) OR (`ShipToContact` = ?)) AND ((? = 1 AND `ShipToEMail` IS NULL) OR (`ShipToEMail` = ?)) AND ((? = 1 AND `ShipToCountryObsolete` IS NULL) OR (`ShipToCountryObsolete` = ?)) AND ((? = 1 AND `Terms` IS NULL) OR (`Terms` = ?)) AND ((? = 1 AND `ShipCode` IS NULL) OR (`ShipCode` = ?)) AND ((? = 1 AND `FOB` IS NULL) OR (`FOB` = ?)) AND ((? = 1 AND `Status` IS NULL) OR (`Status` = ?)) AND ((? = 1 AND `USTotal` IS NULL) OR (`USTotal` = ?)) AND ((? = 1 AND `OtherTotal` IS NULL) OR (`OtherTotal` = ?)) AND ((? = 1 AND `ExchangeRate` IS NULL) OR (`ExchangeRate` = ?)) AND ((? = 1 AND `CancelDate` IS NULL) OR (`CancelDate` = ?)) AND ((? = 1 AND `VendLocationNameObsolete` IS NULL) OR (`VendLocationNameObsolete` = ?)) AND ((? = 1 AND `ShipToLocationNameObsolete` IS NULL) OR (`ShipToLocationNameObsolete` = ?)) AND ((? = 1 AND `MillConfirmationNumber` IS NULL) OR (`MillConfirmationNumber` = ?)) AND ((? = 1 AND `MillAcknowledgeDate` IS NULL) OR (`MillAcknowledgeDate` = ?)) AND ((? = 1 AND `ExchangeDate` IS NULL) OR (`ExchangeDate` = ?)) AND ((? = 1 AND `CurrencyID` IS NULL) OR (`CurrencyID` = ?)) AND ((? = 1 AND `CustomerID` IS NULL) OR (`CustomerID` = ?)) AND ((? = 1 AND `CustomerLocationID` IS NULL) OR (`CustomerLocationID` = ?)) AND ((? = 1 AND `MillID` IS NULL) OR (`MillID` = ?)) AND ((? = 1 AND `MillLocationID` IS NULL) OR (`MillLocationID` = ?)) AND ((? = 1 AND `SurchargesInEffect` IS NULL) OR (`SurchargesInEffect` = ?)) AND ((? = 1 AND `InvoiceNumber` IS NULL) OR (`InvoiceNumber` = ?)) AND ((? = 1 AND `InvoiceDate` IS NULL) OR (`InvoiceDate` = ?)) AND ((? = 1 AND `MillAcknowledgeDateRevised` IS NULL) OR (`MillAcknowledgeDateRevised` = ?)) AND ((? = 1 AND `VendContactID` IS NULL) OR (`VendContactID` = ?)) AND ((? = 1 AND `ShipToContactID` IS NULL) OR (`ShipToContactID` = ?)) AND ((? = 1 AND `MillConfirmationAppliesToEntirePO` IS NULL) OR (`MillConfirmationAppliesToEntirePO` = ?)))</value>
+  </data>
+  <metadata name="oleDbInsertCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand1.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbInsertCommand1.CommandText" xml:space="preserve">
+    <value>INSERT INTO `tblPOHeader2` (`POID`, `PONumber`, `PODate`, `VendCompany`, `VendNameObsolete`, `VendPhone`, `VendFax`, `VendContact`, `VendEMail`, `VendAddressObsolete`, `VendCountryObsolete`, `ShipToCompanyObsolete`, `ShipToNameObsolete`, `ShipToPhone`, `ShipToFax`, `ShipToContact`, `ShipToEMail`, `ShipToAddressObsolete`, `ShipToCountryObsolete`, `Terms`, `ShipCode`, `FOB`, `Status`, `USTotal`, `OtherTotal`, `ExchangeRate`, `CancelDate`, `Comments`, `VendLocationNameObsolete`, `ShipToLocationNameObsolete`, `MillConfirmationNumber`, `MillAcknowledgeDate`, `ExchangeDate`, `CurrencyID`, `CustomerID`, `CustomerLocationID`, `MillID`, `MillLocationID`, `SurchargesInEffect`, `InvoiceNumber`, `InvoiceDate`, `MillAcknowledgeDateRevised`, `VendContactID`, `ShipToContactID`, `MillConfirmationAppliesToEntirePO`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</value>
+  </data>
+  <metadata name="oleDbSelectCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand1.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbSelectCommand1.CommandText" xml:space="preserve">
+    <value>SELECT        POID, PONumber, PODate, VendCompany, VendNameObsolete, VendPhone, VendFax, VendContact, VendEMail, VendAddressObsolete, VendCountryObsolete, 
+                         ShipToCompanyObsolete, ShipToNameObsolete, ShipToPhone, ShipToFax, ShipToContact, ShipToEMail, ShipToAddressObsolete, ShipToCountryObsolete, 
+                         Terms, ShipCode, FOB, Status, USTotal, OtherTotal, ExchangeRate, CancelDate, Comments, VendLocationNameObsolete, ShipToLocationNameObsolete, 
+                         MillConfirmationNumber, MillAcknowledgeDate, ExchangeDate, CurrencyID, CustomerID, CustomerLocationID, MillID, MillLocationID, SurchargesInEffect, 
+                         InvoiceNumber, InvoiceDate, MillAcknowledgeDateRevised, VendContactID, ShipToContactID, MillConfirmationAppliesToEntirePO
+FROM            tblPOHeader2
+WHERE        (POID = ?)</value>
+  </data>
+  <metadata name="oleDbUpdateCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand1.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand1.CommandText" xml:space="preserve">
+    <value>UPDATE `tblPOHeader2` SET `POID` = ?, `PONumber` = ?, `PODate` = ?, `VendCompany` = ?, `VendNameObsolete` = ?, `VendPhone` = ?, `VendFax` = ?, `VendContact` = ?, `VendEMail` = ?, `VendAddressObsolete` = ?, `VendCountryObsolete` = ?, `ShipToCompanyObsolete` = ?, `ShipToNameObsolete` = ?, `ShipToPhone` = ?, `ShipToFax` = ?, `ShipToContact` = ?, `ShipToEMail` = ?, `ShipToAddressObsolete` = ?, `ShipToCountryObsolete` = ?, `Terms` = ?, `ShipCode` = ?, `FOB` = ?, `Status` = ?, `USTotal` = ?, `OtherTotal` = ?, `ExchangeRate` = ?, `CancelDate` = ?, `Comments` = ?, `VendLocationNameObsolete` = ?, `ShipToLocationNameObsolete` = ?, `MillConfirmationNumber` = ?, `MillAcknowledgeDate` = ?, `ExchangeDate` = ?, `CurrencyID` = ?, `CustomerID` = ?, `CustomerLocationID` = ?, `MillID` = ?, `MillLocationID` = ?, `SurchargesInEffect` = ?, `InvoiceNumber` = ?, `InvoiceDate` = ?, `MillAcknowledgeDateRevised` = ?, `VendContactID` = ?, `ShipToContactID` = ?, `MillConfirmationAppliesToEntirePO` = ? WHERE ((`POID` = ?) AND ((? = 1 AND `PONumber` IS NULL) OR (`PONumber` = ?)) AND ((? = 1 AND `PODate` IS NULL) OR (`PODate` = ?)) AND ((? = 1 AND `VendCompany` IS NULL) OR (`VendCompany` = ?)) AND ((? = 1 AND `VendNameObsolete` IS NULL) OR (`VendNameObsolete` = ?)) AND ((? = 1 AND `VendPhone` IS NULL) OR (`VendPhone` = ?)) AND ((? = 1 AND `VendFax` IS NULL) OR (`VendFax` = ?)) AND ((? = 1 AND `VendContact` IS NULL) OR (`VendContact` = ?)) AND ((? = 1 AND `VendEMail` IS NULL) OR (`VendEMail` = ?)) AND ((? = 1 AND `VendCountryObsolete` IS NULL) OR (`VendCountryObsolete` = ?)) AND ((? = 1 AND `ShipToCompanyObsolete` IS NULL) OR (`ShipToCompanyObsolete` = ?)) AND ((? = 1 AND `ShipToNameObsolete` IS NULL) OR (`ShipToNameObsolete` = ?)) AND ((? = 1 AND `ShipToPhone` IS NULL) OR (`ShipToPhone` = ?)) AND ((? = 1 AND `ShipToFax` IS NULL) OR (`ShipToFax` = ?)) AND ((? = 1 AND `ShipToContact` IS NULL) OR (`ShipToContact` = ?)) AND ((? = 1 AND `ShipToEMail` IS NULL) OR (`ShipToEMail` = ?)) AND ((? = 1 AND `ShipToCountryObsolete` IS NULL) OR (`ShipToCountryObsolete` = ?)) AND ((? = 1 AND `Terms` IS NULL) OR (`Terms` = ?)) AND ((? = 1 AND `ShipCode` IS NULL) OR (`ShipCode` = ?)) AND ((? = 1 AND `FOB` IS NULL) OR (`FOB` = ?)) AND ((? = 1 AND `Status` IS NULL) OR (`Status` = ?)) AND ((? = 1 AND `USTotal` IS NULL) OR (`USTotal` = ?)) AND ((? = 1 AND `OtherTotal` IS NULL) OR (`OtherTotal` = ?)) AND ((? = 1 AND `ExchangeRate` IS NULL) OR (`ExchangeRate` = ?)) AND ((? = 1 AND `CancelDate` IS NULL) OR (`CancelDate` = ?)) AND ((? = 1 AND `VendLocationNameObsolete` IS NULL) OR (`VendLocationNameObsolete` = ?)) AND ((? = 1 AND `ShipToLocationNameObsolete` IS NULL) OR (`ShipToLocationNameObsolete` = ?)) AND ((? = 1 AND `MillConfirmationNumber` IS NULL) OR (`MillConfirmationNumber` = ?)) AND ((? = 1 AND `MillAcknowledgeDate` IS NULL) OR (`MillAcknowledgeDate` = ?)) AND ((? = 1 AND `ExchangeDate` IS NULL) OR (`ExchangeDate` = ?)) AND ((? = 1 AND `CurrencyID` IS NULL) OR (`CurrencyID` = ?)) AND ((? = 1 AND `CustomerID` IS NULL) OR (`CustomerID` = ?)) AND ((? = 1 AND `CustomerLocationID` IS NULL) OR (`CustomerLocationID` = ?)) AND ((? = 1 AND `MillID` IS NULL) OR (`MillID` = ?)) AND ((? = 1 AND `MillLocationID` IS NULL) OR (`MillLocationID` = ?)) AND ((? = 1 AND `SurchargesInEffect` IS NULL) OR (`SurchargesInEffect` = ?)) AND ((? = 1 AND `InvoiceNumber` IS NULL) OR (`InvoiceNumber` = ?)) AND ((? = 1 AND `InvoiceDate` IS NULL) OR (`InvoiceDate` = ?)) AND ((? = 1 AND `MillAcknowledgeDateRevised` IS NULL) OR (`MillAcknowledgeDateRevised` = ?)) AND ((? = 1 AND `VendContactID` IS NULL) OR (`VendContactID` = ?)) AND ((? = 1 AND `ShipToContactID` IS NULL) OR (`ShipToContactID` = ?)) AND ((? = 1 AND `MillConfirmationAppliesToEntirePO` IS NULL) OR (`MillConfirmationAppliesToEntirePO` = ?)))</value>
+  </data>
+  <metadata name="poItemAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>278, 17</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand2.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand2.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbDeleteCommand2.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblPOItem2` WHERE ((`POItemNumber` = ?) AND ((? = 1 AND `POID` IS NULL) OR (`POID` = ?)) AND ((? = 1 AND `SeqNumber` IS NULL) OR (`SeqNumber` = ?)) AND ((? = 1 AND `ItemNameObsolete` IS NULL) OR (`ItemNameObsolete` = ?)) AND ((? = 1 AND `Length` IS NULL) OR (`Length` = ?)) AND ((? = 1 AND `SizeOfItem` IS NULL) OR (`SizeOfItem` = ?)) AND ((? = 1 AND `ItemAccessCode` IS NULL) OR (`ItemAccessCode` = ?)) AND ((? = 1 AND `Qty` IS NULL) OR (`Qty` = ?)) AND ((? = 1 AND `UM` IS NULL) OR (`UM` = ?)) AND ((? = 1 AND `DateRequired` IS NULL) OR (`DateRequired` = ?)) AND ((? = 1 AND `AcknowledgeDate` IS NULL) OR (`AcknowledgeDate` = ?)) AND ((? = 1 AND `MillShipDate` IS NULL) OR (`MillShipDate` = ?)) AND ((? = 1 AND `CancelDate` IS NULL) OR (`CancelDate` = ?)) AND ((? = 1 AND `CustRate` IS NULL) OR (`CustRate` = ?)) AND ((? = 1 AND `CommRate` IS NULL) OR (`CommRate` = ?)) AND ((? = 1 AND `CustAmount` IS NULL) OR (`CustAmount` = ?)) AND ((? = 1 AND `CommAmount` IS NULL) OR (`CommAmount` = ?)) AND ((? = 1 AND `FinishID` IS NULL) OR (`FinishID` = ?)) AND ((? = 1 AND `ItemID` IS NULL) OR (`ItemID` = ?)) AND ((? = 1 AND `TreatmentID` IS NULL) OR (`TreatmentID` = ?)) AND ((? = 1 AND `MillConfirmationNumber` IS NULL) OR (`MillConfirmationNumber` = ?)) AND ((? = 1 AND `MillAcknowledgeDate` IS NULL) OR (`MillAcknowledgeDate` = ?)) AND ((? = 1 AND `InvoiceNumber` IS NULL) OR (`InvoiceNumber` = ?)) AND ((? = 1 AND `InvoiceDate` IS NULL) OR (`InvoiceDate` = ?)))</value>
+  </data>
+  <metadata name="oleDbInsertCommand2.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand2.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbInsertCommand2.CommandText" xml:space="preserve">
+    <value>INSERT INTO `tblPOItem2` (`POItemNumber`, `POID`, `SeqNumber`, `ItemNameObsolete`, `ItemDesc`, `Length`, `SizeOfItem`, `ItemAccessCode`, `Qty`, `UM`, `DateRequired`, `AcknowledgeDate`, `MillShipDate`, `CancelDate`, `CustRate`, `CommRate`, `CustAmount`, `CommAmount`, `Comments`, `FinishID`, `ItemID`, `TreatmentID`, `MillConfirmationNumber`, `MillAcknowledgeDate`, `InvoiceNumber`, `InvoiceDate`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</value>
+  </data>
+  <metadata name="oleDbSelectCommand2.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand2.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbSelectCommand2.CommandText" xml:space="preserve">
+    <value>SELECT        POItemNumber, POID, SeqNumber, ItemNameObsolete, ItemDesc, Length, SizeOfItem, ItemAccessCode, Qty, UM, DateRequired, AcknowledgeDate, 
+                         MillShipDate, CancelDate, CustRate, CommRate, CustAmount, CommAmount, Comments, FinishID, ItemID, TreatmentID, MillConfirmationNumber, 
+                         MillAcknowledgeDate, InvoiceNumber, InvoiceDate
+FROM            tblPOItem2
+WHERE        (POID = ?)</value>
+  </data>
+  <metadata name="oleDbUpdateCommand2.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand2.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand2.CommandText" xml:space="preserve">
+    <value>UPDATE `tblPOItem2` SET `POItemNumber` = ?, `POID` = ?, `SeqNumber` = ?, `ItemNameObsolete` = ?, `ItemDesc` = ?, `Length` = ?, `SizeOfItem` = ?, `ItemAccessCode` = ?, `Qty` = ?, `UM` = ?, `DateRequired` = ?, `AcknowledgeDate` = ?, `MillShipDate` = ?, `CancelDate` = ?, `CustRate` = ?, `CommRate` = ?, `CustAmount` = ?, `CommAmount` = ?, `Comments` = ?, `FinishID` = ?, `ItemID` = ?, `TreatmentID` = ?, `MillConfirmationNumber` = ?, `MillAcknowledgeDate` = ?, `InvoiceNumber` = ?, `InvoiceDate` = ? WHERE ((`POItemNumber` = ?) AND ((? = 1 AND `POID` IS NULL) OR (`POID` = ?)) AND ((? = 1 AND `SeqNumber` IS NULL) OR (`SeqNumber` = ?)) AND ((? = 1 AND `ItemNameObsolete` IS NULL) OR (`ItemNameObsolete` = ?)) AND ((? = 1 AND `Length` IS NULL) OR (`Length` = ?)) AND ((? = 1 AND `SizeOfItem` IS NULL) OR (`SizeOfItem` = ?)) AND ((? = 1 AND `ItemAccessCode` IS NULL) OR (`ItemAccessCode` = ?)) AND ((? = 1 AND `Qty` IS NULL) OR (`Qty` = ?)) AND ((? = 1 AND `UM` IS NULL) OR (`UM` = ?)) AND ((? = 1 AND `DateRequired` IS NULL) OR (`DateRequired` = ?)) AND ((? = 1 AND `AcknowledgeDate` IS NULL) OR (`AcknowledgeDate` = ?)) AND ((? = 1 AND `MillShipDate` IS NULL) OR (`MillShipDate` = ?)) AND ((? = 1 AND `CancelDate` IS NULL) OR (`CancelDate` = ?)) AND ((? = 1 AND `CustRate` IS NULL) OR (`CustRate` = ?)) AND ((? = 1 AND `CommRate` IS NULL) OR (`CommRate` = ?)) AND ((? = 1 AND `CustAmount` IS NULL) OR (`CustAmount` = ?)) AND ((? = 1 AND `CommAmount` IS NULL) OR (`CommAmount` = ?)) AND ((? = 1 AND `FinishID` IS NULL) OR (`FinishID` = ?)) AND ((? = 1 AND `ItemID` IS NULL) OR (`ItemID` = ?)) AND ((? = 1 AND `TreatmentID` IS NULL) OR (`TreatmentID` = ?)) AND ((? = 1 AND `MillConfirmationNumber` IS NULL) OR (`MillConfirmationNumber` = ?)) AND ((? = 1 AND `MillAcknowledgeDate` IS NULL) OR (`MillAcknowledgeDate` = ?)) AND ((? = 1 AND `InvoiceNumber` IS NULL) OR (`InvoiceNumber` = ?)) AND ((? = 1 AND `InvoiceDate` IS NULL) OR (`InvoiceDate` = ?)))</value>
+  </data>
+  <metadata name="containerAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>404, 17</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand3.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand3.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbDeleteCommand3.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblContainer` WHERE ((`ContID` = ?) AND ((? = 1 AND `ContNumber` IS NULL) OR (`ContNumber` = ?)) AND ((? = 1 AND `ShipDate` IS NULL) OR (`ShipDate` = ?)) AND ((? = 1 AND `ETA` IS NULL) OR (`ETA` = ?)) AND ((? = 1 AND `Status` IS NULL) OR (`Status` = ?)) AND ((? = 1 AND `CustomerID` IS NULL) OR (`CustomerID` = ?)) AND ((? = 1 AND `CustomerLocationID` IS NULL) OR (`CustomerLocationID` = ?)) AND ((? = 1 AND `ApplyClosingToEntireContainer` IS NULL) OR (`ApplyClosingToEntireContainer` = ?)) AND ((? = 1 AND `ContainerPickupDate` IS NULL) OR (`ContainerPickupDate` = ?)) AND ((? = 1 AND `ContainerPickupTerminal` IS NULL) OR (`ContainerPickupTerminal` = ?)) AND ((? = 1 AND `ContainerProofOfDelivery` IS NULL) OR (`ContainerProofOfDelivery` = ?)) AND ((? = 1 AND `ReleaseDate` IS NULL) OR (`ReleaseDate` = ?)) AND ((? = 1 AND `MillID` IS NULL) OR (`MillID` = ?)))</value>
+  </data>
+  <metadata name="oleDbInsertCommand3.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand3.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbInsertCommand3.CommandText" xml:space="preserve">
+    <value>INSERT INTO `tblContainer` (`ContID`, `ContNumber`, `ShipDate`, `ETA`, `Comments`, `Status`, `CustomerID`, `CustomerLocationID`, `ApplyClosingToEntireContainer`, `ContainerPickupDate`, `ContainerPickupTerminal`, `ContainerProofOfDelivery`, `ReleaseDate`, `MillID`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</value>
+  </data>
+  <metadata name="oleDbSelectCommand3.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand3.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand3.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand3.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand3.CommandText" xml:space="preserve">
+    <value>UPDATE `tblContainer` SET `ContID` = ?, `ContNumber` = ?, `ShipDate` = ?, `ETA` = ?, `Comments` = ?, `Status` = ?, `CustomerID` = ?, `CustomerLocationID` = ?, `ApplyClosingToEntireContainer` = ?, `ContainerPickupDate` = ?, `ContainerPickupTerminal` = ?, `ContainerProofOfDelivery` = ?, `ReleaseDate` = ?, `MillID` = ? WHERE ((`ContID` = ?) AND ((? = 1 AND `ContNumber` IS NULL) OR (`ContNumber` = ?)) AND ((? = 1 AND `ShipDate` IS NULL) OR (`ShipDate` = ?)) AND ((? = 1 AND `ETA` IS NULL) OR (`ETA` = ?)) AND ((? = 1 AND `Status` IS NULL) OR (`Status` = ?)) AND ((? = 1 AND `CustomerID` IS NULL) OR (`CustomerID` = ?)) AND ((? = 1 AND `CustomerLocationID` IS NULL) OR (`CustomerLocationID` = ?)) AND ((? = 1 AND `ApplyClosingToEntireContainer` IS NULL) OR (`ApplyClosingToEntireContainer` = ?)) AND ((? = 1 AND `ContainerPickupDate` IS NULL) OR (`ContainerPickupDate` = ?)) AND ((? = 1 AND `ContainerPickupTerminal` IS NULL) OR (`ContainerPickupTerminal` = ?)) AND ((? = 1 AND `ContainerProofOfDelivery` IS NULL) OR (`ContainerProofOfDelivery` = ?)) AND ((? = 1 AND `ReleaseDate` IS NULL) OR (`ReleaseDate` = ?)) AND ((? = 1 AND `MillID` IS NULL) OR (`MillID` = ?)))</value>
+  </data>
+  <metadata name="contBundleAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>541, 17</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand4.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand4.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbDeleteCommand4.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblContBundle` WHERE ((`ContainerBundleID` = ?) AND ((? = 1 AND `ContID` IS NULL) OR (`ContID` = ?)) AND ((? = 1 AND `POItemNumber` IS NULL) OR (`POItemNumber` = ?)) AND ((? = 1 AND `BundleSeqNumber` IS NULL) OR (`BundleSeqNumber` = ?)) AND ((? = 1 AND `EnglishShipQty` IS NULL) OR (`EnglishShipQty` = ?)) AND ((? = 1 AND `InvoiceNumber` IS NULL) OR (`InvoiceNumber` = ?)) AND ((? = 1 AND `Heat` IS NULL) OR (`Heat` = ?)) AND ((? = 1 AND `MetricShipQty` IS NULL) OR (`MetricShipQty` = ?)) AND ((? = 1 AND `BayNumber` IS NULL) OR (`BayNumber` = ?)) AND ((? = 1 AND `PickupDate` IS NULL) OR (`PickupDate` = ?)) AND ((? = 1 AND `PickupTerminal` IS NULL) OR (`PickupTerminal` = ?)) AND ((? = 1 AND `ProofOfDelivery` IS NULL) OR (`ProofOfDelivery` = ?)) AND ((? = 1 AND `EMInvoiceNumber` IS NULL) OR (`EMInvoiceNumber` = ?)) AND ((? = 1 AND `AuxKey1` IS NULL) OR (`AuxKey1` = ?)) AND ((? = 1 AND `AuxKey2` IS NULL) OR (`AuxKey2` = ?)) AND ((? = 1 AND `MillInvoiceDate` IS NULL) OR (`MillInvoiceDate` = ?)) AND ((? = 1 AND `BundleAlloySurcharge` IS NULL) OR (`BundleAlloySurcharge` = ?)) AND ((? = 1 AND `BundleScrapSurcharge` IS NULL) OR (`BundleScrapSurcharge` = ?)))</value>
+  </data>
+  <metadata name="oleDbInsertCommand4.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand4.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbInsertCommand4.CommandText" xml:space="preserve">
+    <value>INSERT INTO `tblContBundle` (`ContainerBundleID`, `ContID`, `POItemNumber`, `BundleSeqNumber`, `EnglishShipQty`, `InvoiceNumber`, `Heat`, `MetricShipQty`, `BayNumber`, `PickupDate`, `PickupTerminal`, `ProofOfDelivery`, `EMInvoiceNumber`, `AuxKey1`, `AuxKey2`, `MillInvoiceDate`, `BundleAlloySurcharge`, `BundleScrapSurcharge`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</value>
+  </data>
+  <metadata name="oleDbSelectCommand4.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand4.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbSelectCommand4.CommandText" xml:space="preserve">
+    <value>SELECT        ContainerBundleID, ContID, POItemNumber, BundleSeqNumber, EnglishShipQty, InvoiceNumber, Heat, MetricShipQty, BayNumber, PickupDate, 
+                         PickupTerminal, ProofOfDelivery, EMInvoiceNumber, AuxKey1, AuxKey2, MillInvoiceDate, BundleAlloySurcharge, BundleScrapSurcharge
+FROM            tblContBundle
+WHERE        (ContID = ?)</value>
+  </data>
+  <metadata name="oleDbUpdateCommand4.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand4.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand4.CommandText" xml:space="preserve">
+    <value>UPDATE `tblContBundle` SET `ContainerBundleID` = ?, `ContID` = ?, `POItemNumber` = ?, `BundleSeqNumber` = ?, `EnglishShipQty` = ?, `InvoiceNumber` = ?, `Heat` = ?, `MetricShipQty` = ?, `BayNumber` = ?, `PickupDate` = ?, `PickupTerminal` = ?, `ProofOfDelivery` = ?, `EMInvoiceNumber` = ?, `AuxKey1` = ?, `AuxKey2` = ?, `MillInvoiceDate` = ?, `BundleAlloySurcharge` = ?, `BundleScrapSurcharge` = ? WHERE ((`ContainerBundleID` = ?) AND ((? = 1 AND `ContID` IS NULL) OR (`ContID` = ?)) AND ((? = 1 AND `POItemNumber` IS NULL) OR (`POItemNumber` = ?)) AND ((? = 1 AND `BundleSeqNumber` IS NULL) OR (`BundleSeqNumber` = ?)) AND ((? = 1 AND `EnglishShipQty` IS NULL) OR (`EnglishShipQty` = ?)) AND ((? = 1 AND `InvoiceNumber` IS NULL) OR (`InvoiceNumber` = ?)) AND ((? = 1 AND `Heat` IS NULL) OR (`Heat` = ?)) AND ((? = 1 AND `MetricShipQty` IS NULL) OR (`MetricShipQty` = ?)) AND ((? = 1 AND `BayNumber` IS NULL) OR (`BayNumber` = ?)) AND ((? = 1 AND `PickupDate` IS NULL) OR (`PickupDate` = ?)) AND ((? = 1 AND `PickupTerminal` IS NULL) OR (`PickupTerminal` = ?)) AND ((? = 1 AND `ProofOfDelivery` IS NULL) OR (`ProofOfDelivery` = ?)) AND ((? = 1 AND `EMInvoiceNumber` IS NULL) OR (`EMInvoiceNumber` = ?)) AND ((? = 1 AND `AuxKey1` IS NULL) OR (`AuxKey1` = ?)) AND ((? = 1 AND `AuxKey2` IS NULL) OR (`AuxKey2` = ?)) AND ((? = 1 AND `MillInvoiceDate` IS NULL) OR (`MillInvoiceDate` = ?)) AND ((? = 1 AND `BundleAlloySurcharge` IS NULL) OR (`BundleAlloySurcharge` = ?)) AND ((? = 1 AND `BundleScrapSurcharge` IS NULL) OR (`BundleScrapSurcharge` = ?)))</value>
+  </data>
+  <metadata name="companyAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>687, 17</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand5.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand5.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand5.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbDeleteCommand5.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblCompany` WHERE ((`CompID` = ?) AND ((? = 1 AND `CompName` IS NULL) OR (`CompName` = ?)) AND ((? = 1 AND `CompType` IS NULL) OR (`CompType` = ?)) AND ((? = 1 AND `ContainerExcelFile` IS NULL) OR (`ContainerExcelFile` = ?)) AND ((? = 1 AND `CompNameAbbreviation` IS NULL) OR (`CompNameAbbreviation` = ?)))</value>
+  </data>
+  <metadata name="oleDbInsertCommand5.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand5.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand5.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand5.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand5.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand5.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand5.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand5.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand5.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand5.CommandText" xml:space="preserve">
+    <value>UPDATE `tblCompany` SET `CompID` = ?, `CompName` = ?, `CompType` = ?, `ContainerExcelFile` = ?, `CompNameAbbreviation` = ? WHERE ((`CompID` = ?) AND ((? = 1 AND `CompName` IS NULL) OR (`CompName` = ?)) AND ((? = 1 AND `CompType` IS NULL) OR (`CompType` = ?)) AND ((? = 1 AND `ContainerExcelFile` IS NULL) OR (`ContainerExcelFile` = ?)) AND ((? = 1 AND `CompNameAbbreviation` IS NULL) OR (`CompNameAbbreviation` = ?)))</value>
+  </data>
+  <metadata name="poItemAdapterPOItemNumber.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 54</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand6.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand6.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand6.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbDeleteCommand6.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblPOItem2` WHERE ((`POItemNumber` = ?) AND ((? = 1 AND `POID` IS NULL) OR (`POID` = ?)) AND ((? = 1 AND `SeqNumber` IS NULL) OR (`SeqNumber` = ?)) AND ((? = 1 AND `ItemNameObsolete` IS NULL) OR (`ItemNameObsolete` = ?)) AND ((? = 1 AND `Length` IS NULL) OR (`Length` = ?)) AND ((? = 1 AND `SizeOfItem` IS NULL) OR (`SizeOfItem` = ?)) AND ((? = 1 AND `ItemAccessCode` IS NULL) OR (`ItemAccessCode` = ?)) AND ((? = 1 AND `Qty` IS NULL) OR (`Qty` = ?)) AND ((? = 1 AND `UM` IS NULL) OR (`UM` = ?)) AND ((? = 1 AND `DateRequired` IS NULL) OR (`DateRequired` = ?)) AND ((? = 1 AND `AcknowledgeDate` IS NULL) OR (`AcknowledgeDate` = ?)) AND ((? = 1 AND `MillShipDate` IS NULL) OR (`MillShipDate` = ?)) AND ((? = 1 AND `CancelDate` IS NULL) OR (`CancelDate` = ?)) AND ((? = 1 AND `CustRate` IS NULL) OR (`CustRate` = ?)) AND ((? = 1 AND `CommRate` IS NULL) OR (`CommRate` = ?)) AND ((? = 1 AND `CustAmount` IS NULL) OR (`CustAmount` = ?)) AND ((? = 1 AND `CommAmount` IS NULL) OR (`CommAmount` = ?)) AND ((? = 1 AND `FinishID` IS NULL) OR (`FinishID` = ?)) AND ((? = 1 AND `ItemID` IS NULL) OR (`ItemID` = ?)) AND ((? = 1 AND `TreatmentID` IS NULL) OR (`TreatmentID` = ?)) AND ((? = 1 AND `MillConfirmationNumber` IS NULL) OR (`MillConfirmationNumber` = ?)) AND ((? = 1 AND `MillAcknowledgeDate` IS NULL) OR (`MillAcknowledgeDate` = ?)) AND ((? = 1 AND `InvoiceNumber` IS NULL) OR (`InvoiceNumber` = ?)) AND ((? = 1 AND `InvoiceDate` IS NULL) OR (`InvoiceDate` = ?)))</value>
+  </data>
+  <metadata name="oleDbInsertCommand6.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand6.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand6.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbInsertCommand6.CommandText" xml:space="preserve">
+    <value>INSERT INTO `tblPOItem2` (`POItemNumber`, `POID`, `SeqNumber`, `ItemNameObsolete`, `ItemDesc`, `Length`, `SizeOfItem`, `ItemAccessCode`, `Qty`, `UM`, `DateRequired`, `AcknowledgeDate`, `MillShipDate`, `CancelDate`, `CustRate`, `CommRate`, `CustAmount`, `CommAmount`, `Comments`, `FinishID`, `ItemID`, `TreatmentID`, `MillConfirmationNumber`, `MillAcknowledgeDate`, `InvoiceNumber`, `InvoiceDate`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</value>
+  </data>
+  <metadata name="oleDbSelectCommand6.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand6.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand6.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbSelectCommand6.CommandText" xml:space="preserve">
+    <value>SELECT        POItemNumber, POID, SeqNumber, ItemNameObsolete, ItemDesc, Length, SizeOfItem, ItemAccessCode, Qty, UM, DateRequired, AcknowledgeDate, 
+                         MillShipDate, CancelDate, CustRate, CommRate, CustAmount, CommAmount, Comments, FinishID, ItemID, TreatmentID, MillConfirmationNumber, 
+                         MillAcknowledgeDate, InvoiceNumber, InvoiceDate
+FROM            tblPOItem2
+WHERE        (POItemNumber = ?)</value>
+  </data>
+  <metadata name="oleDbUpdateCommand6.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand6.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand6.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand6.CommandText" xml:space="preserve">
+    <value>UPDATE `tblPOItem2` SET `POItemNumber` = ?, `POID` = ?, `SeqNumber` = ?, `ItemNameObsolete` = ?, `ItemDesc` = ?, `Length` = ?, `SizeOfItem` = ?, `ItemAccessCode` = ?, `Qty` = ?, `UM` = ?, `DateRequired` = ?, `AcknowledgeDate` = ?, `MillShipDate` = ?, `CancelDate` = ?, `CustRate` = ?, `CommRate` = ?, `CustAmount` = ?, `CommAmount` = ?, `Comments` = ?, `FinishID` = ?, `ItemID` = ?, `TreatmentID` = ?, `MillConfirmationNumber` = ?, `MillAcknowledgeDate` = ?, `InvoiceNumber` = ?, `InvoiceDate` = ? WHERE ((`POItemNumber` = ?) AND ((? = 1 AND `POID` IS NULL) OR (`POID` = ?)) AND ((? = 1 AND `SeqNumber` IS NULL) OR (`SeqNumber` = ?)) AND ((? = 1 AND `ItemNameObsolete` IS NULL) OR (`ItemNameObsolete` = ?)) AND ((? = 1 AND `Length` IS NULL) OR (`Length` = ?)) AND ((? = 1 AND `SizeOfItem` IS NULL) OR (`SizeOfItem` = ?)) AND ((? = 1 AND `ItemAccessCode` IS NULL) OR (`ItemAccessCode` = ?)) AND ((? = 1 AND `Qty` IS NULL) OR (`Qty` = ?)) AND ((? = 1 AND `UM` IS NULL) OR (`UM` = ?)) AND ((? = 1 AND `DateRequired` IS NULL) OR (`DateRequired` = ?)) AND ((? = 1 AND `AcknowledgeDate` IS NULL) OR (`AcknowledgeDate` = ?)) AND ((? = 1 AND `MillShipDate` IS NULL) OR (`MillShipDate` = ?)) AND ((? = 1 AND `CancelDate` IS NULL) OR (`CancelDate` = ?)) AND ((? = 1 AND `CustRate` IS NULL) OR (`CustRate` = ?)) AND ((? = 1 AND `CommRate` IS NULL) OR (`CommRate` = ?)) AND ((? = 1 AND `CustAmount` IS NULL) OR (`CustAmount` = ?)) AND ((? = 1 AND `CommAmount` IS NULL) OR (`CommAmount` = ?)) AND ((? = 1 AND `FinishID` IS NULL) OR (`FinishID` = ?)) AND ((? = 1 AND `ItemID` IS NULL) OR (`ItemID` = ?)) AND ((? = 1 AND `TreatmentID` IS NULL) OR (`TreatmentID` = ?)) AND ((? = 1 AND `MillConfirmationNumber` IS NULL) OR (`MillConfirmationNumber` = ?)) AND ((? = 1 AND `MillAcknowledgeDate` IS NULL) OR (`MillAcknowledgeDate` = ?)) AND ((? = 1 AND `InvoiceNumber` IS NULL) OR (`InvoiceNumber` = ?)) AND ((? = 1 AND `InvoiceDate` IS NULL) OR (`InvoiceDate` = ?)))</value>
+  </data>
+  <metadata name="locationAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>224, 55</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand7.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand7.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand7.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand7.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand7.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand7.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand7.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand7.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand7.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand7.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand7.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand7.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand7.CommandText" xml:space="preserve">
+    <value>UPDATE tblLocation2 SET Address = ?, ATTNString = ?, CCString = ?, CompID = ?, CountryID = ?, ExcelFile = ?, LocID = ?, LocName = ? WHERE (LocID = ?) AND (CompID = ?) AND (CountryID = ?) AND (ExcelFile = ? OR ? IS NULL AND ExcelFile IS NULL) AND (LocName = ?)</value>
+  </data>
+  <metadata name="bundleFromItemAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>350, 54</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand8.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand8.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand8.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbDeleteCommand8.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblContBundle` WHERE ((`ContainerBundleID` = ?) AND ((? = 1 AND `ContID` IS NULL) OR (`ContID` = ?)) AND ((? = 1 AND `POItemNumber` IS NULL) OR (`POItemNumber` = ?)) AND ((? = 1 AND `BundleSeqNumber` IS NULL) OR (`BundleSeqNumber` = ?)) AND ((? = 1 AND `EnglishShipQty` IS NULL) OR (`EnglishShipQty` = ?)) AND ((? = 1 AND `InvoiceNumber` IS NULL) OR (`InvoiceNumber` = ?)) AND ((? = 1 AND `Heat` IS NULL) OR (`Heat` = ?)) AND ((? = 1 AND `MetricShipQty` IS NULL) OR (`MetricShipQty` = ?)) AND ((? = 1 AND `BayNumber` IS NULL) OR (`BayNumber` = ?)) AND ((? = 1 AND `PickupDate` IS NULL) OR (`PickupDate` = ?)) AND ((? = 1 AND `PickupTerminal` IS NULL) OR (`PickupTerminal` = ?)) AND ((? = 1 AND `ProofOfDelivery` IS NULL) OR (`ProofOfDelivery` = ?)) AND ((? = 1 AND `EMInvoiceNumber` IS NULL) OR (`EMInvoiceNumber` = ?)) AND ((? = 1 AND `AuxKey1` IS NULL) OR (`AuxKey1` = ?)) AND ((? = 1 AND `AuxKey2` IS NULL) OR (`AuxKey2` = ?)) AND ((? = 1 AND `MillInvoiceDate` IS NULL) OR (`MillInvoiceDate` = ?)) AND ((? = 1 AND `BundleAlloySurcharge` IS NULL) OR (`BundleAlloySurcharge` = ?)) AND ((? = 1 AND `BundleScrapSurcharge` IS NULL) OR (`BundleScrapSurcharge` = ?)))</value>
+  </data>
+  <metadata name="oleDbInsertCommand8.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand8.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand8.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbInsertCommand8.CommandText" xml:space="preserve">
+    <value>INSERT INTO `tblContBundle` (`ContainerBundleID`, `ContID`, `POItemNumber`, `BundleSeqNumber`, `EnglishShipQty`, `InvoiceNumber`, `Heat`, `MetricShipQty`, `BayNumber`, `PickupDate`, `PickupTerminal`, `ProofOfDelivery`, `EMInvoiceNumber`, `AuxKey1`, `AuxKey2`, `MillInvoiceDate`, `BundleAlloySurcharge`, `BundleScrapSurcharge`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</value>
+  </data>
+  <metadata name="oleDbSelectCommand8.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand8.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand8.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbSelectCommand8.CommandText" xml:space="preserve">
+    <value>SELECT        ContainerBundleID, ContID, POItemNumber, BundleSeqNumber, EnglishShipQty, InvoiceNumber, Heat, MetricShipQty, BayNumber, PickupDate, 
+                         PickupTerminal, ProofOfDelivery, EMInvoiceNumber, AuxKey1, AuxKey2, MillInvoiceDate, BundleAlloySurcharge, BundleScrapSurcharge
+FROM            tblContBundle
+WHERE        (POItemNumber = ?)</value>
+  </data>
+  <metadata name="oleDbUpdateCommand8.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand8.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand8.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand8.CommandText" xml:space="preserve">
+    <value>UPDATE `tblContBundle` SET `ContainerBundleID` = ?, `ContID` = ?, `POItemNumber` = ?, `BundleSeqNumber` = ?, `EnglishShipQty` = ?, `InvoiceNumber` = ?, `Heat` = ?, `MetricShipQty` = ?, `BayNumber` = ?, `PickupDate` = ?, `PickupTerminal` = ?, `ProofOfDelivery` = ?, `EMInvoiceNumber` = ?, `AuxKey1` = ?, `AuxKey2` = ?, `MillInvoiceDate` = ?, `BundleAlloySurcharge` = ?, `BundleScrapSurcharge` = ? WHERE ((`ContainerBundleID` = ?) AND ((? = 1 AND `ContID` IS NULL) OR (`ContID` = ?)) AND ((? = 1 AND `POItemNumber` IS NULL) OR (`POItemNumber` = ?)) AND ((? = 1 AND `BundleSeqNumber` IS NULL) OR (`BundleSeqNumber` = ?)) AND ((? = 1 AND `EnglishShipQty` IS NULL) OR (`EnglishShipQty` = ?)) AND ((? = 1 AND `InvoiceNumber` IS NULL) OR (`InvoiceNumber` = ?)) AND ((? = 1 AND `Heat` IS NULL) OR (`Heat` = ?)) AND ((? = 1 AND `MetricShipQty` IS NULL) OR (`MetricShipQty` = ?)) AND ((? = 1 AND `BayNumber` IS NULL) OR (`BayNumber` = ?)) AND ((? = 1 AND `PickupDate` IS NULL) OR (`PickupDate` = ?)) AND ((? = 1 AND `PickupTerminal` IS NULL) OR (`PickupTerminal` = ?)) AND ((? = 1 AND `ProofOfDelivery` IS NULL) OR (`ProofOfDelivery` = ?)) AND ((? = 1 AND `EMInvoiceNumber` IS NULL) OR (`EMInvoiceNumber` = ?)) AND ((? = 1 AND `AuxKey1` IS NULL) OR (`AuxKey1` = ?)) AND ((? = 1 AND `AuxKey2` IS NULL) OR (`AuxKey2` = ?)) AND ((? = 1 AND `MillInvoiceDate` IS NULL) OR (`MillInvoiceDate` = ?)) AND ((? = 1 AND `BundleAlloySurcharge` IS NULL) OR (`BundleAlloySurcharge` = ?)) AND ((? = 1 AND `BundleScrapSurcharge` IS NULL) OR (`BundleScrapSurcharge` = ?)))</value>
+  </data>
+  <metadata name="containerTemplateAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>523, 54</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand9.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand9.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand9.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand9.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand9.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand9.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand9.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand9.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand9.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand9.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand9.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand9.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand9.CommandText" xml:space="preserve">
+    <value>UPDATE tblContainerTemplate SET ContainerTemplateID = ?, Description = ?, ExcelFile = ? WHERE (ContainerTemplateID = ?) AND (Description = ? OR ? IS NULL AND Description IS NULL) AND (ExcelFile = ? OR ? IS NULL AND ExcelFile IS NULL)</value>
+  </data>
+  <metadata name="billOfLadingAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>706, 54</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand10.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand10.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand10.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand10.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand10.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand10.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand10.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand10.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand10.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand10.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand10.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand10.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand10.CommandText" xml:space="preserve">
+    <value>UPDATE tblBOL SET BOLID = ?, BOLNumber = ?, PickupDate = ?, Status = ? WHERE (BOLID = ?) AND (BOLNumber = ? OR ? IS NULL AND BOLNumber IS NULL) AND (PickupDate = ? OR ? IS NULL AND PickupDate IS NULL) AND (Status = ? OR ? IS NULL AND Status IS NULL)</value>
+  </data>
+  <metadata name="billOfLadingItemAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 91</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand11.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand11.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand11.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand11.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand11.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand11.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand11.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand11.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand11.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand11.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand11.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand11.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="contBundleFromBundleIDAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>189, 91</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand12.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand12.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand12.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbDeleteCommand12.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblContBundle` WHERE ((`ContainerBundleID` = ?) AND ((? = 1 AND `ContID` IS NULL) OR (`ContID` = ?)) AND ((? = 1 AND `POItemNumber` IS NULL) OR (`POItemNumber` = ?)) AND ((? = 1 AND `BundleSeqNumber` IS NULL) OR (`BundleSeqNumber` = ?)) AND ((? = 1 AND `EnglishShipQty` IS NULL) OR (`EnglishShipQty` = ?)) AND ((? = 1 AND `InvoiceNumber` IS NULL) OR (`InvoiceNumber` = ?)) AND ((? = 1 AND `Heat` IS NULL) OR (`Heat` = ?)) AND ((? = 1 AND `MetricShipQty` IS NULL) OR (`MetricShipQty` = ?)) AND ((? = 1 AND `BayNumber` IS NULL) OR (`BayNumber` = ?)) AND ((? = 1 AND `PickupDate` IS NULL) OR (`PickupDate` = ?)) AND ((? = 1 AND `PickupTerminal` IS NULL) OR (`PickupTerminal` = ?)) AND ((? = 1 AND `ProofOfDelivery` IS NULL) OR (`ProofOfDelivery` = ?)) AND ((? = 1 AND `EMInvoiceNumber` IS NULL) OR (`EMInvoiceNumber` = ?)) AND ((? = 1 AND `AuxKey1` IS NULL) OR (`AuxKey1` = ?)) AND ((? = 1 AND `AuxKey2` IS NULL) OR (`AuxKey2` = ?)) AND ((? = 1 AND `MillInvoiceDate` IS NULL) OR (`MillInvoiceDate` = ?)) AND ((? = 1 AND `BundleAlloySurcharge` IS NULL) OR (`BundleAlloySurcharge` = ?)) AND ((? = 1 AND `BundleScrapSurcharge` IS NULL) OR (`BundleScrapSurcharge` = ?)))</value>
+  </data>
+  <metadata name="oleDbInsertCommand12.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand12.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand12.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbInsertCommand12.CommandText" xml:space="preserve">
+    <value>INSERT INTO `tblContBundle` (`ContainerBundleID`, `ContID`, `POItemNumber`, `BundleSeqNumber`, `EnglishShipQty`, `InvoiceNumber`, `Heat`, `MetricShipQty`, `BayNumber`, `PickupDate`, `PickupTerminal`, `ProofOfDelivery`, `EMInvoiceNumber`, `AuxKey1`, `AuxKey2`, `MillInvoiceDate`, `BundleAlloySurcharge`, `BundleScrapSurcharge`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</value>
+  </data>
+  <metadata name="oleDbSelectCommand12.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand12.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand12.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbSelectCommand12.CommandText" xml:space="preserve">
+    <value>SELECT        ContainerBundleID, ContID, POItemNumber, BundleSeqNumber, EnglishShipQty, InvoiceNumber, Heat, MetricShipQty, BayNumber, PickupDate, 
+                         PickupTerminal, ProofOfDelivery, EMInvoiceNumber, AuxKey1, AuxKey2, MillInvoiceDate, BundleAlloySurcharge, BundleScrapSurcharge
+FROM            tblContBundle
+WHERE        (ContainerBundleID = ?)</value>
+  </data>
+  <metadata name="oleDbUpdateCommand12.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand12.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand12.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand12.CommandText" xml:space="preserve">
+    <value>UPDATE `tblContBundle` SET `ContainerBundleID` = ?, `ContID` = ?, `POItemNumber` = ?, `BundleSeqNumber` = ?, `EnglishShipQty` = ?, `InvoiceNumber` = ?, `Heat` = ?, `MetricShipQty` = ?, `BayNumber` = ?, `PickupDate` = ?, `PickupTerminal` = ?, `ProofOfDelivery` = ?, `EMInvoiceNumber` = ?, `AuxKey1` = ?, `AuxKey2` = ?, `MillInvoiceDate` = ?, `BundleAlloySurcharge` = ?, `BundleScrapSurcharge` = ? WHERE ((`ContainerBundleID` = ?) AND ((? = 1 AND `ContID` IS NULL) OR (`ContID` = ?)) AND ((? = 1 AND `POItemNumber` IS NULL) OR (`POItemNumber` = ?)) AND ((? = 1 AND `BundleSeqNumber` IS NULL) OR (`BundleSeqNumber` = ?)) AND ((? = 1 AND `EnglishShipQty` IS NULL) OR (`EnglishShipQty` = ?)) AND ((? = 1 AND `InvoiceNumber` IS NULL) OR (`InvoiceNumber` = ?)) AND ((? = 1 AND `Heat` IS NULL) OR (`Heat` = ?)) AND ((? = 1 AND `MetricShipQty` IS NULL) OR (`MetricShipQty` = ?)) AND ((? = 1 AND `BayNumber` IS NULL) OR (`BayNumber` = ?)) AND ((? = 1 AND `PickupDate` IS NULL) OR (`PickupDate` = ?)) AND ((? = 1 AND `PickupTerminal` IS NULL) OR (`PickupTerminal` = ?)) AND ((? = 1 AND `ProofOfDelivery` IS NULL) OR (`ProofOfDelivery` = ?)) AND ((? = 1 AND `EMInvoiceNumber` IS NULL) OR (`EMInvoiceNumber` = ?)) AND ((? = 1 AND `AuxKey1` IS NULL) OR (`AuxKey1` = ?)) AND ((? = 1 AND `AuxKey2` IS NULL) OR (`AuxKey2` = ?)) AND ((? = 1 AND `MillInvoiceDate` IS NULL) OR (`MillInvoiceDate` = ?)) AND ((? = 1 AND `BundleAlloySurcharge` IS NULL) OR (`BundleAlloySurcharge` = ?)) AND ((? = 1 AND `BundleScrapSurcharge` IS NULL) OR (`BundleScrapSurcharge` = ?)))</value>
+  </data>
+  <metadata name="billOfLadingItemFromContBundleIDAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>407, 91</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand13.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand13.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand13.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand13.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand13.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand13.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand13.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand13.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand13.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand13.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand13.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand13.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="companyFromTypeAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>674, 91</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand14.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand14.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand14.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbDeleteCommand14.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblCompany` WHERE ((`CompID` = ?) AND ((? = 1 AND `CompName` IS NULL) OR (`CompName` = ?)) AND ((? = 1 AND `CompType` IS NULL) OR (`CompType` = ?)) AND ((? = 1 AND `ContainerExcelFile` IS NULL) OR (`ContainerExcelFile` = ?)) AND ((? = 1 AND `CompNameAbbreviation` IS NULL) OR (`CompNameAbbreviation` = ?)))</value>
+  </data>
+  <metadata name="oleDbInsertCommand14.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand14.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand14.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand14.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand14.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand14.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand14.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand14.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand14.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand14.CommandText" xml:space="preserve">
+    <value>UPDATE `tblCompany` SET `CompID` = ?, `CompName` = ?, `CompType` = ?, `ContainerExcelFile` = ?, `CompNameAbbreviation` = ? WHERE ((`CompID` = ?) AND ((? = 1 AND `CompName` IS NULL) OR (`CompName` = ?)) AND ((? = 1 AND `CompType` IS NULL) OR (`CompType` = ?)) AND ((? = 1 AND `ContainerExcelFile` IS NULL) OR (`ContainerExcelFile` = ?)) AND ((? = 1 AND `CompNameAbbreviation` IS NULL) OR (`CompNameAbbreviation` = ?)))</value>
+  </data>
+  <metadata name="poHeaderFromPONumber.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 128</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand15.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand15.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand15.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbDeleteCommand15.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblPOHeader2` WHERE ((`POID` = ?) AND ((? = 1 AND `PONumber` IS NULL) OR (`PONumber` = ?)) AND ((? = 1 AND `PODate` IS NULL) OR (`PODate` = ?)) AND ((? = 1 AND `VendCompany` IS NULL) OR (`VendCompany` = ?)) AND ((? = 1 AND `VendNameObsolete` IS NULL) OR (`VendNameObsolete` = ?)) AND ((? = 1 AND `VendPhone` IS NULL) OR (`VendPhone` = ?)) AND ((? = 1 AND `VendFax` IS NULL) OR (`VendFax` = ?)) AND ((? = 1 AND `VendContact` IS NULL) OR (`VendContact` = ?)) AND ((? = 1 AND `VendEMail` IS NULL) OR (`VendEMail` = ?)) AND ((? = 1 AND `VendCountryObsolete` IS NULL) OR (`VendCountryObsolete` = ?)) AND ((? = 1 AND `ShipToCompanyObsolete` IS NULL) OR (`ShipToCompanyObsolete` = ?)) AND ((? = 1 AND `ShipToNameObsolete` IS NULL) OR (`ShipToNameObsolete` = ?)) AND ((? = 1 AND `ShipToPhone` IS NULL) OR (`ShipToPhone` = ?)) AND ((? = 1 AND `ShipToFax` IS NULL) OR (`ShipToFax` = ?)) AND ((? = 1 AND `ShipToContact` IS NULL) OR (`ShipToContact` = ?)) AND ((? = 1 AND `ShipToEMail` IS NULL) OR (`ShipToEMail` = ?)) AND ((? = 1 AND `ShipToCountryObsolete` IS NULL) OR (`ShipToCountryObsolete` = ?)) AND ((? = 1 AND `Terms` IS NULL) OR (`Terms` = ?)) AND ((? = 1 AND `ShipCode` IS NULL) OR (`ShipCode` = ?)) AND ((? = 1 AND `FOB` IS NULL) OR (`FOB` = ?)) AND ((? = 1 AND `Status` IS NULL) OR (`Status` = ?)) AND ((? = 1 AND `USTotal` IS NULL) OR (`USTotal` = ?)) AND ((? = 1 AND `OtherTotal` IS NULL) OR (`OtherTotal` = ?)) AND ((? = 1 AND `ExchangeRate` IS NULL) OR (`ExchangeRate` = ?)) AND ((? = 1 AND `CancelDate` IS NULL) OR (`CancelDate` = ?)) AND ((? = 1 AND `VendLocationNameObsolete` IS NULL) OR (`VendLocationNameObsolete` = ?)) AND ((? = 1 AND `ShipToLocationNameObsolete` IS NULL) OR (`ShipToLocationNameObsolete` = ?)) AND ((? = 1 AND `MillConfirmationNumber` IS NULL) OR (`MillConfirmationNumber` = ?)) AND ((? = 1 AND `MillAcknowledgeDate` IS NULL) OR (`MillAcknowledgeDate` = ?)) AND ((? = 1 AND `ExchangeDate` IS NULL) OR (`ExchangeDate` = ?)) AND ((? = 1 AND `CurrencyID` IS NULL) OR (`CurrencyID` = ?)) AND ((? = 1 AND `CustomerID` IS NULL) OR (`CustomerID` = ?)) AND ((? = 1 AND `CustomerLocationID` IS NULL) OR (`CustomerLocationID` = ?)) AND ((? = 1 AND `MillID` IS NULL) OR (`MillID` = ?)) AND ((? = 1 AND `MillLocationID` IS NULL) OR (`MillLocationID` = ?)) AND ((? = 1 AND `SurchargesInEffect` IS NULL) OR (`SurchargesInEffect` = ?)) AND ((? = 1 AND `InvoiceNumber` IS NULL) OR (`InvoiceNumber` = ?)) AND ((? = 1 AND `InvoiceDate` IS NULL) OR (`InvoiceDate` = ?)) AND ((? = 1 AND `MillAcknowledgeDateRevised` IS NULL) OR (`MillAcknowledgeDateRevised` = ?)) AND ((? = 1 AND `VendContactID` IS NULL) OR (`VendContactID` = ?)) AND ((? = 1 AND `ShipToContactID` IS NULL) OR (`ShipToContactID` = ?)) AND ((? = 1 AND `MillConfirmationAppliesToEntirePO` IS NULL) OR (`MillConfirmationAppliesToEntirePO` = ?)))</value>
+  </data>
+  <metadata name="oleDbInsertCommand15.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand15.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand15.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbInsertCommand15.CommandText" xml:space="preserve">
+    <value>INSERT INTO `tblPOHeader2` (`POID`, `PONumber`, `PODate`, `VendCompany`, `VendNameObsolete`, `VendPhone`, `VendFax`, `VendContact`, `VendEMail`, `VendAddressObsolete`, `VendCountryObsolete`, `ShipToCompanyObsolete`, `ShipToNameObsolete`, `ShipToPhone`, `ShipToFax`, `ShipToContact`, `ShipToEMail`, `ShipToAddressObsolete`, `ShipToCountryObsolete`, `Terms`, `ShipCode`, `FOB`, `Status`, `USTotal`, `OtherTotal`, `ExchangeRate`, `CancelDate`, `Comments`, `VendLocationNameObsolete`, `ShipToLocationNameObsolete`, `MillConfirmationNumber`, `MillAcknowledgeDate`, `ExchangeDate`, `CurrencyID`, `CustomerID`, `CustomerLocationID`, `MillID`, `MillLocationID`, `SurchargesInEffect`, `InvoiceNumber`, `InvoiceDate`, `MillAcknowledgeDateRevised`, `VendContactID`, `ShipToContactID`, `MillConfirmationAppliesToEntirePO`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</value>
+  </data>
+  <metadata name="oleDbSelectCommand15.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand15.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand15.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbSelectCommand15.CommandText" xml:space="preserve">
+    <value>SELECT        POID, PONumber, PODate, VendCompany, VendNameObsolete, VendPhone, VendFax, VendContact, VendEMail, VendAddressObsolete, VendCountryObsolete, 
+                         ShipToCompanyObsolete, ShipToNameObsolete, ShipToPhone, ShipToFax, ShipToContact, ShipToEMail, ShipToAddressObsolete, ShipToCountryObsolete, 
+                         Terms, ShipCode, FOB, Status, USTotal, OtherTotal, ExchangeRate, CancelDate, Comments, VendLocationNameObsolete, ShipToLocationNameObsolete, 
+                         MillConfirmationNumber, MillAcknowledgeDate, ExchangeDate, CurrencyID, CustomerID, CustomerLocationID, MillID, MillLocationID, SurchargesInEffect, 
+                         InvoiceNumber, InvoiceDate, MillAcknowledgeDateRevised, VendContactID, ShipToContactID, MillConfirmationAppliesToEntirePO
+FROM            tblPOHeader2
+WHERE        (PONumber = '?')</value>
+  </data>
+  <metadata name="oleDbUpdateCommand15.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand15.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand15.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand15.CommandText" xml:space="preserve">
+    <value>UPDATE `tblPOHeader2` SET `POID` = ?, `PONumber` = ?, `PODate` = ?, `VendCompany` = ?, `VendNameObsolete` = ?, `VendPhone` = ?, `VendFax` = ?, `VendContact` = ?, `VendEMail` = ?, `VendAddressObsolete` = ?, `VendCountryObsolete` = ?, `ShipToCompanyObsolete` = ?, `ShipToNameObsolete` = ?, `ShipToPhone` = ?, `ShipToFax` = ?, `ShipToContact` = ?, `ShipToEMail` = ?, `ShipToAddressObsolete` = ?, `ShipToCountryObsolete` = ?, `Terms` = ?, `ShipCode` = ?, `FOB` = ?, `Status` = ?, `USTotal` = ?, `OtherTotal` = ?, `ExchangeRate` = ?, `CancelDate` = ?, `Comments` = ?, `VendLocationNameObsolete` = ?, `ShipToLocationNameObsolete` = ?, `MillConfirmationNumber` = ?, `MillAcknowledgeDate` = ?, `ExchangeDate` = ?, `CurrencyID` = ?, `CustomerID` = ?, `CustomerLocationID` = ?, `MillID` = ?, `MillLocationID` = ?, `SurchargesInEffect` = ?, `InvoiceNumber` = ?, `InvoiceDate` = ?, `MillAcknowledgeDateRevised` = ?, `VendContactID` = ?, `ShipToContactID` = ?, `MillConfirmationAppliesToEntirePO` = ? WHERE ((`POID` = ?) AND ((? = 1 AND `PONumber` IS NULL) OR (`PONumber` = ?)) AND ((? = 1 AND `PODate` IS NULL) OR (`PODate` = ?)) AND ((? = 1 AND `VendCompany` IS NULL) OR (`VendCompany` = ?)) AND ((? = 1 AND `VendNameObsolete` IS NULL) OR (`VendNameObsolete` = ?)) AND ((? = 1 AND `VendPhone` IS NULL) OR (`VendPhone` = ?)) AND ((? = 1 AND `VendFax` IS NULL) OR (`VendFax` = ?)) AND ((? = 1 AND `VendContact` IS NULL) OR (`VendContact` = ?)) AND ((? = 1 AND `VendEMail` IS NULL) OR (`VendEMail` = ?)) AND ((? = 1 AND `VendCountryObsolete` IS NULL) OR (`VendCountryObsolete` = ?)) AND ((? = 1 AND `ShipToCompanyObsolete` IS NULL) OR (`ShipToCompanyObsolete` = ?)) AND ((? = 1 AND `ShipToNameObsolete` IS NULL) OR (`ShipToNameObsolete` = ?)) AND ((? = 1 AND `ShipToPhone` IS NULL) OR (`ShipToPhone` = ?)) AND ((? = 1 AND `ShipToFax` IS NULL) OR (`ShipToFax` = ?)) AND ((? = 1 AND `ShipToContact` IS NULL) OR (`ShipToContact` = ?)) AND ((? = 1 AND `ShipToEMail` IS NULL) OR (`ShipToEMail` = ?)) AND ((? = 1 AND `ShipToCountryObsolete` IS NULL) OR (`ShipToCountryObsolete` = ?)) AND ((? = 1 AND `Terms` IS NULL) OR (`Terms` = ?)) AND ((? = 1 AND `ShipCode` IS NULL) OR (`ShipCode` = ?)) AND ((? = 1 AND `FOB` IS NULL) OR (`FOB` = ?)) AND ((? = 1 AND `Status` IS NULL) OR (`Status` = ?)) AND ((? = 1 AND `USTotal` IS NULL) OR (`USTotal` = ?)) AND ((? = 1 AND `OtherTotal` IS NULL) OR (`OtherTotal` = ?)) AND ((? = 1 AND `ExchangeRate` IS NULL) OR (`ExchangeRate` = ?)) AND ((? = 1 AND `CancelDate` IS NULL) OR (`CancelDate` = ?)) AND ((? = 1 AND `VendLocationNameObsolete` IS NULL) OR (`VendLocationNameObsolete` = ?)) AND ((? = 1 AND `ShipToLocationNameObsolete` IS NULL) OR (`ShipToLocationNameObsolete` = ?)) AND ((? = 1 AND `MillConfirmationNumber` IS NULL) OR (`MillConfirmationNumber` = ?)) AND ((? = 1 AND `MillAcknowledgeDate` IS NULL) OR (`MillAcknowledgeDate` = ?)) AND ((? = 1 AND `ExchangeDate` IS NULL) OR (`ExchangeDate` = ?)) AND ((? = 1 AND `CurrencyID` IS NULL) OR (`CurrencyID` = ?)) AND ((? = 1 AND `CustomerID` IS NULL) OR (`CustomerID` = ?)) AND ((? = 1 AND `CustomerLocationID` IS NULL) OR (`CustomerLocationID` = ?)) AND ((? = 1 AND `MillID` IS NULL) OR (`MillID` = ?)) AND ((? = 1 AND `MillLocationID` IS NULL) OR (`MillLocationID` = ?)) AND ((? = 1 AND `SurchargesInEffect` IS NULL) OR (`SurchargesInEffect` = ?)) AND ((? = 1 AND `InvoiceNumber` IS NULL) OR (`InvoiceNumber` = ?)) AND ((? = 1 AND `InvoiceDate` IS NULL) OR (`InvoiceDate` = ?)) AND ((? = 1 AND `MillAcknowledgeDateRevised` IS NULL) OR (`MillAcknowledgeDateRevised` = ?)) AND ((? = 1 AND `VendContactID` IS NULL) OR (`VendContactID` = ?)) AND ((? = 1 AND `ShipToContactID` IS NULL) OR (`ShipToContactID` = ?)) AND ((? = 1 AND `MillConfirmationAppliesToEntirePO` IS NULL) OR (`MillConfirmationAppliesToEntirePO` = ?)))</value>
+  </data>
+  <metadata name="contactsAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>196, 128</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand16.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand16.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand16.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbDeleteCommand16.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblContacts` WHERE (((? = 1 AND `CompID` IS NULL) OR (`CompID` = ?)) AND (`ContactID` = ?) AND ((? = 1 AND `EMail` IS NULL) OR (`EMail` = ?)) AND ((? = 1 AND `Fax` IS NULL) OR (`Fax` = ?)) AND ((? = 1 AND `FirstName` IS NULL) OR (`FirstName` = ?)) AND ((? = 1 AND `LastName` IS NULL) OR (`LastName` = ?)) AND ((? = 1 AND `Phone` IS NULL) OR (`Phone` = ?)))</value>
+  </data>
+  <metadata name="oleDbInsertCommand16.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand16.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand16.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand16.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand16.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand16.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand16.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand16.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand16.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand16.CommandText" xml:space="preserve">
+    <value>UPDATE `tblContacts` SET `CompID` = ?, `ContactID` = ?, `EMail` = ?, `Fax` = ?, `FirstName` = ?, `LastName` = ?, `Phone` = ? WHERE (((? = 1 AND `CompID` IS NULL) OR (`CompID` = ?)) AND (`ContactID` = ?) AND ((? = 1 AND `EMail` IS NULL) OR (`EMail` = ?)) AND ((? = 1 AND `Fax` IS NULL) OR (`Fax` = ?)) AND ((? = 1 AND `FirstName` IS NULL) OR (`FirstName` = ?)) AND ((? = 1 AND `LastName` IS NULL) OR (`LastName` = ?)) AND ((? = 1 AND `Phone` IS NULL) OR (`Phone` = ?)))</value>
+  </data>
+  <metadata name="countryAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>328, 128</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand17.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand17.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand17.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand17.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand17.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand17.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand17.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand17.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand17.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand17.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand17.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand17.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="temsAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>456, 128</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand18.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand18.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand18.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand18.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand18.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand18.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand18.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand18.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand18.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand18.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand18.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand18.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="shipCodeAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>571, 128</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand19.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand19.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand19.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand19.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand19.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand19.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand19.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand19.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand19.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand19.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand19.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand19.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="finishAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>707, 128</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand20.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand20.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand20.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand20.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand20.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand20.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand20.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand20.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand20.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand20.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand20.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand20.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand20.CommandText" xml:space="preserve">
+    <value>UPDATE `TblFinish` SET `FinishID` = ?, `FinishType` = ?, `CommissionRate` = ? WHERE ((`FinishID` = ?) AND ((? = 1 AND `FinishType` IS NULL) OR (`FinishType` = ?)) AND ((? = 1 AND `CommissionRate` IS NULL) OR (`CommissionRate` = ?)))</value>
+  </data>
+  <metadata name="companyFromIDAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 165</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand21.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand21.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand21.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbDeleteCommand21.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblCompany` WHERE ((`CompID` = ?) AND ((? = 1 AND `CompName` IS NULL) OR (`CompName` = ?)) AND ((? = 1 AND `CompType` IS NULL) OR (`CompType` = ?)) AND ((? = 1 AND `ContainerExcelFile` IS NULL) OR (`ContainerExcelFile` = ?)) AND ((? = 1 AND `CompNameAbbreviation` IS NULL) OR (`CompNameAbbreviation` = ?)))</value>
+  </data>
+  <metadata name="oleDbInsertCommand21.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand21.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand21.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand21.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand21.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand21.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand21.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand21.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand21.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand21.CommandText" xml:space="preserve">
+    <value>UPDATE `tblCompany` SET `CompID` = ?, `CompName` = ?, `CompType` = ?, `ContainerExcelFile` = ?, `CompNameAbbreviation` = ? WHERE ((`CompID` = ?) AND ((? = 1 AND `CompName` IS NULL) OR (`CompName` = ?)) AND ((? = 1 AND `CompType` IS NULL) OR (`CompType` = ?)) AND ((? = 1 AND `ContainerExcelFile` IS NULL) OR (`ContainerExcelFile` = ?)) AND ((? = 1 AND `CompNameAbbreviation` IS NULL) OR (`CompNameAbbreviation` = ?)))</value>
+  </data>
+  <metadata name="currencyAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>190, 165</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand22.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand22.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand22.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand22.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand22.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand22.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand22.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand22.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand22.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand22.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand22.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand22.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="itemAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>323, 165</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand23.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand23.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand23.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbDeleteCommand23.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblItem` WHERE (((? = 1 AND `CommRate` IS NULL) OR (`CommRate` = ?)) AND ((? = 1 AND `CompID` IS NULL) OR (`CompID` = ?)) AND ((? = 1 AND `CustRate` IS NULL) OR (`CustRate` = ?)) AND (`ItemID` = ?) AND ((? = 1 AND `ItemName` IS NULL) OR (`ItemName` = ?)))</value>
+  </data>
+  <metadata name="oleDbInsertCommand23.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand23.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand23.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand23.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand23.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand23.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand23.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand23.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand23.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand23.CommandText" xml:space="preserve">
+    <value>UPDATE `tblItem` SET `CommRate` = ?, `CompID` = ?, `CustRate` = ?, `ItemDesc` = ?, `ItemID` = ?, `ItemName` = ? WHERE (((? = 1 AND `CommRate` IS NULL) OR (`CommRate` = ?)) AND ((? = 1 AND `CompID` IS NULL) OR (`CompID` = ?)) AND ((? = 1 AND `CustRate` IS NULL) OR (`CustRate` = ?)) AND (`ItemID` = ?) AND ((? = 1 AND `ItemName` IS NULL) OR (`ItemName` = ?)))</value>
+  </data>
+  <metadata name="itemFromItemIDAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>435, 165</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand24.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand24.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand24.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbDeleteCommand24.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblItem` WHERE (((? = 1 AND `CommRate` IS NULL) OR (`CommRate` = ?)) AND ((? = 1 AND `CompID` IS NULL) OR (`CompID` = ?)) AND ((? = 1 AND `CustRate` IS NULL) OR (`CustRate` = ?)) AND (`ItemID` = ?) AND ((? = 1 AND `ItemName` IS NULL) OR (`ItemName` = ?)))</value>
+  </data>
+  <metadata name="oleDbInsertCommand24.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand24.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand24.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand24.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand24.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand24.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand24.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand24.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand24.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand24.CommandText" xml:space="preserve">
+    <value>UPDATE `tblItem` SET `CommRate` = ?, `CompID` = ?, `CustRate` = ?, `ItemDesc` = ?, `ItemID` = ?, `ItemName` = ? WHERE (((? = 1 AND `CommRate` IS NULL) OR (`CommRate` = ?)) AND ((? = 1 AND `CompID` IS NULL) OR (`CompID` = ?)) AND ((? = 1 AND `CustRate` IS NULL) OR (`CustRate` = ?)) AND (`ItemID` = ?) AND ((? = 1 AND `ItemName` IS NULL) OR (`ItemName` = ?)))</value>
+  </data>
+  <metadata name="poHeaderAllAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>608, 165</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand25.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand25.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand25.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbDeleteCommand25.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblPOHeader2` WHERE ((`POID` = ?) AND ((? = 1 AND `PONumber` IS NULL) OR (`PONumber` = ?)) AND ((? = 1 AND `PODate` IS NULL) OR (`PODate` = ?)) AND ((? = 1 AND `VendCompany` IS NULL) OR (`VendCompany` = ?)) AND ((? = 1 AND `VendNameObsolete` IS NULL) OR (`VendNameObsolete` = ?)) AND ((? = 1 AND `VendPhone` IS NULL) OR (`VendPhone` = ?)) AND ((? = 1 AND `VendFax` IS NULL) OR (`VendFax` = ?)) AND ((? = 1 AND `VendContact` IS NULL) OR (`VendContact` = ?)) AND ((? = 1 AND `VendEMail` IS NULL) OR (`VendEMail` = ?)) AND ((? = 1 AND `VendCountryObsolete` IS NULL) OR (`VendCountryObsolete` = ?)) AND ((? = 1 AND `ShipToCompanyObsolete` IS NULL) OR (`ShipToCompanyObsolete` = ?)) AND ((? = 1 AND `ShipToNameObsolete` IS NULL) OR (`ShipToNameObsolete` = ?)) AND ((? = 1 AND `ShipToPhone` IS NULL) OR (`ShipToPhone` = ?)) AND ((? = 1 AND `ShipToFax` IS NULL) OR (`ShipToFax` = ?)) AND ((? = 1 AND `ShipToContact` IS NULL) OR (`ShipToContact` = ?)) AND ((? = 1 AND `ShipToEMail` IS NULL) OR (`ShipToEMail` = ?)) AND ((? = 1 AND `ShipToCountryObsolete` IS NULL) OR (`ShipToCountryObsolete` = ?)) AND ((? = 1 AND `Terms` IS NULL) OR (`Terms` = ?)) AND ((? = 1 AND `ShipCode` IS NULL) OR (`ShipCode` = ?)) AND ((? = 1 AND `FOB` IS NULL) OR (`FOB` = ?)) AND ((? = 1 AND `Status` IS NULL) OR (`Status` = ?)) AND ((? = 1 AND `USTotal` IS NULL) OR (`USTotal` = ?)) AND ((? = 1 AND `OtherTotal` IS NULL) OR (`OtherTotal` = ?)) AND ((? = 1 AND `ExchangeRate` IS NULL) OR (`ExchangeRate` = ?)) AND ((? = 1 AND `CancelDate` IS NULL) OR (`CancelDate` = ?)) AND ((? = 1 AND `VendLocationNameObsolete` IS NULL) OR (`VendLocationNameObsolete` = ?)) AND ((? = 1 AND `ShipToLocationNameObsolete` IS NULL) OR (`ShipToLocationNameObsolete` = ?)) AND ((? = 1 AND `MillConfirmationNumber` IS NULL) OR (`MillConfirmationNumber` = ?)) AND ((? = 1 AND `MillAcknowledgeDate` IS NULL) OR (`MillAcknowledgeDate` = ?)) AND ((? = 1 AND `ExchangeDate` IS NULL) OR (`ExchangeDate` = ?)) AND ((? = 1 AND `CurrencyID` IS NULL) OR (`CurrencyID` = ?)) AND ((? = 1 AND `CustomerID` IS NULL) OR (`CustomerID` = ?)) AND ((? = 1 AND `CustomerLocationID` IS NULL) OR (`CustomerLocationID` = ?)) AND ((? = 1 AND `MillID` IS NULL) OR (`MillID` = ?)) AND ((? = 1 AND `MillLocationID` IS NULL) OR (`MillLocationID` = ?)) AND ((? = 1 AND `SurchargesInEffect` IS NULL) OR (`SurchargesInEffect` = ?)) AND ((? = 1 AND `InvoiceNumber` IS NULL) OR (`InvoiceNumber` = ?)) AND ((? = 1 AND `InvoiceDate` IS NULL) OR (`InvoiceDate` = ?)) AND ((? = 1 AND `MillAcknowledgeDateRevised` IS NULL) OR (`MillAcknowledgeDateRevised` = ?)) AND ((? = 1 AND `VendContactID` IS NULL) OR (`VendContactID` = ?)) AND ((? = 1 AND `ShipToContactID` IS NULL) OR (`ShipToContactID` = ?)) AND ((? = 1 AND `MillConfirmationAppliesToEntirePO` IS NULL) OR (`MillConfirmationAppliesToEntirePO` = ?)))</value>
+  </data>
+  <metadata name="oleDbInsertCommand25.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand25.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand25.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbInsertCommand25.CommandText" xml:space="preserve">
+    <value>INSERT INTO `tblPOHeader2` (`POID`, `PONumber`, `PODate`, `VendCompany`, `VendNameObsolete`, `VendPhone`, `VendFax`, `VendContact`, `VendEMail`, `VendAddressObsolete`, `VendCountryObsolete`, `ShipToCompanyObsolete`, `ShipToNameObsolete`, `ShipToPhone`, `ShipToFax`, `ShipToContact`, `ShipToEMail`, `ShipToAddressObsolete`, `ShipToCountryObsolete`, `Terms`, `ShipCode`, `FOB`, `Status`, `USTotal`, `OtherTotal`, `ExchangeRate`, `CancelDate`, `Comments`, `VendLocationNameObsolete`, `ShipToLocationNameObsolete`, `MillConfirmationNumber`, `MillAcknowledgeDate`, `ExchangeDate`, `CurrencyID`, `CustomerID`, `CustomerLocationID`, `MillID`, `MillLocationID`, `SurchargesInEffect`, `InvoiceNumber`, `InvoiceDate`, `MillAcknowledgeDateRevised`, `VendContactID`, `ShipToContactID`, `MillConfirmationAppliesToEntirePO`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</value>
+  </data>
+  <metadata name="oleDbSelectCommand25.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand25.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand25.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbSelectCommand25.CommandText" xml:space="preserve">
+    <value>SELECT        POID, PONumber, PODate, VendCompany, VendNameObsolete, VendPhone, VendFax, VendContact, VendEMail, VendAddressObsolete, VendCountryObsolete, 
+                         ShipToCompanyObsolete, ShipToNameObsolete, ShipToPhone, ShipToFax, ShipToContact, ShipToEMail, ShipToAddressObsolete, ShipToCountryObsolete, 
+                         Terms, ShipCode, FOB, Status, USTotal, OtherTotal, ExchangeRate, CancelDate, Comments, VendLocationNameObsolete, ShipToLocationNameObsolete, 
+                         MillConfirmationNumber, MillAcknowledgeDate, ExchangeDate, CurrencyID, CustomerID, CustomerLocationID, MillID, MillLocationID, SurchargesInEffect, 
+                         InvoiceNumber, InvoiceDate, MillAcknowledgeDateRevised, VendContactID, ShipToContactID, MillConfirmationAppliesToEntirePO
+FROM            tblPOHeader2</value>
+  </data>
+  <metadata name="oleDbUpdateCommand25.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand25.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand25.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand25.CommandText" xml:space="preserve">
+    <value>UPDATE `tblPOHeader2` SET `POID` = ?, `PONumber` = ?, `PODate` = ?, `VendCompany` = ?, `VendNameObsolete` = ?, `VendPhone` = ?, `VendFax` = ?, `VendContact` = ?, `VendEMail` = ?, `VendAddressObsolete` = ?, `VendCountryObsolete` = ?, `ShipToCompanyObsolete` = ?, `ShipToNameObsolete` = ?, `ShipToPhone` = ?, `ShipToFax` = ?, `ShipToContact` = ?, `ShipToEMail` = ?, `ShipToAddressObsolete` = ?, `ShipToCountryObsolete` = ?, `Terms` = ?, `ShipCode` = ?, `FOB` = ?, `Status` = ?, `USTotal` = ?, `OtherTotal` = ?, `ExchangeRate` = ?, `CancelDate` = ?, `Comments` = ?, `VendLocationNameObsolete` = ?, `ShipToLocationNameObsolete` = ?, `MillConfirmationNumber` = ?, `MillAcknowledgeDate` = ?, `ExchangeDate` = ?, `CurrencyID` = ?, `CustomerID` = ?, `CustomerLocationID` = ?, `MillID` = ?, `MillLocationID` = ?, `SurchargesInEffect` = ?, `InvoiceNumber` = ?, `InvoiceDate` = ?, `MillAcknowledgeDateRevised` = ?, `VendContactID` = ?, `ShipToContactID` = ?, `MillConfirmationAppliesToEntirePO` = ? WHERE ((`POID` = ?) AND ((? = 1 AND `PONumber` IS NULL) OR (`PONumber` = ?)) AND ((? = 1 AND `PODate` IS NULL) OR (`PODate` = ?)) AND ((? = 1 AND `VendCompany` IS NULL) OR (`VendCompany` = ?)) AND ((? = 1 AND `VendNameObsolete` IS NULL) OR (`VendNameObsolete` = ?)) AND ((? = 1 AND `VendPhone` IS NULL) OR (`VendPhone` = ?)) AND ((? = 1 AND `VendFax` IS NULL) OR (`VendFax` = ?)) AND ((? = 1 AND `VendContact` IS NULL) OR (`VendContact` = ?)) AND ((? = 1 AND `VendEMail` IS NULL) OR (`VendEMail` = ?)) AND ((? = 1 AND `VendCountryObsolete` IS NULL) OR (`VendCountryObsolete` = ?)) AND ((? = 1 AND `ShipToCompanyObsolete` IS NULL) OR (`ShipToCompanyObsolete` = ?)) AND ((? = 1 AND `ShipToNameObsolete` IS NULL) OR (`ShipToNameObsolete` = ?)) AND ((? = 1 AND `ShipToPhone` IS NULL) OR (`ShipToPhone` = ?)) AND ((? = 1 AND `ShipToFax` IS NULL) OR (`ShipToFax` = ?)) AND ((? = 1 AND `ShipToContact` IS NULL) OR (`ShipToContact` = ?)) AND ((? = 1 AND `ShipToEMail` IS NULL) OR (`ShipToEMail` = ?)) AND ((? = 1 AND `ShipToCountryObsolete` IS NULL) OR (`ShipToCountryObsolete` = ?)) AND ((? = 1 AND `Terms` IS NULL) OR (`Terms` = ?)) AND ((? = 1 AND `ShipCode` IS NULL) OR (`ShipCode` = ?)) AND ((? = 1 AND `FOB` IS NULL) OR (`FOB` = ?)) AND ((? = 1 AND `Status` IS NULL) OR (`Status` = ?)) AND ((? = 1 AND `USTotal` IS NULL) OR (`USTotal` = ?)) AND ((? = 1 AND `OtherTotal` IS NULL) OR (`OtherTotal` = ?)) AND ((? = 1 AND `ExchangeRate` IS NULL) OR (`ExchangeRate` = ?)) AND ((? = 1 AND `CancelDate` IS NULL) OR (`CancelDate` = ?)) AND ((? = 1 AND `VendLocationNameObsolete` IS NULL) OR (`VendLocationNameObsolete` = ?)) AND ((? = 1 AND `ShipToLocationNameObsolete` IS NULL) OR (`ShipToLocationNameObsolete` = ?)) AND ((? = 1 AND `MillConfirmationNumber` IS NULL) OR (`MillConfirmationNumber` = ?)) AND ((? = 1 AND `MillAcknowledgeDate` IS NULL) OR (`MillAcknowledgeDate` = ?)) AND ((? = 1 AND `ExchangeDate` IS NULL) OR (`ExchangeDate` = ?)) AND ((? = 1 AND `CurrencyID` IS NULL) OR (`CurrencyID` = ?)) AND ((? = 1 AND `CustomerID` IS NULL) OR (`CustomerID` = ?)) AND ((? = 1 AND `CustomerLocationID` IS NULL) OR (`CustomerLocationID` = ?)) AND ((? = 1 AND `MillID` IS NULL) OR (`MillID` = ?)) AND ((? = 1 AND `MillLocationID` IS NULL) OR (`MillLocationID` = ?)) AND ((? = 1 AND `SurchargesInEffect` IS NULL) OR (`SurchargesInEffect` = ?)) AND ((? = 1 AND `InvoiceNumber` IS NULL) OR (`InvoiceNumber` = ?)) AND ((? = 1 AND `InvoiceDate` IS NULL) OR (`InvoiceDate` = ?)) AND ((? = 1 AND `MillAcknowledgeDateRevised` IS NULL) OR (`MillAcknowledgeDateRevised` = ?)) AND ((? = 1 AND `VendContactID` IS NULL) OR (`VendContactID` = ?)) AND ((? = 1 AND `ShipToContactID` IS NULL) OR (`ShipToContactID` = ?)) AND ((? = 1 AND `MillConfirmationAppliesToEntirePO` IS NULL) OR (`MillConfirmationAppliesToEntirePO` = ?)))</value>
+  </data>
+  <metadata name="poItemAllAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>759, 165</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand26.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand26.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand26.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbDeleteCommand26.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblPOItem2` WHERE ((`POItemNumber` = ?) AND ((? = 1 AND `POID` IS NULL) OR (`POID` = ?)) AND ((? = 1 AND `SeqNumber` IS NULL) OR (`SeqNumber` = ?)) AND ((? = 1 AND `ItemNameObsolete` IS NULL) OR (`ItemNameObsolete` = ?)) AND ((? = 1 AND `Length` IS NULL) OR (`Length` = ?)) AND ((? = 1 AND `SizeOfItem` IS NULL) OR (`SizeOfItem` = ?)) AND ((? = 1 AND `ItemAccessCode` IS NULL) OR (`ItemAccessCode` = ?)) AND ((? = 1 AND `Qty` IS NULL) OR (`Qty` = ?)) AND ((? = 1 AND `UM` IS NULL) OR (`UM` = ?)) AND ((? = 1 AND `DateRequired` IS NULL) OR (`DateRequired` = ?)) AND ((? = 1 AND `AcknowledgeDate` IS NULL) OR (`AcknowledgeDate` = ?)) AND ((? = 1 AND `MillShipDate` IS NULL) OR (`MillShipDate` = ?)) AND ((? = 1 AND `CancelDate` IS NULL) OR (`CancelDate` = ?)) AND ((? = 1 AND `CustRate` IS NULL) OR (`CustRate` = ?)) AND ((? = 1 AND `CommRate` IS NULL) OR (`CommRate` = ?)) AND ((? = 1 AND `CustAmount` IS NULL) OR (`CustAmount` = ?)) AND ((? = 1 AND `CommAmount` IS NULL) OR (`CommAmount` = ?)) AND ((? = 1 AND `FinishID` IS NULL) OR (`FinishID` = ?)) AND ((? = 1 AND `ItemID` IS NULL) OR (`ItemID` = ?)) AND ((? = 1 AND `TreatmentID` IS NULL) OR (`TreatmentID` = ?)) AND ((? = 1 AND `MillConfirmationNumber` IS NULL) OR (`MillConfirmationNumber` = ?)) AND ((? = 1 AND `MillAcknowledgeDate` IS NULL) OR (`MillAcknowledgeDate` = ?)) AND ((? = 1 AND `InvoiceNumber` IS NULL) OR (`InvoiceNumber` = ?)) AND ((? = 1 AND `InvoiceDate` IS NULL) OR (`InvoiceDate` = ?)))</value>
+  </data>
+  <metadata name="oleDbInsertCommand26.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand26.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand26.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbInsertCommand26.CommandText" xml:space="preserve">
+    <value>INSERT INTO `tblPOItem2` (`POItemNumber`, `POID`, `SeqNumber`, `ItemNameObsolete`, `ItemDesc`, `Length`, `SizeOfItem`, `ItemAccessCode`, `Qty`, `UM`, `DateRequired`, `AcknowledgeDate`, `MillShipDate`, `CancelDate`, `CustRate`, `CommRate`, `CustAmount`, `CommAmount`, `Comments`, `FinishID`, `ItemID`, `TreatmentID`, `MillConfirmationNumber`, `MillAcknowledgeDate`, `InvoiceNumber`, `InvoiceDate`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</value>
+  </data>
+  <metadata name="oleDbSelectCommand26.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand26.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand26.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbSelectCommand26.CommandText" xml:space="preserve">
+    <value>SELECT        POItemNumber, POID, SeqNumber, ItemNameObsolete, ItemDesc, Length, SizeOfItem, ItemAccessCode, Qty, UM, DateRequired, AcknowledgeDate, 
+                         MillShipDate, CancelDate, CustRate, CommRate, CustAmount, CommAmount, Comments, FinishID, ItemID, TreatmentID, MillConfirmationNumber, 
+                         MillAcknowledgeDate, InvoiceNumber, InvoiceDate
+FROM            tblPOItem2</value>
+  </data>
+  <metadata name="oleDbUpdateCommand26.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand26.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand26.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand26.CommandText" xml:space="preserve">
+    <value>UPDATE `tblPOItem2` SET `POItemNumber` = ?, `POID` = ?, `SeqNumber` = ?, `ItemNameObsolete` = ?, `ItemDesc` = ?, `Length` = ?, `SizeOfItem` = ?, `ItemAccessCode` = ?, `Qty` = ?, `UM` = ?, `DateRequired` = ?, `AcknowledgeDate` = ?, `MillShipDate` = ?, `CancelDate` = ?, `CustRate` = ?, `CommRate` = ?, `CustAmount` = ?, `CommAmount` = ?, `Comments` = ?, `FinishID` = ?, `ItemID` = ?, `TreatmentID` = ?, `MillConfirmationNumber` = ?, `MillAcknowledgeDate` = ?, `InvoiceNumber` = ?, `InvoiceDate` = ? WHERE ((`POItemNumber` = ?) AND ((? = 1 AND `POID` IS NULL) OR (`POID` = ?)) AND ((? = 1 AND `SeqNumber` IS NULL) OR (`SeqNumber` = ?)) AND ((? = 1 AND `ItemNameObsolete` IS NULL) OR (`ItemNameObsolete` = ?)) AND ((? = 1 AND `Length` IS NULL) OR (`Length` = ?)) AND ((? = 1 AND `SizeOfItem` IS NULL) OR (`SizeOfItem` = ?)) AND ((? = 1 AND `ItemAccessCode` IS NULL) OR (`ItemAccessCode` = ?)) AND ((? = 1 AND `Qty` IS NULL) OR (`Qty` = ?)) AND ((? = 1 AND `UM` IS NULL) OR (`UM` = ?)) AND ((? = 1 AND `DateRequired` IS NULL) OR (`DateRequired` = ?)) AND ((? = 1 AND `AcknowledgeDate` IS NULL) OR (`AcknowledgeDate` = ?)) AND ((? = 1 AND `MillShipDate` IS NULL) OR (`MillShipDate` = ?)) AND ((? = 1 AND `CancelDate` IS NULL) OR (`CancelDate` = ?)) AND ((? = 1 AND `CustRate` IS NULL) OR (`CustRate` = ?)) AND ((? = 1 AND `CommRate` IS NULL) OR (`CommRate` = ?)) AND ((? = 1 AND `CustAmount` IS NULL) OR (`CustAmount` = ?)) AND ((? = 1 AND `CommAmount` IS NULL) OR (`CommAmount` = ?)) AND ((? = 1 AND `FinishID` IS NULL) OR (`FinishID` = ?)) AND ((? = 1 AND `ItemID` IS NULL) OR (`ItemID` = ?)) AND ((? = 1 AND `TreatmentID` IS NULL) OR (`TreatmentID` = ?)) AND ((? = 1 AND `MillConfirmationNumber` IS NULL) OR (`MillConfirmationNumber` = ?)) AND ((? = 1 AND `MillAcknowledgeDate` IS NULL) OR (`MillAcknowledgeDate` = ?)) AND ((? = 1 AND `InvoiceNumber` IS NULL) OR (`InvoiceNumber` = ?)) AND ((? = 1 AND `InvoiceDate` IS NULL) OR (`InvoiceDate` = ?)))</value>
+  </data>
+  <metadata name="itemFromCompIDAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 202</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand27.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand27.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand27.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbDeleteCommand27.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblItem` WHERE (((? = 1 AND `CommRate` IS NULL) OR (`CommRate` = ?)) AND ((? = 1 AND `CompID` IS NULL) OR (`CompID` = ?)) AND ((? = 1 AND `CustRate` IS NULL) OR (`CustRate` = ?)) AND (`ItemID` = ?) AND ((? = 1 AND `ItemName` IS NULL) OR (`ItemName` = ?)))</value>
+  </data>
+  <metadata name="oleDbInsertCommand27.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand27.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand27.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand27.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand27.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand27.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand27.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand27.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand27.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand27.CommandText" xml:space="preserve">
+    <value>UPDATE `tblItem` SET `CommRate` = ?, `CompID` = ?, `CustRate` = ?, `ItemDesc` = ?, `ItemID` = ?, `ItemName` = ? WHERE (((? = 1 AND `CommRate` IS NULL) OR (`CommRate` = ?)) AND ((? = 1 AND `CompID` IS NULL) OR (`CompID` = ?)) AND ((? = 1 AND `CustRate` IS NULL) OR (`CustRate` = ?)) AND (`ItemID` = ?) AND ((? = 1 AND `ItemName` IS NULL) OR (`ItemName` = ?)))</value>
+  </data>
+  <metadata name="locationAllAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>195, 202</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand28.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand28.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand28.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand28.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand28.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand28.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand28.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand28.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand28.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand28.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand28.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand28.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand28.CommandText" xml:space="preserve">
+    <value>UPDATE tblLocation2 SET Address = ?, ATTNString = ?, CCString = ?, CompID = ?, CountryID = ?, ExcelFile = ?, LocID = ?, LocName = ? WHERE (LocID = ?) AND (CompID = ?) AND (CountryID = ?) AND (ExcelFile = ? OR ? IS NULL AND ExcelFile IS NULL) AND (LocName = ?)</value>
+  </data>
+  <metadata name="treatmentAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>336, 202</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand29.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand29.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand29.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand29.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand29.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand29.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand29.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand29.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand29.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand29.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand29.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand29.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="locationAdapterFromLocID.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>475, 202</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand30.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand30.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand30.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand30.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand30.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand30.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand30.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand30.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand30.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand30.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand30.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand30.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand30.CommandText" xml:space="preserve">
+    <value>UPDATE tblLocation2 SET Address = ?, ATTNString = ?, CCString = ?, CompID = ?, CountryID = ?, ExcelFile = ?, LocID = ?, LocName = ? WHERE (LocID = ?) AND (CompID = ?) AND (CountryID = ?) AND (ExcelFile = ? OR ? IS NULL AND ExcelFile IS NULL) AND (LocName = ?)</value>
+  </data>
+  <metadata name="billOfLadingFromStatus.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>659, 202</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand31.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand31.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbDeleteCommand31.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand31.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand31.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbInsertCommand31.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand31.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand31.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbSelectCommand31.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand31.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand31.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbUpdateCommand31.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbUpdateCommand31.CommandText" xml:space="preserve">
+    <value>UPDATE tblBOL SET BOLID = ?, BOLNumber = ?, PickupDate = ?, Status = ? WHERE (BOLID = ?) AND (BOLNumber = ? OR ? IS NULL AND BOLNumber IS NULL) AND (PickupDate = ? OR ? IS NULL AND PickupDate IS NULL) AND (Status = ? OR ? IS NULL AND Status IS NULL)</value>
+  </data>
+  <metadata name="contAllAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>154, 239</value>
+  </metadata>
+  <metadata name="oleDbCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand1.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbCommand1.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblContainer` WHERE ((`ContID` = ?) AND ((? = 1 AND `ContNumber` IS NULL) OR (`ContNumber` = ?)) AND ((? = 1 AND `ShipDate` IS NULL) OR (`ShipDate` = ?)) AND ((? = 1 AND `ETA` IS NULL) OR (`ETA` = ?)) AND ((? = 1 AND `Status` IS NULL) OR (`Status` = ?)) AND ((? = 1 AND `CustomerID` IS NULL) OR (`CustomerID` = ?)) AND ((? = 1 AND `CustomerLocationID` IS NULL) OR (`CustomerLocationID` = ?)) AND ((? = 1 AND `ApplyClosingToEntireContainer` IS NULL) OR (`ApplyClosingToEntireContainer` = ?)) AND ((? = 1 AND `ContainerPickupDate` IS NULL) OR (`ContainerPickupDate` = ?)) AND ((? = 1 AND `ContainerPickupTerminal` IS NULL) OR (`ContainerPickupTerminal` = ?)) AND ((? = 1 AND `ContainerProofOfDelivery` IS NULL) OR (`ContainerProofOfDelivery` = ?)) AND ((? = 1 AND `ReleaseDate` IS NULL) OR (`ReleaseDate` = ?)))</value>
+  </data>
+  <metadata name="oleDbCommand2.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand2.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbCommand2.CommandText" xml:space="preserve">
+    <value>INSERT INTO `tblContainer` (`ContID`, `ContNumber`, `ShipDate`, `ETA`, `Comments`, `Status`, `CustomerID`, `CustomerLocationID`, `ApplyClosingToEntireContainer`, `ContainerPickupDate`, `ContainerPickupTerminal`, `ContainerProofOfDelivery`, `ReleaseDate`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</value>
+  </data>
+  <metadata name="oleDbCommand3.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand3.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbCommand4.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand4.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbCommand4.CommandText" xml:space="preserve">
+    <value>UPDATE `tblContainer` SET `ContID` = ?, `ContNumber` = ?, `ShipDate` = ?, `ETA` = ?, `Comments` = ?, `Status` = ?, `CustomerID` = ?, `CustomerLocationID` = ?, `ApplyClosingToEntireContainer` = ?, `ContainerPickupDate` = ?, `ContainerPickupTerminal` = ?, `ContainerProofOfDelivery` = ?, `ReleaseDate` = ? WHERE ((`ContID` = ?) AND ((? = 1 AND `ContNumber` IS NULL) OR (`ContNumber` = ?)) AND ((? = 1 AND `ShipDate` IS NULL) OR (`ShipDate` = ?)) AND ((? = 1 AND `ETA` IS NULL) OR (`ETA` = ?)) AND ((? = 1 AND `Status` IS NULL) OR (`Status` = ?)) AND ((? = 1 AND `CustomerID` IS NULL) OR (`CustomerID` = ?)) AND ((? = 1 AND `CustomerLocationID` IS NULL) OR (`CustomerLocationID` = ?)) AND ((? = 1 AND `ApplyClosingToEntireContainer` IS NULL) OR (`ApplyClosingToEntireContainer` = ?)) AND ((? = 1 AND `ContainerPickupDate` IS NULL) OR (`ContainerPickupDate` = ?)) AND ((? = 1 AND `ContainerPickupTerminal` IS NULL) OR (`ContainerPickupTerminal` = ?)) AND ((? = 1 AND `ContainerProofOfDelivery` IS NULL) OR (`ContainerProofOfDelivery` = ?)) AND ((? = 1 AND `ReleaseDate` IS NULL) OR (`ReleaseDate` = ?)))</value>
+  </data>
+  <metadata name="itemFromItemNameAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 276</value>
+  </metadata>
+  <metadata name="oleDbCommand5.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand5.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand5.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbCommand5.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblItem` WHERE ((`ItemID` = ?) AND ((? = 1 AND `CompID` IS NULL) OR (`CompID` = ?)) AND ((? = 1 AND `ItemName` IS NULL) OR (`ItemName` = ?)) AND ((? = 1 AND `CustRate` IS NULL) OR (`CustRate` = ?)) AND ((? = 1 AND `CommRate` IS NULL) OR (`CommRate` = ?)))</value>
+  </data>
+  <metadata name="oleDbCommand6.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand6.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand6.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbCommand7.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand7.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand7.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbCommand8.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand8.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand8.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>439, 239</value>
+  </metadata>
+  <data name="oleDbCommand8.CommandText" xml:space="preserve">
+    <value>UPDATE `tblItem` SET `ItemID` = ?, `CompID` = ?, `ItemName` = ?, `ItemDesc` = ?, `CustRate` = ?, `CommRate` = ? WHERE ((`ItemID` = ?) AND ((? = 1 AND `CompID` IS NULL) OR (`CompID` = ?)) AND ((? = 1 AND `ItemName` IS NULL) OR (`ItemName` = ?)) AND ((? = 1 AND `CustRate` IS NULL) OR (`CustRate` = ?)) AND ((? = 1 AND `CommRate` IS NULL) OR (`CommRate` = ?)))</value>
+  </data>
+  <metadata name="contactsAllAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>350, 276</value>
+  </metadata>
+  <metadata name="oleDbCommand9.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand9.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand9.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbCommand9.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblContacts` WHERE (((? = 1 AND `CompID` IS NULL) OR (`CompID` = ?)) AND (`ContactID` = ?) AND ((? = 1 AND `EMail` IS NULL) OR (`EMail` = ?)) AND ((? = 1 AND `Fax` IS NULL) OR (`Fax` = ?)) AND ((? = 1 AND `FirstName` IS NULL) OR (`FirstName` = ?)) AND ((? = 1 AND `LastName` IS NULL) OR (`LastName` = ?)) AND ((? = 1 AND `Phone` IS NULL) OR (`Phone` = ?)))</value>
+  </data>
+  <metadata name="oleDbCommand10.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand10.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand10.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbCommand11.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand11.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand11.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbCommand12.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand12.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand12.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>207, 276</value>
+  </metadata>
+  <data name="oleDbCommand12.CommandText" xml:space="preserve">
+    <value>UPDATE `tblContacts` SET `CompID` = ?, `ContactID` = ?, `EMail` = ?, `Fax` = ?, `FirstName` = ?, `LastName` = ?, `Phone` = ? WHERE (((? = 1 AND `CompID` IS NULL) OR (`CompID` = ?)) AND (`ContactID` = ?) AND ((? = 1 AND `EMail` IS NULL) OR (`EMail` = ?)) AND ((? = 1 AND `Fax` IS NULL) OR (`Fax` = ?)) AND ((? = 1 AND `FirstName` IS NULL) OR (`FirstName` = ?)) AND ((? = 1 AND `LastName` IS NULL) OR (`LastName` = ?)) AND ((? = 1 AND `Phone` IS NULL) OR (`Phone` = ?)))</value>
+  </data>
+  <metadata name="containerCheckForDuplicatesAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>473, 241</value>
+  </metadata>
+  <metadata name="oleDbCommand13.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand13.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand13.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>494, 276</value>
+  </metadata>
+  <data name="oleDbCommand13.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblContainer` WHERE (((? = 1 AND `ApplyClosingToEntireContainer` IS NULL) OR (`ApplyClosingToEntireContainer` = ?)) AND ((? = 1 AND `ContainerPickupDate` IS NULL) OR (`ContainerPickupDate` = ?)) AND ((? = 1 AND `ContainerPickupTerminal` IS NULL) OR (`ContainerPickupTerminal` = ?)) AND ((? = 1 AND `ContainerProofOfDelivery` IS NULL) OR (`ContainerProofOfDelivery` = ?)) AND (`ContID` = ?) AND ((? = 1 AND `ContNumber` IS NULL) OR (`ContNumber` = ?)) AND ((? = 1 AND `CustomerID` IS NULL) OR (`CustomerID` = ?)) AND ((? = 1 AND `CustomerLocationID` IS NULL) OR (`CustomerLocationID` = ?)) AND ((? = 1 AND `ETA` IS NULL) OR (`ETA` = ?)) AND ((? = 1 AND `ShipDate` IS NULL) OR (`ShipDate` = ?)) AND ((? = 1 AND `Status` IS NULL) OR (`Status` = ?)) AND ((? = 1 AND `ReleaseDate` IS NULL) OR (`ReleaseDate` = ?)))</value>
+  </data>
+  <metadata name="oleDbCommand14.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand14.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand14.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbCommand14.CommandText" xml:space="preserve">
+    <value>INSERT INTO `tblContainer` (`ApplyClosingToEntireContainer`, `Comments`, `ContainerPickupDate`, `ContainerPickupTerminal`, `ContainerProofOfDelivery`, `ContID`, `ContNumber`, `CustomerID`, `CustomerLocationID`, `ETA`, `ShipDate`, `Status`, `ReleaseDate`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</value>
+  </data>
+  <metadata name="oleDbCommand15.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand15.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand15.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbCommand15.CommandText" xml:space="preserve">
+    <value>SELECT ApplyClosingToEntireContainer, Comments, ContainerPickupDate, ContainerPickupTerminal, ContainerProofOfDelivery, ContID, ContNumber, CustomerID, CustomerLocationID, ETA, ShipDate, Status ,ReleaseDate FROM tblContainer WHERE (ContNumber = ? AND CustomerID = ?)</value>
+  </data>
+  <metadata name="oleDbCommand16.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand16.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand16.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 313</value>
+  </metadata>
+  <data name="oleDbCommand16.CommandText" xml:space="preserve">
+    <value>UPDATE `tblContainer` SET `ApplyClosingToEntireContainer` = ?, `Comments` = ?, `ContainerPickupDate` = ?, `ContainerPickupTerminal` = ?, `ContainerProofOfDelivery` = ?, `ContID` = ?, `ContNumber` = ?, `CustomerID` = ?, `CustomerLocationID` = ?, `ETA` = ?, `ShipDate` = ?, `Status` = ?, `ReleaseDate` = ? WHERE (((? = 1 AND `ApplyClosingToEntireContainer` IS NULL) OR (`ApplyClosingToEntireContainer` = ?)) AND ((? = 1 AND `ContainerPickupDate` IS NULL) OR (`ContainerPickupDate` = ?)) AND ((? = 1 AND `ContainerPickupTerminal` IS NULL) OR (`ContainerPickupTerminal` = ?)) AND ((? = 1 AND `ContainerProofOfDelivery` IS NULL) OR (`ContainerProofOfDelivery` = ?)) AND (`ContID` = ?) AND ((? = 1 AND `ContNumber` IS NULL) OR (`ContNumber` = ?)) AND ((? = 1 AND `CustomerID` IS NULL) OR (`CustomerID` = ?)) AND ((? = 1 AND `CustomerLocationID` IS NULL) OR (`CustomerLocationID` = ?)) AND ((? = 1 AND `ETA` IS NULL) OR (`ETA` = ?)) AND ((? = 1 AND `ShipDate` IS NULL) OR (`ShipDate` = ?)) AND ((? = 1 AND `Status` IS NULL) OR (`Status` = ?)) AND ((? = 1 AND `ReleaseDate` IS NULL) OR (`ReleaseDate` = ?)))</value>
+  </data>
+  <metadata name="surchargeRateAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>498, 271</value>
+  </metadata>
+  <metadata name="oleDbCommand17.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand17.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand17.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>160, 313</value>
+  </metadata>
+  <data name="oleDbCommand17.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblSurchargeRate` WHERE ((`SurchargeID` = ?) AND ((? = 1 AND `ItemID` IS NULL) OR (`ItemID` = ?)) AND ((? = 1 AND `FinishID` IS NULL) OR (`FinishID` = ?)) AND ((? = 1 AND `SurchargeRate` IS NULL) OR (`SurchargeRate` = ?)) AND ((? = 1 AND `SurchargeDate` IS NULL) OR (`SurchargeDate` = ?)) AND ((? = 1 AND `SurchargeMonth` IS NULL) OR (`SurchargeMonth` = ?)))</value>
+  </data>
+  <metadata name="oleDbCommand18.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand18.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand18.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbCommand19.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand19.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand19.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbCommand20.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand20.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand20.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbCommand20.CommandText" xml:space="preserve">
+    <value>UPDATE `tblSurchargeRate` SET `SurchargeID` = ?, `ItemID` = ?, `FinishID` = ?, `SurchargeRate` = ?, `SurchargeDate` = ?, `SurchargeMonth` = ? WHERE ((`SurchargeID` = ?) AND ((? = 1 AND `ItemID` IS NULL) OR (`ItemID` = ?)) AND ((? = 1 AND `FinishID` IS NULL) OR (`FinishID` = ?)) AND ((? = 1 AND `SurchargeRate` IS NULL) OR (`SurchargeRate` = ?)) AND ((? = 1 AND `SurchargeDate` IS NULL) OR (`SurchargeDate` = ?)) AND ((? = 1 AND `SurchargeMonth` IS NULL) OR (`SurchargeMonth` = ?)))</value>
+  </data>
+  <metadata name="surchargeAllAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>468, 313</value>
+  </metadata>
+  <metadata name="oleDbCommand21.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand21.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand21.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>160, 313</value>
+  </metadata>
+  <data name="oleDbCommand21.CommandText" xml:space="preserve">
+    <value>DELETE FROM `tblSurchargeRate` WHERE ((`SurchargeID` = ?) AND ((? = 1 AND `ItemID` IS NULL) OR (`ItemID` = ?)) AND ((? = 1 AND `FinishID` IS NULL) OR (`FinishID` = ?)) AND ((? = 1 AND `SurchargeRate` IS NULL) OR (`SurchargeRate` = ?)) AND ((? = 1 AND `SurchargeDate` IS NULL) OR (`SurchargeDate` = ?)) AND ((? = 1 AND `SurchargeMonth` IS NULL) OR (`SurchargeMonth` = ?)))</value>
+  </data>
+  <metadata name="oleDbCommand22.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand22.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand22.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>314, 313</value>
+  </metadata>
+  <metadata name="oleDbCommand23.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand23.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand23.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="oleDbCommand24.DesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand24.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="oleDbCommand24.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="oleDbCommand24.CommandText" xml:space="preserve">
+    <value>UPDATE `tblSurchargeRate` SET `SurchargeID` = ?, `ItemID` = ?, `FinishID` = ?, `SurchargeRate` = ?, `SurchargeDate` = ?, `SurchargeMonth` = ? WHERE ((`SurchargeID` = ?) AND ((? = 1 AND `ItemID` IS NULL) OR (`ItemID` = ?)) AND ((? = 1 AND `FinishID` IS NULL) OR (`FinishID` = ?)) AND ((? = 1 AND `SurchargeRate` IS NULL) OR (`SurchargeRate` = ?)) AND ((? = 1 AND `SurchargeDate` IS NULL) OR (`SurchargeDate` = ?)) AND ((? = 1 AND `SurchargeMonth` IS NULL) OR (`SurchargeMonth` = ?)))</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>368</value>
+  </metadata>
+</root>

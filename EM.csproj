@@ -1,0 +1,736 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F61AC777-6196-4FD5-AFA8-D8B6854C3599}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>EM</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>EM</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AcknowledgeReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AcknowledgeReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdapterHelper.resx">
+      <DependentUpon>AdapterHelper.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewCompany.resx">
+      <DependentUpon>AddNewCompany.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewContact.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AddNewContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewCountry.resx">
+      <DependentUpon>AddNewCountry.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewItem.resx">
+      <DependentUpon>AddNewItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewLocation.resx">
+      <DependentUpon>AddNewLocation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AutoCompleteComboBox.resx">
+      <DependentUpon>AutoCompleteComboBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AutoCompleteTextBox.resx">
+      <DependentUpon>AutoCompleteTextBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Background.resx">
+      <DependentUpon>Background.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BalanceReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BalanceReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseEMForm.resx">
+      <DependentUpon>BaseEMForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BatchAddInvoice.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BatchAddInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BatchAddNewInvoice.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BatchAddNewInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="buttonface.bmp" />
+    <EmbeddedResource Include="buttonfacepressed.bmp" />
+    <EmbeddedResource Include="ChooseItem.resx">
+      <DependentUpon>ChooseItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chooser.resx">
+      <DependentUpon>Chooser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CloseContainer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CloseContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompanyForm.resx">
+      <DependentUpon>CompanyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contacts.resx">
+      <DependentUpon>Contacts.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Container.resx">
+      <DependentUpon>Container.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContainerItem.resx">
+      <DependentUpon>ContainerItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContainerReportDlg.resx">
+      <DependentUpon>ContainerReportDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CurrencyFiller.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CurrencyFiller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MillInvoiceForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MillInvoiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewInvoiceReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NewInvoiceReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CountryForm.resx">
+      <DependentUpon>CountryForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport1.resx">
+      <DependentUpon>CrystalReport1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContETAReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ContETAReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalViewer.resx">
+      <DependentUpon>CrystalViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DateSelectorControl.resx">
+      <DependentUpon>DateSelectorControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DateTimeSelector.resx">
+      <DependentUpon>DateTimeSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DummyForm.resx">
+      <DependentUpon>DummyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMForm.resx">
+      <DependentUpon>EMForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ETAReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ETAReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fullbuttonface.bmp" />
+    <EmbeddedResource Include="fullbuttonfacepressed.bmp" />
+    <EmbeddedResource Include="GenericCrystalViewer.resx">
+      <DependentUpon>GenericCrystalViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceSupportForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InvoiceSupportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item.resx">
+      <DependentUpon>Item.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemEdit.resx">
+      <DependentUpon>ItemEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KeyBasedForm.resx">
+      <DependentUpon>KeyBasedForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocationForm.resx">
+      <DependentUpon>LocationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="newsalesreports.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>newsalesreports.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NumberListEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NumberListEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NumberSelectorControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NumberSelectorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderLog.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OrderLog.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PickComputerName.resx">
+      <DependentUpon>PickComputerName.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PO.resx">
+      <DependentUpon>PO.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POItem.resx">
+      <DependentUpon>POItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POItemReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>POItemReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PromiseReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PromiseReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuantitySize.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>QuantitySize.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuickGridEdit.resx">
+      <DependentUpon>QuickGridEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportDialog.resx">
+      <DependentUpon>ReportDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportPreview.resx">
+      <DependentUpon>ReportPreview.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResolveDuplicateKeys.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ResolveDuplicateKeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesReports.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SalesReports.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesReportsByCustomer.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SalesReportsByCustomer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaveCancelDlg.resx">
+      <DependentUpon>SaveCancelDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaveNoSaveCancel.resx">
+      <DependentUpon>SaveNoSaveCancel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="saveyesno.resx">
+      <DependentUpon>saveyesno.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowCompletedPODlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ShowCompletedPODlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testFullDatabase.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>testFullDatabase.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewContainers.resx">
+      <DependentUpon>ViewContainers.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="AcknowledgeReport.cs">
+      <DependentUpon>AcknowledgeReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="AdapterHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewContact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewContact.Designer.cs">
+      <DependentUpon>AddNewContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewCountry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewLocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AutoCompleteComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AutoCompleteTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Background.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BalanceReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BalanceReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseEMForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BatchAddInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BatchAddInvoice.Designer.cs">
+      <DependentUpon>BatchAddInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BatchAddNewInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BatchAddNewInvoice.Designer.cs">
+      <DependentUpon>BatchAddNewInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChooseItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chooser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CloseContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CloseContainer.Designer.cs">
+      <DependentUpon>CloseContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contacts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Container.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContainerItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContainerReportDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CurrencyFiller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CurrencyFiller.Designer.cs">
+      <DependentUpon>CurrencyFiller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MillInvoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MillInvoiceForm.Designer.cs">
+      <DependentUpon>MillInvoiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewInvoiceReport.cs">
+      <DependentUpon>NewInvoiceReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CountryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrystalReport1.cs">
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="ContETAReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContETAReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataInterface.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DateSelectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DateTimeSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DummyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMDataRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EMDataSet.cs">
+      <DependentUpon>EMDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EMDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EMDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EMForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ETAReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ETAReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExcelHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FieldExtractor.cs" />
+    <Compile Include="FinishTypeGrid.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FormSupport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GenericCrystalViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperFunctions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InvoiceSupportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvoiceSupportForm.Designer.cs">
+      <DependentUpon>InvoiceSupportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemEdit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="KeyBasedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewExcelHelper.cs" />
+    <Compile Include="newsalesreports.cs">
+      <DependentUpon>newsalesreports.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="NumberListEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NumberListEditor.Designer.cs">
+      <DependentUpon>NumberListEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NumberSelectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NumberSelectorControl.Designer.cs">
+      <DependentUpon>NumberSelectorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderLog.cs">
+      <DependentUpon>OrderLog.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="PickComputerName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POItemReport.cs">
+      <DependentUpon>POItemReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="PromiseReport.cs">
+      <DependentUpon>PromiseReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="QuantitySize.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuantitySize.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QuickGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QuickGridEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResolveDuplicateKeys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResolveDuplicateKeys.Designer.cs">
+      <DependentUpon>ResolveDuplicateKeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesReports.cs">
+      <DependentUpon>SalesReports.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="SalesReportsByCustomer.cs">
+      <DependentUpon>SalesReportsByCustomer.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="SaveCancelDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaveNoSaveCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="saveyesno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetupQuickGrid.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ShowCompletedPODlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowCompletedPODlg.Designer.cs">
+      <DependentUpon>ShowCompletedPODlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stopwatch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TaggedItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tester.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="testFullDatabase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>testFullDatabase.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolbarInterface.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UpdateOldRecords.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewContainers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="xmlwriter.cs" />
+    <Content Include="App.ico" />
+    <Content Include="EMDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EMDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Resources\XMLFooter.txt" />
+    <None Include="Resources\XMLHeader2.txt" />
+    <None Include="app.config" />
+    <None Include="EMDataSet.xsc">
+      <DependentUpon>EMDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EMDataSet.xss">
+      <DependentUpon>EMDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EMDataSet.xsx">
+      <DependentUpon>EMDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{CF845C55-C321-4742-B673-E6212D061ED9}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
