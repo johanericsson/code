@@ -449,7 +449,10 @@ namespace EM
             decimal currentValue = (decimal)row[fieldName];
             decimal currentQty = (decimal)row["Qty"];
             currentValue = currentValue * currentQty + newValue * newQty;
-            currentValue = currentValue/(currentQty + newQty);
+            if (currentQty + newQty != 0)
+            {
+                currentValue = currentValue / (currentQty + newQty);
+            }
             row[fieldName] = currentValue;
         }
         void AddIn(DataRow row, string fieldName, decimal value)

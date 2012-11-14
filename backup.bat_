@@ -1,0 +1,1 @@
+xcopy /s /i *.* "%userprofile%\schedule\%random%"

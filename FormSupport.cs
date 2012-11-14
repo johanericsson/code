@@ -187,6 +187,8 @@ namespace EM
 				}
 				if (fieldName == "ItemDesc")
 					return itemRow["ItemDesc"];
+                if (fieldName == "CancelDate")
+                    return itemRow["CancelDate"];
 				if (fieldName == "PONumber")
 					return poHeader["PONumber"];
 				if (fieldName == "SizeOfItem")
@@ -218,7 +220,7 @@ namespace EM
 				"BayNumber","InvoiceNumber","MillInvoiceDate","BundleAlloySurcharge",
                 "BundleScrapSurcharge",
                 "EMInvoiceNumber",
-				"PickupDate","PickupTerminal","ProofOfDelivery",
+				"PickupDate","PickupTerminal","ProofOfDelivery","*CancelDate",
                 "ContainerBundleID"};
 			EMDataSet.ContainerTblRow contRow = emDataSet.ContainerTbl.FindByContID(contID);
 			bool showLessFields = !contRow.IsApplyClosingToEntireContainerNull() &&
@@ -230,6 +232,7 @@ namespace EM
 											"EnglishShipQty","Heat",
 											"BayNumber","InvoiceNumber","MillInvoiceDate",
                                             "BundleAlloySurcharge","BundleScrapSurcharge","EMInvoiceNumber",
+                                            "*CancelDate",
 											"ContainerBundleID"};
 			
 			}
@@ -239,7 +242,8 @@ namespace EM
 				IsNewAllowed.No,isReadOnly,"BundleSeqNumber",
 				new GetFieldDelegate(bundleFieldHelper.GetBundleField),
 				face,bolFieldList);
-				
+
+            bundleGrid.SetCancelColumn("CancelDate");
 			
 			DataTable weightTable = new DataTable();
 

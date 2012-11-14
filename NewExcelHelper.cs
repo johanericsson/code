@@ -202,6 +202,7 @@ namespace EM
             "INVOICE","InvoiceNumber",
             "BAY","BayNumber",
             "ETA","ContID>ContainerTbl.ETA",
+            "RATE","POItemNumber>POItemTbl.CustRate",
             "BRANCH","POItemNumber>POItemTbl.POID>POHeaderTbl.CustomerLocationID>LocationTbl.LocName"
             };
             string[] fields = new string[fieldsAndPaths.Length/2];

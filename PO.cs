@@ -709,6 +709,8 @@ namespace EM
 				return bundleWeight;
 			if (field == "BOLWeight")
 				return bolWeight;
+            if (field == "CancelDate")
+                return row["CancelDate"];
 			if (field == "PercentPickedUp")
 			{
 				if (row.IsQtyNull())
@@ -818,7 +820,8 @@ namespace EM
 					FormSupport.GridWizard(containerCheckGrid,itemTable,isKg,IsNewAllowed.No,
 						IsReadOnly.Yes,"SeqNumber",new FormSupport.GetFieldDelegate(this.GetContainerCheckField)
 						,null,"ItemName","SizeOfItem","Length","Qty",
-						"ContainerWeight","BOLWeight","PercentPickedUp","SeqNumber","POItemNumber");
+						"ContainerWeight","BOLWeight","PercentPickedUp","CancelDate","SeqNumber","POItemNumber");
+                    containerCheckGrid.SetCancelColumn("CancelDate");
 				}
 				else if (selectedIndex == 1) // for weight table
 				{
@@ -830,7 +833,7 @@ namespace EM
 			        {
 				        "*ItemName",
 				        "*SizeOfItem","*Length",
-				        "*ItemAccessCode","*Qty"});
+				        "*ItemAccessCode","*Qty","*CancelDate"});
                     if (!GetHeaderRow().IsMillConfirmationAppliesToEntirePONull() &&
                         GetHeaderRow().MillConfirmationAppliesToEntirePO == 0)
                     {
@@ -842,6 +845,7 @@ namespace EM
                         IsNewAllowed.No, IsReadOnly.No, "SeqNumber",
                         new FormSupport.GetFieldDelegate(GetPOItemFieldForGrid)
                         , this, poFields.ToArray());
+                    millConfirmationGrid.SetCancelColumn("CancelDate");
                     
                 }
                 else Debug.Assert(false);

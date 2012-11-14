@@ -1546,10 +1546,15 @@ namespace EM
                             itemRow["MillAcknowledgeDate"] = headerRow["MillAcknowledgeDate"];
                         }
                     }
+
+                    string locationName = emDataSet.LocationTbl.FindByLocID(headerRow.MillLocationID).LocName;
+                    headerRow.VendEMail = locationName;
+
                 }
                 foreach (EMDataSet.POItemTblRow itemRow in emDataSet.POItemTbl.Rows)
                 {
-                    if (itemRow.IsQtyNull() || itemRow.Qty == 0)
+                    /* 3/14/2011 - there are items with no quantity
+                     if (itemRow.IsQtyNull() || itemRow.Qty == 0)
                     {
                         itemRow.Delete();
                         continue;
@@ -1557,9 +1562,22 @@ namespace EM
                     if (DataInterface.IsMetric(itemRow))
                     {
                         itemRow.Qty = DataInterface.ConvertToLbs(itemRow.Qty);
+                    }*/
+                    if (itemRow.IsCustAmountNull() || itemRow.CustAmount == 0)
+                    {
+                        itemRow.Delete();
+                        continue;
                     }
+
+                    if (itemRow.IsQtyNull() == false && DataInterface.IsMetric(itemRow))
+                    {
+                        itemRow.Qty = DataInterface.ConvertToLbs(itemRow.Qty);
+                    }
+                    
                 }
+
                 string[] fieldList = new string[]{
+                    "POID>POHeaderTbl.VendEMail",
                     "POID>POHeaderTbl.PONumber",
                     "POID>POHeaderTbl.PODate",
                     "POID>POHeaderTbl.ShipToEmail",
@@ -1571,15 +1589,18 @@ namespace EM
                     "Length",
                     "CustRate",
                     "POID>POHeaderTbl.ExchangeRate",
-                    "=RC[-2]*RC[-5]",
+                    "CustAmount",
                     "=RC[-2]*RC[-1]",
                     "=IF(RC[-10]=&quot;HR&quot;,RC[-7],0)",
                     "=IF(RC[-11]=&quot;CF&quot;,RC[-8],0)",
                     "=IF(RC[-12]=&quot;SHT&quot;,RC[-9],0)",
-                    "=IF(RC[-13]=&quot;Forged&quot;,RC[-10],0)"};
+                    "=IF(RC[-13]=&quot;Forged&quot;,RC[-10],0)",
+                    "=IF(RC[-14]=&quot;SS&quot;,RC[-11],0)"
+                };
                 
                 string[] friendlyTitles = new string[]
                 {
+                    "Mill",
                        "PONumber",
                        "PODate",
                     "Customer",
@@ -1596,10 +1617,12 @@ namespace EM
                     "HR",
                     "CF",
                     "SHT",
-                    "Forged"
+                    "Forged",
+                    "SS"
                };
                 string[] types = new string[]
                 {
+                    "String",
                     "String",
                     "DateTime",
                     "String",
@@ -1609,6 +1632,7 @@ namespace EM
                     "Number",
                     "String",
                     "String",
+                    "Number",
                     "Number",
                     "Number",
                     "Formula",
